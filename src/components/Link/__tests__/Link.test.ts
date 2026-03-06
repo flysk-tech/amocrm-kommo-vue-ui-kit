@@ -1,13 +1,31 @@
 import { describe, it, expect } from 'vitest'
-import { render } from '@testing-library/vue'
-import Link from '../Link.vue'
-import { LinkPrimaryTheme } from '../Link.themes'
+import { render, screen } from '@testing-library/vue'
+import { Link, LinkPrimaryTheme } from '..'
 
 describe('Link', () => {
+  it('renders as an anchor element', () => {
+    render(Link, {
+      props: { theme: LinkPrimaryTheme },
+      attrs: { role: 'link' },
+      slots: { default: 'Go to Dashboard' },
+    })
+
+    expect(screen.getByRole('link')).toBeInTheDocument()
+  })
+
+  it('renders children via default slot', () => {
+    render(Link, {
+      props: { theme: LinkPrimaryTheme },
+      slots: { default: 'Go to Dashboard' },
+    })
+
+    expect(screen.getByText('Go to Dashboard')).toBeInTheDocument()
+  })
+
   it('applies external class via Vue class binding', () => {
     const { container } = render(Link, {
       props: { theme: LinkPrimaryTheme },
-      attrs: { class: 'custom-class', href: 'https://example.com' },
+      attrs: { class: 'custom-class' },
       slots: { default: 'Click me' },
     })
 
@@ -15,14 +33,15 @@ describe('Link', () => {
     expect(a?.classList.contains('custom-class')).toBe(true)
   })
 
-  it('renders with theme and slot content', () => {
-    const { getByText, container } = render(Link, {
-      props: { theme: LinkPrimaryTheme, href: 'https://example.com' },
+  it('passes href and target attributes', () => {
+    const { container } = render(Link, {
+      props: { theme: LinkPrimaryTheme },
+      attrs: { href: 'https://example.com', target: '_blank' },
       slots: { default: 'Visit Site' },
     })
 
-    expect(getByText('Visit Site')).toBeInTheDocument()
     const a = container.querySelector('a')
     expect(a?.getAttribute('href')).toBe('https://example.com')
+    expect(a?.getAttribute('target')).toBe('_blank')
   })
 })
