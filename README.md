@@ -1,187 +1,137 @@
-# @amocrm/vue-ui-kit
+# @flysk-tech/amocrm-kommo-vue-ui-kit
 
-> Готовые к использованию Vue 3 компоненты, реализующие дизайн amoCRM
+> Vue 3 port of [@kommo-crm/crm-react-ui-kit](https://www.npmjs.com/package/@kommo-crm/crm-react-ui-kit) — ready-to-use UI components implementing amoCRM/Kommo design system.
 
-[![npm version](https://badge.fury.io/js/%40amocrm%2Fvue-ui-kit.svg)](https://badge.fury.io/js/%40amocrm%2Fvue-ui-kit)
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 [![Vue 3](https://img.shields.io/badge/Vue-3-4FC08D?logo=vue.js)](https://vuejs.org/)
 
-## 🚀 Особенности
+## Features
 
-- ✅ **Vue 3 + Composition API** - современная архитектура
-- ✅ **TypeScript** - полная типизация из коробки
-- ✅ **Темная/светлая тема** - автоматическое переключение
-- ✅ **Русская локализация** - адаптировано для российского рынка
-- ✅ **Tree-shaking** - импортируйте только нужные компоненты
-- ✅ **CSS модули** - изолированные стили компонентов
-- ✅ **Accessibility** - поддержка WCAG 2.1
-- ✅ **SSR/SSG** - совместимость с Nuxt и другими
+- **Vue 3 + Composition API** with `<script setup>`
+- **TypeScript** — full type coverage
+- **23 components** ported from React with Vue-native API
+- **Dark/light theme** via CSS custom properties
+- **Tree-shaking** — import only what you need
+- **CSS Modules** with SCSS
 
-## 📦 Установка
+## Installation
 
 ```bash
-# npm
-npm install @amocrm/vue-ui-kit
-
-# yarn
-yarn add @amocrm/vue-ui-kit
-
-# pnpm
-pnpm add @amocrm/vue-ui-kit
+npm install @flysk-tech/amocrm-kommo-vue-ui-kit
+# or
+yarn add @flysk-tech/amocrm-kommo-vue-ui-kit
 ```
 
-## 🎯 Быстрый старт
-
-### Полная установка
-
-```typescript
-// main.ts
-import { createApp } from 'vue'
-import AmoCrmUiKit from '@amocrm/vue-ui-kit'
-
-const app = createApp(App)
-app.use(AmoCrmUiKit)
-app.mount('#app')
-```
-
-### Выборочный импорт (рекомендуется)
+## Usage
 
 ```vue
 <template>
-  <ThemeProvider :theme="{ mode: 'light' }">
-    <Button
-      :theme="buttonTheme"
-      @click="handleClick"
-    >
-      Нажмите меня
-    </Button>
-  </ThemeProvider>
+  <Button :theme="ButtonPrimaryTheme" @click="handleClick">
+    Click me
+  </Button>
 </template>
 
 <script setup lang="ts">
-import { ThemeProvider, Button } from '@amocrm/vue-ui-kit'
-import { buttonPrimaryTheme } from '@amocrm/vue-ui-kit/themes'
-
-const buttonTheme = buttonPrimaryTheme
+import { Button, ButtonPrimaryTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit'
 
 const handleClick = () => {
-  console.log('Кнопка нажата!')
+  console.log('clicked')
 }
 </script>
 ```
 
-## 🎨 Система тем
+### v-model support
 
 ```vue
 <template>
-  <ThemeProvider :theme="themeConfig">
-    <div class="app">
-      <Button @click="toggleTheme">
-        Переключить тему
-      </Button>
-      <!-- Ваши компоненты -->
-    </div>
-  </ThemeProvider>
+  <Input
+    v-model="text"
+    :theme="InputLightTheme"
+    placeholder="Type here..."
+  />
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { ThemeProvider, useTheme } from '@amocrm/vue-ui-kit'
+import { Input, InputLightTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit'
 
-const themeConfig = ref({
-  mode: 'light' as const,
-  customVariables: {
-    '--crm-ui-kit-color-primary': '#007bff'
-  }
-})
-
-const { toggleTheme } = useTheme()
+const text = ref('')
 </script>
 ```
 
-## 📚 Компоненты
+### Dark/light theme
 
-### Формы
-- **Button** - кнопки с различными состояниями
-- **Input** - поля ввода с валидацией
-- **TextArea** - многострочный ввод
-- **Select** - выпадающие списки
-- **Checkbox** - чекбоксы и группы
-- **RadioGroup** - радиокнопки
-- **Switcher** - переключатели
+```vue
+<script setup lang="ts">
+import { ConfigProvider, Appearance } from '@flysk-tech/amocrm-kommo-vue-ui-kit'
+</script>
 
-### Интерфейс
-- **Text** - типографика
-- **Link** - ссылки
-- **Spinner** - индикаторы загрузки
-- **Portal** - телепортация компонентов
+<template>
+  <ConfigProvider :appearance="Appearance.ALTERNATIVE">
+    <!-- All components inside will use dark theme -->
+  </ConfigProvider>
+</template>
+```
 
-### Контент
-- **ContentBlock** - блоки контента
-- **Callout** - уведомления
-- **Accordion** - аккордеоны
+## Components
 
-## 🛠️ Разработка
+### Forms
+- **Button** — buttons with loading, disabled, success states
+- **Input** — text input with v-model, error states, after slot
+- **InlineInput** — inline text input
+- **TextArea** — multiline input with autosize
+- **BaseInput** — base input primitive
+- **Select** — dropdown select
+- **SelectButton** — select trigger button
+- **Checkbox** / **CheckboxGroup** — checkboxes with select-all
+- **RadioGroup** — radio buttons
+- **Switcher** — toggle switch
+
+### Display
+- **Text** — typography
+- **Label** / **LabelGroup** — form labels
+- **Link** — anchor links
+- **Spinner** — loading indicator
+
+### Layout
+- **ContentBlock** — content container
+- **Callout** — info/warning/error/success callouts
+- **Accordion** — collapsible panels (single/multiple)
+- **List** — keyboard-navigable list
+- **Portal** — teleport content to another DOM node
+- **FilterTabs** — filter tab groups
+- **ConfigProvider** — theme appearance provider
+- **VisuallyHiddenInput** — accessible hidden input
+
+## Development
 
 ```bash
-# Установка зависимостей
-yarn install
-
-# Запуск dev сервера
-yarn dev
-
-# Сборка библиотеки
-yarn build
-
-# Запуск тестов
-yarn test
-
-# Линтинг
-yarn lint
-
-# Storybook
-yarn storybook
+yarn install       # Install dependencies
+yarn dev           # Dev server
+yarn build         # Build library
+yarn test          # Run unit tests
+yarn storybook     # Storybook dev server
+yarn build-storybook  # Build Storybook
 ```
 
-## 📖 Документация
+## Migration from React
 
-Полная документация доступна в [Storybook](https://amocrm.github.io/vue-ui-kit-storybook)
-
-## 🔧 Системные требования
-
-- Vue 3.4+
-- Node.js 18+
-- TypeScript 5.5+ (опционально)
-
-## 🤝 Совместимость с React версией
-
-Эта библиотека является Vue.js портом [@kommo-crm/crm-react-ui-kit](https://www.npmjs.com/package/@kommo-crm/crm-react-ui-kit). API максимально совместим для упрощения миграции.
-
-### Миграция с React
-
-```typescript
+```tsx
 // React
 import { Button } from '@kommo-crm/crm-react-ui-kit'
-<Button isLoading={true} onClick={handleClick}>Кнопка</Button>
+<Button className="custom" isLoading={true} onClick={handleClick}>Click</Button>
 
 // Vue
-import { Button } from '@amocrm/vue-ui-kit'
-<Button :is-loading="true" @click="handleClick">Кнопка</Button>
+import { Button } from '@flysk-tech/amocrm-kommo-vue-ui-kit'
+<Button class="custom" :isLoading="true" @click="handleClick">Click</Button>
 ```
 
-## 📄 Лицензия
+Key differences:
+- `className` → standard `class` attribute
+- `onClick` → `@click` event
+- `value` + `onChange` → `v-model`
+- `children` → default `<slot />`
 
-MIT © amoCRM
+## License
 
-## 🐛 Сообщить об ошибке
-
-Если вы нашли ошибку, [создайте issue](https://github.com/amocrm/vue-ui-kit/issues/new) в нашем репозитории.
-
-## 🎯 Roadmap
-
-- [ ] Полный набор из 23 компонентов
-- [ ] Storybook документация
-- [ ] Accessibility тесты
-- [ ] Performance benchmarks
-- [ ] Nuxt 3 плагин
-- [ ] Figma интеграция
+MIT © Flysk LLC
