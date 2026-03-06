@@ -11,13 +11,8 @@ export interface SelectProps {
   defaultValue?: SelectItem
   isInvalid?: boolean
   isDisabled?: boolean
-  onChange?: (item: SelectItem) => void
-  onOpenChange?: (open: boolean) => void
-  className?: string
   isOpen?: boolean
   isDefaultOpen?: boolean
-  // Common HTML attributes
-  id?: string
 }
 
 export interface SelectContextProps {

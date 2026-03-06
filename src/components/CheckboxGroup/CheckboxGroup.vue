@@ -6,8 +6,7 @@
       styles.checkbox_group,
       {
         [styles.horizontal]: orientation === 'horizontal'
-      },
-      className
+      }
     ]"
     :style="theme"
   >
@@ -16,18 +15,15 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue'
+import { ref, reactive, watchEffect } from 'vue'
 import { provideCheckboxGroupContext, DISPLAY_NAME } from './CheckboxGroup.context'
 import { useCheckboxGroupState } from './composables/useCheckboxGroupState'
 import type { CheckboxGroupProps } from './CheckboxGroup.types'
 import styles from './CheckboxGroup.module.scss'
 
-type Props = CheckboxGroupProps & {
-  className?: string
-}
+type Props = CheckboxGroupProps
 
 const props = withDefaults(defineProps<Props>(), {
-  className: '',
   isDisabled: false,
   orientation: 'vertical',
 })
@@ -39,17 +35,19 @@ const { register, state } = useCheckboxGroupState({
   isDisabled: props.isDisabled,
 })
 
-const contextValue = computed(() => ({
+// Provide reactive context — provide once, update reactively
+const context = reactive({
   values: state.value,
   register,
   isDisabled: props.isDisabled,
-}))
-
-provideCheckboxGroupContext(contextValue.value)
-
-watch(() => contextValue.value, (newVal) => {
-  provideCheckboxGroupContext(newVal)
 })
+
+watchEffect(() => {
+  context.values = state.value
+  context.isDisabled = props.isDisabled
+})
+
+provideCheckboxGroupContext(context as any)
 
 defineExpose({
   checkboxGroupRef,

@@ -11,10 +11,6 @@ export interface AccordionMultipleProps extends BaseAccordionProps {
    * Used for Uncontrolled Accordion.
    */
   defaultValue?: string[]
-  /**
-   * Callback for changing the opened item.
-   */
-  onChange?: (value: string[]) => void
 }
 
 export interface AccordionMultipleImplProps extends AccordionMultipleProps {

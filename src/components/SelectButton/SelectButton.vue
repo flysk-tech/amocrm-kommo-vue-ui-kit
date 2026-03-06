@@ -5,7 +5,6 @@
     type="button"
     :class="[
       styles.button,
-      className,
       {
         [styles.invalid]: isInvalid,
         [styles.disabled]: isDisabled
@@ -28,7 +27,6 @@ import styles from './SelectButton.module.scss'
 type Props = SelectButtonProps & {}
 
 const props = withDefaults(defineProps<Props>(), {
-  className: '',
   isInvalid: false,
   isDisabled: false,
 })
@@ -43,9 +41,6 @@ const ENTER = 'Enter'
 const SPACEBAR = 'Space'
 
 const handleClick = () => {
-  if (props.onToggle) {
-    props.onToggle()
-  }
   emit('toggle')
 }
 

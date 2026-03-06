@@ -15,10 +15,6 @@ export interface AccordionSingleProps extends BaseAccordionProps {
    * Used for Uncontrolled Accordion.
    */
   defaultValue?: string
-  /**
-   * Callback for changing the opened item.
-   */
-  onChange?: (value?: string) => void
 }
 
 export interface AccordionSingleImplProps extends AccordionSingleProps {

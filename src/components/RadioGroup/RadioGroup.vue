@@ -7,8 +7,7 @@
       styles.radiogroup,
       {
         [styles.horizontal]: orientation === 'horizontal'
-      },
-      className
+      }
     ]"
     :style="theme"
   >
@@ -17,17 +16,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, reactive, watchEffect } from 'vue'
 import { provideRadioGroupContext, DISPLAY_NAME } from './RadioGroup.context'
 import type { RadioGroupProps } from './RadioGroup.types'
 import styles from './RadioGroup.module.scss'
 
-type Props = RadioGroupProps & {
-  className?: string
-}
+type Props = RadioGroupProps
 
 const props = withDefaults(defineProps<Props>(), {
-  className: '',
   isDisabled: false,
   orientation: 'vertical',
 })
@@ -41,21 +37,25 @@ const radiogroupRef = ref<HTMLDivElement | null>(null)
 const handleChange = (event: Event) => {
   const target = event.target as HTMLInputElement
   emit('change', target.value)
-  if (props.onChange) {
-    props.onChange(target.value)
-  }
 }
 
-// Provide context for child components
-const contextValue = computed(() => ({
+// Provide reactive context for child components
+const context = reactive({
   name: props.name,
   value: props.value,
   defaultValue: props.defaultValue,
   isDisabled: props.isDisabled,
   onChange: handleChange,
-}))
+})
 
-provideRadioGroupContext(contextValue.value)
+watchEffect(() => {
+  context.name = props.name
+  context.value = props.value
+  context.defaultValue = props.defaultValue
+  context.isDisabled = props.isDisabled
+})
+
+provideRadioGroupContext(context as any)
 
 defineExpose({
   radiogroupRef,

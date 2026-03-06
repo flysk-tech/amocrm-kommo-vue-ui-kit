@@ -2,7 +2,7 @@
   <div
     v-bind="$attrs"
     ref="accordionRef"
-    :class="[styles.wrapper, themeClassName, className]"
+    :class="[styles.wrapper, themeClassName]"
   >
     <slot />
   </div>
@@ -16,12 +16,9 @@ import type { AccordionMultipleProps } from '../../Accordion.types'
 import type { AccordionThemeType } from '../../Accordion.themes'
 import styles from '../../Accordion.module.scss'
 
-type Props = AccordionMultipleProps & {
-  className?: string
-}
+type Props = AccordionMultipleProps
 
 const props = withDefaults(defineProps<Props>(), {
-  className: '',
   defaultValue: () => [],
 })
 
@@ -55,9 +52,6 @@ const handleChange = (newValue: string) => {
   }
 
   emit('change', correctValue)
-  if (props.onChange) {
-    props.onChange(correctValue)
-  }
 }
 
 // Provide context - просто передаём computed ref напрямую

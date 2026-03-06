@@ -1,9 +1,9 @@
 <template>
-  <div :class="[styles.wrapper, className]" :style="theme">
+  <div :class="styles.wrapper" :style="theme">
     <VisuallyHiddenInput
       v-bind="$attrs"
       ref="inputRef"
-      :className="styles.input"
+      :class="styles.input"
       type="checkbox"
       :value="value"
     />
@@ -17,15 +17,9 @@ import VisuallyHiddenInput from '@/components/VisuallyHiddenInput/VisuallyHidden
 import type { SwitcherProps } from './Switcher.types'
 import styles from './Switcher.module.scss'
 
-type Props = SwitcherProps & {
-  className?: string
-  value?: string
-}
+type Props = SwitcherProps
 
-const props = withDefaults(defineProps<Props>(), {
-  className: '',
-  value: 'Y',
-})
+const props = defineProps<Props>()
 
 const inputRef = ref<InstanceType<typeof VisuallyHiddenInput> | null>(null)
 

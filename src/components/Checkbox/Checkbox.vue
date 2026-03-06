@@ -2,7 +2,6 @@
   <div
     :class="[
       styles.wrapper,
-      className,
       {
         [styles.touchable]: isTouchable
       }
@@ -12,7 +11,7 @@
     <VisuallyHiddenInput
       v-bind="$attrs"
       ref="inputRef"
-      :className="styles.input"
+      :class="styles.input"
       type="checkbox"
     />
     <span
@@ -34,12 +33,9 @@ import type { CheckboxProps } from './Checkbox.types'
 import { isTouchableDevice } from '@/lib/utils'
 import styles from './Checkbox.module.scss'
 
-type Props = CheckboxProps & {
-  className?: string
-}
+type Props = CheckboxProps
 
 const props = withDefaults(defineProps<Props>(), {
-  className: '',
   checkedStyle: 'mark',
   isInvalid: false,
 })

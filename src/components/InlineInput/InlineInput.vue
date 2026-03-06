@@ -1,5 +1,5 @@
 <template>
-  <div :class="[styles.wrapper, className]" :style="theme">
+  <div :class="styles.wrapper" :style="theme">
     <div
       :class="[
         styles.input_container,
@@ -11,11 +11,7 @@
       <BaseInput
         v-bind="$attrs"
         ref="inputRef"
-        :className="[
-          {
-            [styles.has_after]: Boolean(after)
-          }
-        ].filter(Boolean).join(' ')"
+        :class="{ [styles.has_after]: Boolean(after) }"
         :isDisabled="isDisabled"
       />
     </div>
@@ -23,7 +19,7 @@
       <div :class="styles.after">{{ after }}</div>
     </div>
     <div v-if="isInvalid" :class="styles.invalid_description_container">
-      <Text size="m" :theme="InlineInputInvalidTextTheme" :className="styles.invalid_description">
+      <Text size="m" :theme="InlineInputInvalidTextTheme" :class="styles.invalid_description">
         {{ invalidDescription }}
       </Text>
     </div>
@@ -38,12 +34,9 @@ import type { InlineInputProps } from './InlineInput.types'
 import { InlineInputInvalidTextTheme } from './InlineInput.themes'
 import styles from './InlineInput.module.scss'
 
-type Props = InlineInputProps & {
-  className?: string
-}
+type Props = InlineInputProps
 
 const props = withDefaults(defineProps<Props>(), {
-  className: '',
   isInvalid: false,
 })
 

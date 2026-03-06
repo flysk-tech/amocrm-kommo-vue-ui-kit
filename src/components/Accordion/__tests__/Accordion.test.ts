@@ -76,26 +76,6 @@ const renderAccordionSingle = (
 }
 
 describe('AccordionSingle', () => {
-  it('should be defined', () => {
-    expect(renderAccordionSingle).toBeDefined()
-  })
-
-  it('should apply custom css properties', async () => {
-    const className = 'my-class'
-
-    renderAccordionSingle({ className })
-
-    const accordion = screen.getByTestId(DATA_ACCORDION_TEST_ID)
-
-    expect(accordion).toHaveClass(className)
-    /**
-     * 1. Modular className
-     * 2. Theme className
-     * 3. Additional class `my-class`
-     */
-    expect(accordion.classList).toHaveLength(3)
-  })
-
   it('should renders the Accordion component', () => {
     renderAccordionSingle()
 
@@ -192,26 +172,6 @@ const renderAccordionMultiple = (
 }
 
 describe('AccordionMultiple', () => {
-  it('should be defined', () => {
-    expect(renderAccordionMultiple).toBeDefined()
-  })
-
-  it('should apply custom css properties', async () => {
-    const className = 'my-class'
-
-    renderAccordionMultiple({ className })
-
-    const accordion = screen.getByTestId(DATA_ACCORDION_TEST_ID)
-
-    expect(accordion).toHaveClass(className)
-    /**
-     * 1. Modular className
-     * 2. Theme className
-     * 3. Additional class `my-class`
-     */
-    expect(accordion.classList).toHaveLength(3)
-  })
-
   it('should renders the Accordion component', () => {
     renderAccordionMultiple()
 

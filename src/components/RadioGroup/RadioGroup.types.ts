@@ -36,10 +36,6 @@ export type RadioContextProps = {
 
 export interface RadioGroupProps {
   /**
-   * Handler for the selected value.
-   */
-  onChange: (value: string) => void
-  /**
    * Object with CSS theme properties.
    */
   theme: RadioGroupThemeType
@@ -64,6 +60,4 @@ export interface RadioGroupProps {
    * `disabled` attribute for Radio buttons.
    */
   isDisabled?: boolean
-  className?: string
-  id?: string
 }

@@ -15,10 +15,6 @@ export interface BaseAccordionProps {
    * Object with CSS theme properties.
    */
   theme: AccordionThemeType
-  /**
-   * Custom class.
-   */
-  className?: string
 }
 
 export type AccordionProps = AccordionSingleImplProps | AccordionMultipleImplProps

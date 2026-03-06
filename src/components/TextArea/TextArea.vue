@@ -1,5 +1,5 @@
 <template>
-  <div :class="[styles.wrapper, className]" :style="theme">
+  <div :class="styles.wrapper" :style="theme">
     <div
       :class="[
         styles.textarea_container,
@@ -40,7 +40,6 @@ import type { TextAreaProps } from './TextArea.types'
 import styles from './TextArea.module.scss'
 
 type Props = TextAreaProps & {
-  className?: string
   modelValue?: string | number
 }
 
@@ -50,7 +49,6 @@ interface Emits {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  className: '',
   isInvalid: false,
   isDisabled: false,
   isReadOnly: false,

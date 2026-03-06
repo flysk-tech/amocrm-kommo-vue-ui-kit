@@ -49,6 +49,4 @@ export interface CheckboxGroupProps {
   orientation?: LabelGroupOrientation
   theme: CheckboxGroupThemeType
   isDisabled?: boolean
-  className?: string
-  id?: string
 }
