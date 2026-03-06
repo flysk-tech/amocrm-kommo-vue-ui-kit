@@ -17,8 +17,4 @@ export interface ItemProps {
    * Content to the left of the title.
    */
   before?: any
-  /**
-   * Custom class.
-   */
-  className?: string
 }

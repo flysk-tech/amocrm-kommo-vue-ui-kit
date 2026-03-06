@@ -2,7 +2,7 @@
   <div
     v-bind="$attrs"
     ref="calloutRef"
-    :class="[styles.wrapper, className]"
+    :class="styles.wrapper"
     :style="themeStyles"
   >
     <component
@@ -19,12 +19,9 @@ import { computed, ref } from 'vue'
 import type { CalloutProps } from './Callout.types'
 import styles from './Callout.module.scss'
 
-type Props = CalloutProps & {
-  className?: string
-}
+type Props = CalloutProps
 
 const props = withDefaults(defineProps<Props>(), {
-  className: '',
   isIconAvailable: true,
 })
 

@@ -16,11 +16,8 @@ export interface FilterTabsContextProps {
 }
 
 export interface FilterTabsProps {
-  onChange: FilterTabsChangeEvent
   theme: FilterTabsThemeType
   orientation?: FilterTabsOrientation
   isMultiSelect?: boolean
   isDisabled?: boolean
-  className?: string
-  id?: string
 }

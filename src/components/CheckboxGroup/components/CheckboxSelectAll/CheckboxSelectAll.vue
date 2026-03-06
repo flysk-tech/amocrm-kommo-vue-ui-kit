@@ -1,13 +1,13 @@
 <template>
   <CheckboxCore
     ref="checkboxRef"
-    :className="className"
-    :onChange="handleChange"
+    :class="className"
     :theme="theme"
     :value="SELECT_ALL"
     :isDisabled="isGlobalDisabled || isDisabled"
     :isChecked="propsBasedOnInternalState.isChecked"
     :checkedStyle="propsBasedOnInternalState.checkedStyle"
+    @change="handleChange"
     v-bind="rest"
   />
 </template>

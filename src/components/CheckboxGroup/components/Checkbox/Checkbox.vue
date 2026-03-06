@@ -1,7 +1,7 @@
 <template>
   <CheckboxCore
     ref="checkboxRef"
-    :className="className"
+    :class="className"
     :name="name"
     :value="value"
     :theme="theme"

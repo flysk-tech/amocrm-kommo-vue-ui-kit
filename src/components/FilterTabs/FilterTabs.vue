@@ -7,7 +7,6 @@
       {
         [styles.horizontal]: orientation === 'horizontal'
       },
-      className
     ]"
     :style="theme"
   >
@@ -16,20 +15,21 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue'
+import { ref, reactive, watchEffect } from 'vue'
 import { provideFilterTabsContext, DISPLAY_NAME } from './FilterTabs.context'
 import type { FilterTabsProps } from './FilterTabs.types'
 import styles from './FilterTabs.module.scss'
 
-type Props = FilterTabsProps & {
-  className?: string
-}
+type Props = FilterTabsProps
 
 const props = withDefaults(defineProps<Props>(), {
-  className: '',
   isDisabled: false,
   orientation: 'horizontal',
 })
+
+const emit = defineEmits<{
+  (e: 'change', updatedValues: string[], trigger?: string): void
+}>()
 
 const filterTabsRef = ref<HTMLDivElement | null>(null)
 const state = ref<string[]>([])
@@ -58,7 +58,7 @@ const handleManageState = (name?: string) => {
   }
 
   state.value = updatedState
-  props.onChange(updatedState, name)
+  emit('change', updatedState, name)
 }
 
 const registerActiveName = (name: string) => {
@@ -74,21 +74,19 @@ const registerActiveName = (name: string) => {
   }
 }
 
-const contextValue = computed(() => ({
+const context = reactive({
   values: state.value,
   onChange: handleManageState,
   registerActiveName,
   isDisabled: props.isDisabled,
-}))
+})
 
-provideFilterTabsContext(contextValue.value)
+watchEffect(() => {
+  context.values = state.value
+  context.isDisabled = props.isDisabled
+})
 
-watch(
-  () => contextValue.value,
-  (newVal) => {
-    provideFilterTabsContext(newVal)
-  }
-)
+provideFilterTabsContext(context as any)
 
 defineExpose({
   filterTabsRef,

@@ -2,7 +2,7 @@
   <div
     v-bind="$attrs"
     ref="blockRef"
-    :class="[styles.block, className]"
+    :class="styles.block"
     :style="theme"
   >
     <slot />
@@ -14,13 +14,9 @@ import { ref } from 'vue'
 import type { ContentBlockProps } from './ContentBlock.types'
 import styles from './ContentBlock.module.scss'
 
-type Props = ContentBlockProps & {
-  className?: string
-}
+type Props = ContentBlockProps
 
-const props = withDefaults(defineProps<Props>(), {
-  className: '',
-})
+const props = defineProps<Props>()
 
 const blockRef = ref<HTMLDivElement | null>(null)
 

@@ -7,8 +7,7 @@
       {
         [styles.active]: isActive
       },
-      themeClassName,
-      className
+      themeClassName
     ]"
   >
     <div :class="styles.header" @click="handleClick">
@@ -46,12 +45,9 @@ import styles from './Item.module.scss'
 
 const DISPLAY_NAME = 'Accordion.Item'
 
-type Props = ItemProps & {
-  className?: string
-}
+type Props = ItemProps
 
 const props = withDefaults(defineProps<Props>(), {
-  className: '',
   before: null,
 })
 

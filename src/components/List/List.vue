@@ -11,7 +11,6 @@
       {
         [styles.opened]: isOpened
       },
-      className
     ]"
     :style="theme"
     @keydown="handleKeyDown"
@@ -25,12 +24,9 @@ import { ref, computed } from 'vue'
 import type { ListProps } from './List.types'
 import styles from './List.module.scss'
 
-type Props = ListProps & {
-  className?: string
-}
+type Props = ListProps
 
 const props = withDefaults(defineProps<Props>(), {
-  className: '',
   hoveredIndex: 0,
 })
 
@@ -56,22 +52,14 @@ const handleKeyDown = (event: KeyboardEvent) => {
     case 'ArrowDown':
       event.preventDefault()
       if (hoveredIndex < itemsLength.value - 1) {
-        const newIndex = hoveredIndex + 1
-        emit('hoveredIndexChange', newIndex)
-        if (props.onHoveredIndexChange) {
-          props.onHoveredIndexChange(newIndex)
-        }
+        emit('hoveredIndexChange', hoveredIndex + 1)
       }
       break
 
     case 'ArrowUp':
       event.preventDefault()
       if (hoveredIndex > 0) {
-        const newIndex = hoveredIndex - 1
-        emit('hoveredIndexChange', newIndex)
-        if (props.onHoveredIndexChange) {
-          props.onHoveredIndexChange(newIndex)
-        }
+        emit('hoveredIndexChange', hoveredIndex - 1)
       }
       break
 
@@ -79,17 +67,11 @@ const handleKeyDown = (event: KeyboardEvent) => {
     case 'Space':
       event.preventDefault()
       emit('select', hoveredIndex)
-      if (props.onSelect) {
-        props.onSelect(hoveredIndex)
-      }
       break
 
     case 'Escape':
       event.preventDefault()
       emit('toggle', false)
-      if (props.onToggle) {
-        props.onToggle(false)
-      }
       break
   }
 }
