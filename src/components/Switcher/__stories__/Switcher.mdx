@@ -1,0 +1,17 @@
+import { Title, Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import { CodeBlock } from '@storybook-utils/components'
+import * as SwitcherStories from './Switcher.stories'
+
+<Meta of={SwitcherStories} />
+
+<Title>Switcher</Title>
+
+<Canvas of={SwitcherStories.Default} />
+
+## Использование
+
+<CodeBlock of={SwitcherStories.Default} />
+
+## Props
+
+<Controls />

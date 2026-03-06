@@ -1,0 +1,38 @@
+<template>
+  <input
+    v-bind="$attrs"
+    ref="inputRef"
+    :class="[
+      styles.input,
+      {
+        [styles.placeholder_visible]: isPlaceholderVisibleOnFocus
+      },
+      className
+    ]"
+    :disabled="isDisabled"
+    :readonly="isReadonly"
+  />
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import type { BaseInputProps } from './BaseInput.types'
+import styles from './BaseInput.module.scss'
+
+type Props = BaseInputProps & {
+  className?: string
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  className: '',
+  isDisabled: false,
+  isReadonly: false,
+  isPlaceholderVisibleOnFocus: false,
+})
+
+const inputRef = ref<HTMLInputElement | null>(null)
+
+defineExpose({
+  inputRef,
+})
+</script>

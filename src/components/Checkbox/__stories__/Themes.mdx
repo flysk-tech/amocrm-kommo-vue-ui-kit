@@ -1,0 +1,57 @@
+import { Title, Meta } from '@storybook/addon-docs/blocks'
+import * as CheckboxStories from './Checkbox.stories'
+import { ThemeVisualization } from '@storybook-utils/components'
+import {
+  CheckboxLightTheme,
+  CheckboxSmallLightTheme,
+  CheckboxDarkTheme,
+  CheckboxSmallDarkTheme,
+} from '../Checkbox.themes'
+
+<Meta title="Components/Checkbox/Themes" of={CheckboxStories} />
+
+<Title>"Темы"</Title>
+
+## CheckboxLightTheme
+
+```typescript
+import { CheckboxLightTheme } from '@amocrm/vue-ui-kit/Checkbox'
+```
+
+<ThemeVisualization
+  theme={CheckboxLightTheme}
+  of={CheckboxStories.CheckboxLight}
+/>
+
+## CheckboxSmallLightTheme
+
+```typescript
+import { CheckboxSmallLightTheme } from '@amocrm/vue-ui-kit/Checkbox'
+```
+
+<ThemeVisualization
+  theme={CheckboxSmallLightTheme}
+  of={CheckboxStories.CheckboxSmallLight}
+/>
+
+## CheckboxDarkTheme
+
+```typescript
+import { CheckboxDarkTheme } from '@amocrm/vue-ui-kit/Checkbox'
+```
+
+<ThemeVisualization
+  theme={CheckboxDarkTheme}
+  of={CheckboxStories.CheckboxDark}
+/>
+
+## CheckboxSmallDarkTheme
+
+```typescript
+import { CheckboxSmallDarkTheme } from '@amocrm/vue-ui-kit/Checkbox'
+```
+
+<ThemeVisualization
+  theme={CheckboxSmallDarkTheme}
+  of={CheckboxStories.CheckboxSmallDark}
+/>

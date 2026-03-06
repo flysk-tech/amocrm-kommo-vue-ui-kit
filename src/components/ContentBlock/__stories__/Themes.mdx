@@ -1,0 +1,18 @@
+import { Title, Meta, Canvas } from '@storybook/addon-docs/blocks'
+import * as ContentBlock from './ContentBlock.stories'
+import { ThemeVisualization } from '@storybook-utils/components'
+import { ContentBlockTheme } from '../ContentBlock.themes'
+
+<Meta title="Components/ContentBlock/Themes" of={ContentBlock} />
+
+<Title>"Темы"</Title>
+
+<Canvas of={ContentBlock.Default} />
+
+## ContentBlockTheme
+
+```typescript
+import { ContentBlockTheme } from '@amocrm/vue-ui-kit/ContentBlock'
+```
+
+<ThemeVisualization theme={ContentBlockTheme} />

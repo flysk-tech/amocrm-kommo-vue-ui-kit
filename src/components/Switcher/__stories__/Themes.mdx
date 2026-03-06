@@ -1,0 +1,16 @@
+import { Title, Meta } from '@storybook/addon-docs/blocks'
+import * as SwitcherStories from './Switcher.stories'
+import { ThemeVisualization } from '@storybook-utils/components'
+import { SwitcherPrimaryTheme } from '../Switcher.themes'
+
+<Meta title="Components/Switcher/Themes" of={SwitcherStories} />
+
+<Title>"Темы"</Title>
+
+## SwitcherPrimaryTheme
+
+```typescript
+import { SwitcherPrimaryTheme } from '@amocrm/vue-ui-kit/Switcher'
+```
+
+<ThemeVisualization theme={SwitcherPrimaryTheme} of={SwitcherStories.Default} />

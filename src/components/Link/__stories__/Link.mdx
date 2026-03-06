@@ -1,0 +1,17 @@
+import { Title, Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import { CodeBlock } from '@storybook-utils/components'
+import * as LinkStories from './Link.stories'
+
+<Meta of={LinkStories} />
+
+<Title>Link</Title>
+
+<Canvas of={LinkStories.Default} />
+
+## Использование
+
+<CodeBlock of={LinkStories.Default} />
+
+## Props
+
+<Controls />

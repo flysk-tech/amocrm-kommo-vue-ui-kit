@@ -1,0 +1,81 @@
+@use "variables" as *;
+
+// Миксины для переиспользования
+
+// Миксин для адаптивности темы
+@mixin theme-aware($property, $light-value, $dark-value) {
+  #{$property}: var(--#{$prefix}-#{$light-value});
+
+  [data-theme="dark"] & {
+    #{$property}: var(--#{$prefix}-#{$dark-value});
+  }
+}
+
+// Миксин для установки CSS переменных компонента
+@mixin component-theme($component-name, $theme-map) {
+  @each $key, $value in $theme-map {
+    --#{$prefix}-#{$component-name}-#{$key}: #{$value};
+  }
+}
+
+// Миксин для focus состояния
+@mixin focus-visible() {
+  &:focus-visible {
+    outline: var(--#{$prefix}-focus-outline-width, 2px)
+             var(--#{$prefix}-focus-outline-style, solid)
+             var(--#{$prefix}-focus-outline-color, #0057a9);
+    outline-offset: var(--#{$prefix}-focus-outline-offset, 1px);
+    border-radius: var(--#{$prefix}-focus-border-radius, 3px);
+  }
+}
+
+// Миксин для disabled состояния
+@mixin disabled() {
+  &:disabled,
+  &[disabled],
+  &.disabled {
+    opacity: var(--#{$prefix}-disabled-opacity, 0.6);
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+}
+
+// Миксин для кастомного scrollbar
+@mixin custom-scrollbar() {
+  scrollbar-width: var(--#{$prefix}-scrollbar-width, 7px);
+
+  &::-webkit-scrollbar {
+    width: var(--#{$prefix}-scrollbar-width, 7px);
+    background: var(--#{$prefix}-scrollbar-track-background, inherit);
+    border-radius: var(--#{$prefix}-scrollbar-track-border-radius, 3px);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--#{$prefix}-scrollbar-thumb-background, #cdcdcd);
+    border-radius: var(--#{$prefix}-scrollbar-thumb-border-radius, 30px);
+  }
+}
+
+// Миксин для текста с троеточием
+@mixin text-ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Миксин для центрирования абсолютно позиционированного элемента
+@mixin absolute-center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Миксин для hover эффектов только на десктопе
+@mixin hover-only() {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+import { Title, Meta } from '@storybook/addon-docs/blocks'
+import * as InlineInputStories from './InlineInput.stories'
+import { ThemeVisualization } from '@storybook-utils/components'
+import {
+  InlineInputPrimaryTheme,
+  InlineInputPrimaryFocusedTheme,
+} from '../InlineInput.themes'
+
+<Meta title="Components/InlineInput/Themes" of={InlineInputStories} />
+
+<Title>"Темы"</Title>
+
+## InlineInputPrimaryTheme
+
+```typescript
+import { InlineInputPrimaryTheme } from '@amocrm/vue-ui-kit/InlineInput'
+```
+
+<ThemeVisualization theme={InlineInputPrimaryTheme} of={InlineInputStories.Default} />
+
+## InlineInputPrimaryFocusedTheme
+
+```typescript
+import { InlineInputPrimaryFocusedTheme } from '@amocrm/vue-ui-kit/InlineInput'
+```
+
+<ThemeVisualization theme={InlineInputPrimaryFocusedTheme} />

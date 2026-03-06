@@ -1,0 +1,35 @@
+import { Title, Meta } from '@storybook/addon-docs/blocks'
+import * as RadioGroupStories from './RadioGroup.stories'
+import { ThemeVisualization } from '@storybook-utils/components'
+import {
+  RadioGroupTheme,
+  RadioGroupItemRootTheme,
+  RadioPrimaryTheme,
+} from '../index'
+
+<Meta title="Components/RadioGroup/Themes" of={RadioGroupStories} />
+<Title>"Темы"</Title>
+
+## RadioGroupTheme
+
+```typescript
+import { RadioGroupTheme } from '@amocrm/vue-ui-kit/RadioGroup'
+```
+
+<ThemeVisualization theme={RadioGroupTheme} of={RadioGroupStories.Default} />
+
+## RadioGroupItemRootTheme
+
+```typescript
+import { RadioGroupItemRootTheme } from '@amocrm/vue-ui-kit/RadioGroup'
+```
+
+<ThemeVisualization theme={RadioGroupItemRootTheme} of={RadioGroupStories.Default} />
+
+## RadioPrimaryTheme
+
+```typescript
+import { RadioPrimaryTheme } from '@amocrm/vue-ui-kit/RadioGroup'
+```
+
+<ThemeVisualization theme={RadioPrimaryTheme} of={RadioGroupStories.Default} />

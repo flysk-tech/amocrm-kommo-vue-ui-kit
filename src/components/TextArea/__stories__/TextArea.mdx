@@ -1,0 +1,17 @@
+import { Title, Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import { CodeBlock } from '@storybook-utils/components'
+import * as TextAreaStories from './TextArea.stories'
+
+<Meta of={TextAreaStories} />
+
+<Title>TextArea</Title>
+
+<Canvas of={TextAreaStories.Default} />
+
+## Использование
+
+<CodeBlock of={TextAreaStories.Default} />
+
+## Props
+
+<Controls />

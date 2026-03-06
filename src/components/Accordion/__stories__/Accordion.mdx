@@ -1,0 +1,17 @@
+import { Title, Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import { CodeBlock } from '@storybook-utils/components'
+import * as AccordionStories from './Accordion.stories'
+
+<Meta of={AccordionStories} />
+
+<Title>Accordion</Title>
+
+<Canvas of={AccordionStories.Default} />
+
+## Использование
+
+<CodeBlock of={AccordionStories.Default} />
+
+## Props
+
+<Controls />

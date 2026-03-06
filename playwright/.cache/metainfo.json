@@ -1,0 +1,170 @@
+{
+  "version": "1.55.1",
+  "viteVersion": "6.3.6",
+  "registerSourceHash": "ff8a0896b5953eb8fa0e32aaebffdab7efa3bc27",
+  "components": [
+    {
+      "id": "_Users_anton_projects_amocrm_vue_ui_kit_amocrm_vue_ui_kit_src_components_Button___tests___ButtonPrimaryPlayground_vue",
+      "filename": "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/__tests__/Button.e2e.test.ts",
+      "importSource": "./ButtonPrimaryPlayground.vue"
+    },
+    {
+      "id": "_Users_anton_projects_amocrm_vue_ui_kit_amocrm_vue_ui_kit_src_components_Button___tests___ButtonNeutralPlayground_vue",
+      "filename": "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/__tests__/Button.e2e.test.ts",
+      "importSource": "./ButtonNeutralPlayground.vue"
+    },
+    {
+      "id": "_Users_anton_projects_amocrm_vue_ui_kit_amocrm_vue_ui_kit_src_components_Button___tests___ButtonSecondaryPlayground_vue",
+      "filename": "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/__tests__/Button.e2e.test.ts",
+      "importSource": "./ButtonSecondaryPlayground.vue"
+    }
+  ],
+  "sources": {
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/playwright/index.html": {
+      "timestamp": 1759432439504.33
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/playwright/index.ts": {
+      "timestamp": 1759432462995.828
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/node_modules/vue/dist/vue.runtime.esm-bundler.js": {
+      "timestamp": 1759149103055
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/node_modules/@vue/compiler-dom/dist/compiler-dom.esm-bundler.js": {
+      "timestamp": 1759149061844
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/__tests__/ButtonPrimaryPlayground.vue": {
+      "timestamp": 1759432059856.672
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/__tests__/ButtonNeutralPlayground.vue": {
+      "timestamp": 1759432058813.5046
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/__tests__/ButtonSecondaryPlayground.vue": {
+      "timestamp": 1759432060892.8452
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": {
+      "timestamp": 1759149103055
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/node_modules/@vue/compiler-core/dist/compiler-core.esm-bundler.js": {
+      "timestamp": 1759066718977.999
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/node_modules/@vue/shared/dist/shared.esm-bundler.js": {
+      "timestamp": 1759066718970.999
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/Button.themes.ts": {
+      "timestamp": 1759428770176.4678
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": {
+      "timestamp": 1759066720259
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/Button.vue": {
+      "timestamp": 1759429310284.8882
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/lib/appearance.ts": {
+      "timestamp": 1759431879726.916
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/tests/e2e/ComponentPlayground.vue": {
+      "timestamp": 1759432021619.8777
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/playwright/index.css": {
+      "timestamp": 1759432447728.227
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/tests/e2e/constants.ts": {
+      "timestamp": 1759432476994.5452
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/tests/e2e/utils.ts": {
+      "timestamp": 1759432011762.3345
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/ConfigProvider/ConfigProvider.vue": {
+      "timestamp": 1759323169439.7656
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/composables/useButtonAnimations.ts": {
+      "timestamp": 1759176677328.2312
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Spinner/Spinner.vue": {
+      "timestamp": 1759412753826.839
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": {
+      "timestamp": 1759149103194
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/Button.module.scss": {
+      "timestamp": 1759230452425.1257
+    },
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Spinner/Spinner.module.scss": {
+      "timestamp": 1759412734340.0913
+    }
+  },
+  "deps": {
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/__tests__/ButtonPrimaryPlayground.vue": [
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/__tests__/ButtonPrimaryPlayground.vue",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/__tests__/ButtonPrimaryPlayground.vue?vue&type=script&setup=true&lang.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/node_modules/@vue/shared/dist/shared.esm-bundler.js",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/tests/e2e/ComponentPlayground.vue",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/tests/e2e/ComponentPlayground.vue?vue&type=script&setup=true&lang.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/ConfigProvider/ConfigProvider.vue",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/ConfigProvider/ConfigProvider.vue?vue&type=script&setup=true&lang.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/lib/appearance.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/tests/e2e/utils.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/tests/e2e/constants.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/Button.vue",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/Button.vue?vue&type=script&setup=true&lang.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Spinner/Spinner.vue",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Spinner/Spinner.vue?vue&type=script&setup=true&lang.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Spinner/Spinner.module.scss",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/composables/useButtonAnimations.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/Button.module.scss",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/Button.themes.ts"
+    ],
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/__tests__/ButtonNeutralPlayground.vue": [
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/__tests__/ButtonNeutralPlayground.vue",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/__tests__/ButtonNeutralPlayground.vue?vue&type=script&setup=true&lang.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/node_modules/@vue/shared/dist/shared.esm-bundler.js",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/tests/e2e/ComponentPlayground.vue",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/tests/e2e/ComponentPlayground.vue?vue&type=script&setup=true&lang.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/ConfigProvider/ConfigProvider.vue",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/ConfigProvider/ConfigProvider.vue?vue&type=script&setup=true&lang.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/lib/appearance.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/tests/e2e/utils.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/tests/e2e/constants.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/Button.vue",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/Button.vue?vue&type=script&setup=true&lang.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Spinner/Spinner.vue",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Spinner/Spinner.vue?vue&type=script&setup=true&lang.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Spinner/Spinner.module.scss",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/composables/useButtonAnimations.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/Button.module.scss",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/Button.themes.ts"
+    ],
+    "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/__tests__/ButtonSecondaryPlayground.vue": [
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/__tests__/ButtonSecondaryPlayground.vue",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/__tests__/ButtonSecondaryPlayground.vue?vue&type=script&setup=true&lang.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/node_modules/@vue/shared/dist/shared.esm-bundler.js",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/tests/e2e/ComponentPlayground.vue",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/tests/e2e/ComponentPlayground.vue?vue&type=script&setup=true&lang.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/ConfigProvider/ConfigProvider.vue",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/ConfigProvider/ConfigProvider.vue?vue&type=script&setup=true&lang.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/lib/appearance.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/tests/e2e/utils.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/tests/e2e/constants.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/Button.vue",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/Button.vue?vue&type=script&setup=true&lang.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Spinner/Spinner.vue",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Spinner/Spinner.vue?vue&type=script&setup=true&lang.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Spinner/Spinner.module.scss",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/composables/useButtonAnimations.ts",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/Button.module.scss",
+      "/Users/anton/projects/amocrm-vue-ui-kit/amocrm-vue-ui-kit/src/components/Button/Button.themes.ts"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+import { Title, Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import { CodeBlock } from '@storybook-utils/components'
+import * as CalloutStories from './Callout.stories'
+
+<Meta of={CalloutStories} />
+
+<Title>Callout</Title>
+
+<Canvas of={CalloutStories.Default} />
+
+## Использование
+
+<CodeBlock of={CalloutStories.Default} />
+
+## Props
+
+<Controls />

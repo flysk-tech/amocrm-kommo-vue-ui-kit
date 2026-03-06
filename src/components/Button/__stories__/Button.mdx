@@ -1,0 +1,30 @@
+import { Title, Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import * as ButtonStories from './Button.stories';
+
+<Meta of={ButtonStories} />
+
+<Title>Button</Title>
+
+<Canvas of={ButtonStories.Default} />
+
+## Использование
+
+```vue
+<template>
+  <Button :theme="ButtonPrimaryTheme" @click="handleClick">
+    Нажми меня
+  </Button>
+</template>
+
+<script setup lang="ts">
+import { Button, ButtonPrimaryTheme } from '@amocrm/vue-ui-kit'
+
+const handleClick = () => {
+  console.log('Button clicked!')
+}
+</script>
+```
+
+## Props
+
+<Controls />

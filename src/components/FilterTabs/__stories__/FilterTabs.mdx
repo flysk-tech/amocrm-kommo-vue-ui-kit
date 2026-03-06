@@ -1,0 +1,11 @@
+import { Title, Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import { CodeBlock } from '@storybook-utils/components'
+import * as FilterTabsStories from './FilterTabs.stories'
+
+<Meta of={FilterTabsStories} />
+<Title>FilterTabs</Title>
+<Canvas of={FilterTabsStories.Default} />
+## Использование
+<CodeBlock of={FilterTabsStories.Default} />
+## Props
+<Controls />

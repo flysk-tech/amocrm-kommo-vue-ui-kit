@@ -1,0 +1,11 @@
+import { Title, Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import { CodeBlock } from '@storybook-utils/components'
+import * as CheckboxGroupStories from './CheckboxGroup.stories'
+
+<Meta of={CheckboxGroupStories} />
+<Title>CheckboxGroup</Title>
+<Canvas of={CheckboxGroupStories.Default} />
+## Использование
+<CodeBlock of={CheckboxGroupStories.Default} />
+## Props
+<Controls />

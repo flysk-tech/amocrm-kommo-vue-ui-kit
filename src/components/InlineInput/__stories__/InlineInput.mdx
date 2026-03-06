@@ -1,0 +1,17 @@
+import { Title, Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import { CodeBlock } from '@storybook-utils/components'
+import * as InlineInputStories from './InlineInput.stories'
+
+<Meta of={InlineInputStories} />
+
+<Title>InlineInput</Title>
+
+<Canvas of={InlineInputStories.Default} />
+
+## Использование
+
+<CodeBlock of={InlineInputStories.Default} />
+
+## Props
+
+<Controls />

@@ -1,0 +1,17 @@
+import { Title, Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import { CodeBlock } from '@storybook-utils/components'
+import * as LabelStories from './Label.stories'
+
+<Meta of={LabelStories} />
+
+<Title>Label</Title>
+
+<Canvas of={LabelStories.Default} />
+
+## Использование
+
+<CodeBlock of={LabelStories.Default} />
+
+## Props
+
+<Controls />

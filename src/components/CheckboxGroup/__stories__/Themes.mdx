@@ -1,0 +1,26 @@
+import { Title, Meta } from '@storybook/addon-docs/blocks'
+import * as CheckboxGroupStories from './CheckboxGroup.stories'
+import { ThemeVisualization } from '@storybook-utils/components'
+import {
+  CheckboxGroupTheme,
+  CheckboxGroupItemRootTheme,
+} from '../index'
+
+<Meta title="Components/CheckboxGroup/Themes" of={CheckboxGroupStories} />
+<Title>"Темы"</Title>
+
+## CheckboxGroupTheme
+
+```typescript
+import { CheckboxGroupTheme } from '@amocrm/vue-ui-kit/CheckboxGroup'
+```
+
+<ThemeVisualization theme={CheckboxGroupTheme} of={CheckboxGroupStories.Default} />
+
+## CheckboxGroupItemRootTheme
+
+```typescript
+import { CheckboxGroupItemRootTheme } from '@amocrm/vue-ui-kit/CheckboxGroup'
+```
+
+<ThemeVisualization theme={CheckboxGroupItemRootTheme} of={CheckboxGroupStories.Default} />

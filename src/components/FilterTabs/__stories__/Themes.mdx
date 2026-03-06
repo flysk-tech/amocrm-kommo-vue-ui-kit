@@ -1,0 +1,35 @@
+import { Title, Meta } from '@storybook/addon-docs/blocks'
+import * as FilterTabsStories from './FilterTabs.stories'
+import { ThemeVisualization } from '@storybook-utils/components'
+import {
+  FilterTabsTheme,
+  FilterTabsItemRootTheme,
+  TabPrimaryTheme,
+} from '../index'
+
+<Meta title="Components/FilterTabs/Themes" of={FilterTabsStories} />
+<Title>"Темы"</Title>
+
+## FilterTabsTheme
+
+```typescript
+import { FilterTabsTheme } from '@amocrm/vue-ui-kit/FilterTabs'
+```
+
+<ThemeVisualization theme={FilterTabsTheme} of={FilterTabsStories.Default} />
+
+## FilterTabsItemRootTheme
+
+```typescript
+import { FilterTabsItemRootTheme } from '@amocrm/vue-ui-kit/FilterTabs'
+```
+
+<ThemeVisualization theme={FilterTabsItemRootTheme} of={FilterTabsStories.Default} />
+
+## TabPrimaryTheme
+
+```typescript
+import { TabPrimaryTheme } from '@amocrm/vue-ui-kit/FilterTabs'
+```
+
+<ThemeVisualization theme={TabPrimaryTheme} of={FilterTabsStories.Default} />

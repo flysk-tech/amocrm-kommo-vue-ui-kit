@@ -1,0 +1,16 @@
+import { Title, Meta } from '@storybook/addon-docs/blocks'
+import * as LinkStories from './Link.stories'
+import { ThemeVisualization } from '@storybook-utils/components'
+import { LinkPrimaryTheme } from '../Link.themes'
+
+<Meta title="Components/Link/Themes" of={LinkStories} />
+
+<Title>"Темы"</Title>
+
+## LinkPrimaryTheme
+
+```typescript
+import { LinkPrimaryTheme } from '@amocrm/vue-ui-kit/Link'
+```
+
+<ThemeVisualization theme={LinkPrimaryTheme} of={LinkStories.Default} />

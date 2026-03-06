@@ -1,0 +1,25 @@
+import { Title, Meta } from '@storybook/addon-docs/blocks'
+import * as AccordionStories from './Accordion.stories'
+import { ThemeVisualization } from '@storybook-utils/components'
+import { AccordionTheme } from '../Accordion.themes'
+import { AccordionItemTheme } from '../components/Item/Item.themes'
+
+<Meta title="Components/Accordion/Themes" of={AccordionStories} />
+
+<Title>Themes</Title>
+
+## AccordionTheme
+
+```typescript
+import { AccordionTheme } from '@amocrm/vue-ui-kit/Accordion'
+```
+
+<ThemeVisualization theme={AccordionTheme} of={AccordionStories.Default} />
+
+## AccordionItemTheme
+
+```typescript
+import { AccordionItemTheme } from '@amocrm/vue-ui-kit/Accordion'
+```
+
+<ThemeVisualization theme={AccordionItemTheme} />

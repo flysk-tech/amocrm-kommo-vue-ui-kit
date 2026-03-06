@@ -1,0 +1,47 @@
+// Базовый CSS reset для компонентов библиотеки
+
+// Общие стили для всех элементов библиотеки
+[class*="#{$prefix}"] {
+  box-sizing: border-box;
+}
+
+[class*="#{$prefix}"]::before,
+[class*="#{$prefix}"]::after {
+  box-sizing: border-box;
+}
+
+// Убираем стандартные отступы и рамки для элементов формы
+.#{$prefix}-button,
+.#{$prefix}-input,
+.#{$prefix}-textarea,
+.#{$prefix}-select {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  background: transparent;
+  outline: none;
+  appearance: none;
+}
+
+// Убираем стили списков
+.#{$prefix}-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// Базовые стили для ссылок
+.#{$prefix}-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+// Базовые стили для изображений
+.#{$prefix}-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

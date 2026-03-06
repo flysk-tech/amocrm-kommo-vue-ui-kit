@@ -1,0 +1,26 @@
+import { Title, Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import * as TextStories from './Text.stories';
+
+<Meta of={TextStories} />
+
+<Title>Text</Title>
+
+<Canvas of={TextStories.Default} />
+
+## Использование
+
+```vue
+<script setup>
+import { Text, TextPrimaryTheme } from '@amocrm/vue-ui-kit'
+</script>
+
+<template>
+  <Text size="l" :theme="TextPrimaryTheme">
+    Обычный текст
+  </Text>
+</template>
+```
+
+## Props
+
+<Controls />

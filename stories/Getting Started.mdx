@@ -1,0 +1,338 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Getting Started/Getting Started" />
+
+export const RightArrow = () => <svg
+    viewBox="0 0 14 14"
+    width="8px"
+    height="14px"
+    style={{
+      marginLeft: '4px',
+      display: 'inline-block',
+      shapeRendering: 'inherit',
+      verticalAlign: 'middle',
+      fill: 'currentColor',
+      'path fill': 'currentColor'
+    }}
+>
+  <path d="m11.1 7.35-5.5 5.5a.5.5 0 0 1-.7-.7L10.04 7 4.9 1.85a.5.5 0 1 1 .7-.7l5.5 5.5c.2.2.2.5 0 .7Z" />
+</svg>
+
+<div className="sb-container">
+  <div className='sb-section-title'>
+    # amoCRM Vue UI Kit
+
+    Библиотека Vue.js компонентов для создания виджетов в экосистеме amoCRM. Это Vue-порт оригинальной React-библиотеки с поддержкой Vue 3, Composition API и полной типизацией TypeScript.
+  </div>
+
+  <div className="sb-section">
+    <div className="sb-section-item">
+      <h4 className="sb-section-item-heading">🚀 Быстрый старт</h4>
+      <p className="sb-section-item-paragraph">Установите пакет и начните использовать компоненты в своих Vue приложениях.</p>
+      <div style={{ backgroundColor: '#f8f9fa', padding: '16px', borderRadius: '4px', marginBottom: '16px' }}>
+        <code>npm install @amocrm/vue-ui-kit</code>
+      </div>
+      <a
+        href="/?path=/docs/components-input--docs"
+        target="_blank"
+      >Посмотреть компоненты<RightArrow /></a>
+    </div>
+    <div className="sb-section-item">
+      <h4 className="sb-section-item-heading">🎨 Система тем</h4>
+      <p className="sb-section-item-paragraph">Каждый компонент поддерживает темизацию через CSS переменные. Легко создавайте собственные темы.</p>
+      <a
+        href="/?path=/docs/getting-started-theme-system--docs"
+        target="_blank"
+      >Узнать больше<RightArrow /></a>
+    </div>
+    <div className="sb-section-item">
+      <h4 className="sb-section-item-heading">⚡ Vue 3 + TypeScript</h4>
+      <p className="sb-section-item-paragraph">Полная поддержка Composition API, v-model, слотов и строгая типизация из коробки.</p>
+      <a
+        href="/?path=/docs/components-input--docs"
+        target="_blank"
+      >Посмотреть компоненты<RightArrow /></a>
+    </div>
+  </div>
+</div>
+
+<div className="sb-container">
+  <div className='sb-section-title'>
+    ## Пример использования
+
+    Базовый пример работы с компонентами библиотеки:
+  </div>
+
+```vue
+<template>
+  <div>
+    <Input
+      v-model="inputValue"
+      :theme="InputPrimaryTheme"
+      placeholder="Введите текст"
+      :isInvalid="isError"
+      invalidDescription="Поле обязательно для заполнения"
+    >
+      <template #after>
+        <svg style="width: 16px; height: 16px;"><!-- иконка --></svg>
+      </template>
+    </Input>
+
+    <Button
+      :theme="ButtonPrimaryTheme"
+      @click="handleSubmit"
+    >
+      Отправить
+    </Button>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import { Button, ButtonPrimaryTheme } from '@amocrm/vue-ui-kit/Button'
+import { Input, InputPrimaryTheme } from '@amocrm/vue-ui-kit/Input'
+
+const inputValue = ref('')
+const isError = ref(false)
+
+const handleSubmit = () => {
+  if (!inputValue.value) {
+    isError.value = true
+  } else {
+    console.log('Значение:', inputValue.value)
+    isError.value = false
+  }
+}
+</script>
+```
+</div>
+
+<div className="sb-container">
+  <div className='sb-section-title'>
+    ## Особенности Vue версии
+
+    Узнайте о ключевых отличиях и возможностях Vue версии библиотеки.
+  </div>
+
+  <div className="sb-section">
+    <div className="sb-features-grid">
+      <div className="sb-grid-item">
+        <h4 className="sb-section-item-heading">v-model поддержка</h4>
+        <p className="sb-section-item-paragraph">Все input-компоненты поддерживают двустороннюю привязку данных через v-model.</p>
+        <code style={{ fontSize: '12px', backgroundColor: '#f1f3f4', padding: '4px 8px', borderRadius: '3px' }}>
+          &lt;Input v-model="value" /&gt;
+        </code>
+      </div>
+      <div className="sb-grid-item">
+        <h4 className="sb-section-item-heading">События Vue</h4>
+        <p className="sb-section-item-paragraph">Стандартные Vue события: @click, @input, @focus, @blur и другие.</p>
+        <code style={{ fontSize: '12px', backgroundColor: '#f1f3f4', padding: '4px 8px', borderRadius: '3px' }}>
+          @click="handler"
+        </code>
+      </div>
+      <div className="sb-grid-item">
+        <h4 className="sb-section-item-heading">Слоты</h4>
+        <p className="sb-section-item-paragraph">Именованные слоты для кастомизации содержимого компонентов.</p>
+        <code style={{ fontSize: '12px', backgroundColor: '#f1f3f4', padding: '4px 8px', borderRadius: '3px' }}>
+          &lt;template #after&gt;
+        </code>
+      </div>
+      <div className="sb-grid-item">
+        <h4 className="sb-section-item-heading">Композиционные функции</h4>
+        <p className="sb-section-item-paragraph">Утилиты для работы с темами и состоянием компонентов.</p>
+        <code style={{ fontSize: '12px', backgroundColor: '#f1f3f4', padding: '4px 8px', borderRadius: '3px' }}>
+          useTheme()
+        </code>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className="sb-section sb-socials">
+    <div className="sb-section-item">
+      <div>
+        <h4>📚 Документация компонентов</h4>
+        Изучите все доступные компоненты и их возможности.
+        <a
+          href="/?path=/docs/components-button--docs"
+          target="_blank"
+        >Открыть каталог<RightArrow /></a>
+      </div>
+    </div>
+    <div className="sb-section-item">
+      <div>
+        <h4>🎨 Система тем</h4>
+        Узнайте как создавать и применять пользовательские темы.
+        <a
+          href="/?path=/docs/getting-started-theme-system--docs"
+          target="_blank"
+        >Изучить темы<RightArrow /></a>
+      </div>
+    </div>
+    <div className="sb-section-item">
+      <div>
+        <h4>⚛️ React версия</h4>
+        Ознакомьтесь с оригинальной React библиотекой.
+        <a
+          href="https://storybook.kommo.com/"
+          target="_blank"
+        >Открить React Storybook<RightArrow /></a>
+      </div>
+    </div>
+    <div className="sb-section-item">
+      <div>
+        <h4>🚀 Флайск</h4>
+        Разработано командой Флайск - ваши надежные партнеры в web-разработке.
+        <a
+          href="https://flysk.ru/"
+          target="_blank"
+        >Узнать о нас<RightArrow /></a>
+      </div>
+    </div>
+</div>
+
+<div className='sb-addon'>
+  <div className='sb-addon-text'>
+    <h4>Открытый исходный код</h4>
+    <p className="sb-section-item-paragraph">Библиотека разработана с любовью командой Флайск. Вклад в развитие Vue экосистемы и знакомство с нашими технологиями.</p>
+    <a
+        href="https://github.com/flysk-tech/"
+        target="_blank"
+      >GitHub Флайск<RightArrow /></a>
+  </div>
+  <div className='sb-addon-img-custom'>
+    <div style={{
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      height: '100%',
+      width: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: '48px',
+      color: 'white',
+      fontWeight: 'bold'
+    }}>
+      Флайск
+    </div>
+  </div>
+</div>
+
+<style>
+  {`
+  .sb-container {
+    margin-bottom: 48px;
+  }
+
+  .sb-section {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .sb-section-title {
+    margin-bottom: 32px;
+  }
+
+  .sb-section a:not(h1 a, h2 a, h3 a) {
+    font-size: 14px;
+  }
+
+  .sb-section-item, .sb-grid-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sb-section-item-heading {
+    padding-top: 20px !important;
+    padding-bottom: 5px !important;
+    margin: 0 !important;
+  }
+  .sb-section-item-paragraph {
+    margin: 0;
+    padding-bottom: 10px;
+  }
+
+  .sb-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 32px 20px;
+  }
+
+  .sb-socials {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .sb-socials p {
+    margin-bottom: 10px;
+  }
+
+  .sb-addon {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #EEF3F8;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: #EEF3F8;
+    height: 180px;
+    margin-bottom: 48px;
+    overflow: hidden;
+  }
+
+  .sb-addon-text {
+    padding-left: 48px;
+    max-width: 240px;
+  }
+
+  .sb-addon-text h4 {
+    padding-top: 0px;
+  }
+
+  .sb-addon-img-custom {
+    position: absolute;
+    right: 48px;
+    top: 20px;
+    height: 140px;
+    width: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  @media screen and (max-width: 600px) {
+    .sb-section {
+      flex-direction: column;
+    }
+
+    .sb-features-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .sb-socials {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sb-addon {
+      height: 280px;
+      align-items: flex-start;
+      padding-top: 32px;
+      overflow: hidden;
+    }
+
+    .sb-addon-text {
+      padding-left: 24px;
+    }
+
+    .sb-addon-img-custom {
+      right: 24px;
+      top: 160px;
+      height: 100px;
+      width: 150px;
+    }
+  }
+  `}
+</style>

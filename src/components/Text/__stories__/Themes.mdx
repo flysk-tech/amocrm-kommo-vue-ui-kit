@@ -1,0 +1,57 @@
+import { Title, Meta } from '@storybook/addon-docs/blocks';
+import * as TextStories from './Text.stories';
+import { ThemeVisualization } from '@storybook-utils/components';
+import {
+  TextPrimaryTheme,
+  TextSecondaryLightTheme,
+  TextSecondaryDarkTheme,
+  TextErrorTheme,
+} from '../Text.themes';
+
+<Meta title="Typography/Text/Themes" of={TextStories} />
+
+<Title>Themes</Title>
+
+## TextPrimaryTheme
+
+```typescript
+import { TextPrimaryTheme } from '@amocrm/vue-ui-kit'
+```
+
+<ThemeVisualization
+  theme={TextPrimaryTheme}
+  of={TextStories.TextPrimary}
+/>
+
+## TextSecondaryLightTheme
+
+```typescript
+import { TextSecondaryLightTheme } from '@amocrm/vue-ui-kit'
+```
+
+<ThemeVisualization
+  theme={TextSecondaryLightTheme}
+  of={TextStories.TextSecondaryLight}
+/>
+
+## TextSecondaryDarkTheme
+
+```typescript
+import { TextSecondaryDarkTheme } from '@amocrm/vue-ui-kit'
+```
+
+<ThemeVisualization
+  theme={TextSecondaryDarkTheme}
+  of={TextStories.TextSecondaryDark}
+/>
+
+## TextErrorTheme
+
+```typescript
+import { TextErrorTheme } from '@amocrm/vue-ui-kit'
+```
+
+<ThemeVisualization
+  theme={TextErrorTheme}
+  of={TextStories.TextError}
+/>

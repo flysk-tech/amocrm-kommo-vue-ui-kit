@@ -1,0 +1,26 @@
+import { Title, Meta, Canvas } from '@storybook/addon-docs/blocks'
+import * as LabelStories from './Label.stories'
+import { ThemeVisualization } from '@storybook-utils/components'
+import { LabelTheme, LabelGroupTheme } from '../Label.themes'
+
+<Meta title="Components/Label/Themes" of={LabelStories} />
+
+<Title>"Темы"</Title>
+
+<Canvas of={LabelStories.Default} />
+
+## LabelTheme
+
+```typescript
+import { LabelTheme } from '@amocrm/vue-ui-kit/Label'
+```
+
+<ThemeVisualization theme={LabelTheme} />
+
+## LabelGroupTheme
+
+```typescript
+import { LabelGroupTheme } from '@amocrm/vue-ui-kit/Label'
+```
+
+<ThemeVisualization theme={LabelGroupTheme} />

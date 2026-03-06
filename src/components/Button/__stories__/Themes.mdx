@@ -1,0 +1,45 @@
+import { Title, Meta } from '@storybook/addon-docs/blocks';
+import * as ButtonStories from './Button.stories';
+import { ThemeVisualization } from '@storybook-utils/components';
+import {
+  ButtonPrimaryTheme,
+  ButtonNeutralTheme,
+  ButtonSecondaryTheme,
+} from '../Button.themes';
+
+<Meta title="Components/Button/Themes" of={ButtonStories} />
+
+<Title>Themes</Title>
+
+## ButtonNeutralTheme
+
+```typescript
+import { ButtonNeutralTheme } from '@amocrm/vue-ui-kit'
+```
+
+<ThemeVisualization
+  theme={ButtonNeutralTheme}
+  of={ButtonStories.Neutral}
+/>
+
+## ButtonPrimaryTheme
+
+```typescript
+import { ButtonPrimaryTheme } from '@amocrm/vue-ui-kit'
+```
+
+<ThemeVisualization
+  theme={ButtonPrimaryTheme}
+  of={ButtonStories.Primary}
+/>
+
+## ButtonSecondaryTheme
+
+```typescript
+import { ButtonSecondaryTheme } from '@amocrm/vue-ui-kit'
+```
+
+<ThemeVisualization
+  theme={ButtonSecondaryTheme}
+  of={ButtonStories.Secondary}
+/>

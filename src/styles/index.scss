@@ -1,0 +1,15 @@
+// Главный файл стилей библиотеки
+
+// Импорт CSS переменных (всегда первым)
+@import './theme.css';
+
+// Абстракции (переменные и миксины)
+@import './abstracts/variables';
+@import './abstracts/mixins';
+
+// Базовые стили
+@import './base/reset';
+
+// Утилиты
+@import './utilities/focus';
+@import './utilities/scrollbar';

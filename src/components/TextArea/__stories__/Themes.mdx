@@ -1,0 +1,30 @@
+import { Title, Meta } from '@storybook/addon-docs/blocks'
+import * as TextAreaStories from './TextArea.stories'
+import { ThemeVisualization } from '@storybook-utils/components'
+import { TextareaLightTheme, TextareaDarkTheme } from '../TextArea.themes'
+
+<Meta title="Components/TextArea/Themes" of={TextAreaStories} />
+
+<Title>"Темы"</Title>
+
+## TextareaLightTheme
+
+```typescript
+import { TextareaLightTheme } from '@amocrm/vue-ui-kit/TextArea'
+```
+
+<ThemeVisualization
+  theme={TextareaLightTheme}
+  of={TextAreaStories.TextareaLight}
+/>
+
+## TextareaDarkTheme
+
+```typescript
+import { TextareaDarkTheme } from '@amocrm/vue-ui-kit/TextArea'
+```
+
+<ThemeVisualization
+  theme={TextareaDarkTheme}
+  of={TextAreaStories.TextareaDark}
+/>

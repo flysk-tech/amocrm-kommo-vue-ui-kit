@@ -1,0 +1,231 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Getting Started/Theme System" />
+
+# Система тем компонентов
+
+Тема в библиотеке - это набор дизайн-токенов в виде CSS переменных. Вот пример того, как это может выглядеть:
+
+```css
+.MyComponent {
+  color: var(--amocrm-vue-ui-kit-color-cultured);
+  background: var(--amocrm-vue-ui-kit-color-blueberry);
+}
+```
+
+# Темы компонентов
+
+Каждый компонент имеет свойство `theme` для стилизации. Все компоненты имеют предопределенные темы, которые можно найти по адресу:
+
+```javascript
+import { ThemeName } from '@amocrm/vue-ui-kit/ComponentName'
+```
+
+Где:
+
+> `ComponentName` - это название компонента, тему которого вы хотите использовать.
+
+> `ThemeName` - это название его темы.
+
+Подробную информацию о темах компонента смотрите в документации `Themes` каждого компонента.
+
+# Создание пользовательской темы
+
+Если вы не можете найти подходящую тему для вашего компонента, вы можете создать свою собственную.
+
+Давайте рассмотрим создание компонента на примере [`<Input />`](/?path=/docs/components-input--docs).
+
+## Дизайн-токены компонента
+
+Пример основных дизайн-токенов для Input:
+
+<div style={{display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '24px'}}>
+  <div style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
+    <div style={{width: '24px', height: '24px', backgroundColor: '#333333', borderRadius: '4px', border: '1px solid #ccc'}}></div>
+    <div>
+      <strong>--amocrm-vue-ui-kit-input-color</strong><br/>
+      <small style={{color: '#666'}}>var(--amocrm-vue-ui-kit-input-color) - #333333</small>
+    </div>
+  </div>
+  <div style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
+    <div style={{width: '24px', height: '24px', backgroundColor: '#ffffff', borderRadius: '4px', border: '1px solid #ccc'}}></div>
+    <div>
+      <strong>--amocrm-vue-ui-kit-input-background-color</strong><br/>
+      <small style={{color: '#666'}}>var(--amocrm-vue-ui-kit-input-background-color) - #ffffff</small>
+    </div>
+  </div>
+  <div style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
+    <div style={{width: '24px', height: '24px', backgroundColor: '#e5e5e5', borderRadius: '4px', border: '1px solid #ccc'}}></div>
+    <div>
+      <strong>--amocrm-vue-ui-kit-input-border-color</strong><br/>
+      <small style={{color: '#666'}}>var(--amocrm-vue-ui-kit-palette-border-default) - #e5e5e5</small>
+    </div>
+  </div>
+  <div style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
+    <div style={{width: '24px', height: '24px', backgroundColor: '#ff6b6b', borderRadius: '4px', border: '1px solid #ccc'}}></div>
+    <div>
+      <strong>--amocrm-vue-ui-kit-input-error-color</strong><br/>
+      <small style={{color: '#666'}}>var(--amocrm-vue-ui-kit-palette-border-error) - #ff6b6b</small>
+    </div>
+  </div>
+</div>
+
+## Создание пользовательской темы
+
+### Создание объекта темы
+
+**my-theme.ts**
+
+```typescript
+import { type InputTheme } from '@amocrm/vue-ui-kit/Input';
+
+export const MyInputTheme: InputTheme = {
+  '--amocrm-vue-ui-kit-input-color': '#2c3e50',
+  '--amocrm-vue-ui-kit-input-background-color': '#ecf0f1',
+  '--amocrm-vue-ui-kit-input-border-top': '1px solid #3498db',
+  '--amocrm-vue-ui-kit-input-border-bottom': '1px solid #3498db',
+  '--amocrm-vue-ui-kit-input-border-left': '1px solid #3498db',
+  '--amocrm-vue-ui-kit-input-border-right': '1px solid #3498db',
+  '--amocrm-vue-ui-kit-input-border-radius': '8px',
+  '--amocrm-vue-ui-kit-input-height': '40px',
+  '--amocrm-vue-ui-kit-input-padding-left': '12px',
+  '--amocrm-vue-ui-kit-input-padding-right': '12px',
+  '--amocrm-vue-ui-kit-input-font-size': '16px',
+  '--amocrm-vue-ui-kit-input-line-height': '24px',
+};
+```
+
+### Применение в вашем компоненте
+
+**my-component.vue**
+
+```vue
+<template>
+  <div>
+    <Input
+      v-model="inputValue"
+      :theme="MyInputTheme"
+      placeholder="Кастомный стиль"
+      :isInvalid="isError"
+      invalidDescription="Ошибка валидации"
+    />
+
+    <Button
+      :theme="ButtonPrimaryTheme"
+      @click="validateInput"
+    >
+      Проверить
+    </Button>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import { Input } from '@amocrm/vue-ui-kit/Input'
+import { Button, ButtonPrimaryTheme } from '@amocrm/vue-ui-kit/Button'
+import { MyInputTheme } from './my-theme'
+
+const inputValue = ref('')
+const isError = ref(false)
+
+const validateInput = () => {
+  isError.value = !inputValue.value
+}
+</script>
+```
+
+## Переиспользование тем
+
+Вы можете создать базовую тему и расширить её:
+
+```typescript
+import { InputPrimaryTheme, type InputTheme } from '@amocrm/vue-ui-kit/Input'
+
+// Создаём тему на основе Primary
+export const MyDarkInputTheme: InputTheme = {
+  ...InputPrimaryTheme,
+  '--amocrm-vue-ui-kit-input-color': '#ffffff',
+  '--amocrm-vue-ui-kit-input-background-color': '#2c3e50',
+  '--amocrm-vue-ui-kit-input-border-top': '1px solid #34495e',
+  '--amocrm-vue-ui-kit-input-border-bottom': '1px solid #34495e',
+  '--amocrm-vue-ui-kit-input-border-left': '1px solid #34495e',
+  '--amocrm-vue-ui-kit-input-border-right': '1px solid #34495e',
+}
+```
+
+## Типизация тем
+
+Все темы строго типизированы в TypeScript:
+
+```typescript
+// Каждый компонент экспортирует свой тип темы
+import { type ButtonTheme } from '@amocrm/vue-ui-kit/Button'
+import { type InputTheme } from '@amocrm/vue-ui-kit/Input'
+import { type SpinnerTheme } from '@amocrm/vue-ui-kit/Spinner'
+
+// Создание типизированной темы
+const myTheme: ButtonTheme = {
+  // TypeScript подскажет все доступные CSS переменные
+  '--amocrm-vue-ui-kit-button-background-color': '#3498db'
+}
+```
+
+## Композиционная функция для тем
+
+Для удобства работы с темами можно использовать композиционную функцию:
+
+```typescript
+// composables/useTheme.ts
+import { computed, ref } from 'vue'
+
+export function useTheme<T extends Record<string, string>>(defaultTheme: T) {
+  const theme = ref(defaultTheme)
+
+  const setTheme = (newTheme: Partial<T>) => {
+    theme.value = { ...theme.value, ...newTheme }
+  }
+
+  const resetTheme = () => {
+    theme.value = defaultTheme
+  }
+
+  const themeVars = computed(() => theme.value)
+
+  return {
+    theme: themeVars,
+    setTheme,
+    resetTheme
+  }
+}
+```
+
+Использование:
+
+```vue
+<script setup lang="ts">
+import { useTheme } from '@/composables/useTheme'
+import { InputPrimaryTheme } from '@amocrm/vue-ui-kit/Input'
+
+const { theme, setTheme } = useTheme(InputPrimaryTheme)
+
+// Изменение темы динамически
+const makeDark = () => {
+  setTheme({
+    '--amocrm-vue-ui-kit-input-background-color': '#2c3e50',
+    '--amocrm-vue-ui-kit-input-color': '#ffffff'
+  })
+}
+</script>
+
+<template>
+  <Input v-model="value" :theme="theme" />
+</template>
+```
+
+## Лучшие практики
+
+1. **Именование тем**: Используйте описательные имена `MyDarkInputTheme`, `CompactButtonTheme`
+2. **Наследование**: Расширяйте существующие темы вместо создания с нуля
+3. **Консистентность**: Используйте одинаковые значения цветов и размеров across темах
+4. **Типизация**: Всегда используйте TypeScript типы для тем
+5. **Переиспользование**: Создавайте композиционные функции для сложной логики тем

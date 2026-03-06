@@ -1,0 +1,34 @@
+import { Title, Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import * as InputStories from './Input.stories';
+
+<Meta of={InputStories} />
+
+<Title>Input</Title>
+
+<Canvas of={InputStories.Default} />
+
+## Использование
+
+```vue
+<template>
+  <Input
+    v-model="inputValue"
+    :theme="InputLightTheme"
+    placeholder="Введите текст"
+    :isInvalid="isError"
+    invalidDescription="Поле обязательно для заполнения"
+  />
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import { Input, InputLightTheme } from '@amocrm/vue-ui-kit'
+
+const inputValue = ref('')
+const isError = ref(false)
+</script>
+```
+
+## Props
+
+<Controls />
