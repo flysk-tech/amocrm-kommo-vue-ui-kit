@@ -1,13 +1,14 @@
 import { ref, watch, onBeforeUnmount } from 'vue'
-import { nanoid } from 'nanoid'
 import type { CrmUiKitCSSProperties } from '@/lib/theme'
 
 const DEFAULT_PREFIX = 'crm-ui-kit-theme'
 
+let counter = 0
+
 const stylesMap = new Map<object, { className: string; styleElement: HTMLStyleElement; refCount: number }>()
 
 const createClass = <T extends CrmUiKitCSSProperties>(newTheme: T) => {
-  const className = `${DEFAULT_PREFIX}-${nanoid(5)}`
+  const className = `${DEFAULT_PREFIX}-${++counter}`
   const styleElement = document.createElement('style')
   const stylesString = Object.entries(newTheme)
     .map(([key, value]) => `${key}: ${value};`)

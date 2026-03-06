@@ -1,0 +1,4105 @@
+{
+  "config": {
+    "configFile": "/app/playwright-ct.config.ts",
+    "rootDir": "/app/src",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 5
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "e2e-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/app/__diff_output__",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "android (chromium) | default",
+        "name": "android (chromium) | default",
+        "testDir": "/app/src",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.e2e.test.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/app/__diff_output__",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "ios (webkit) | default",
+        "name": "ios (webkit) | default",
+        "testDir": "/app/src",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.e2e.test.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/app/__diff_output__",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "web (chromium) | default",
+        "name": "web (chromium) | default",
+        "testDir": "/app/src",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.e2e.test.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/app/__diff_output__",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "web (firefox) | default",
+        "name": "web (firefox) | default",
+        "testDir": "/app/src",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.e2e.test.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/app/__diff_output__",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "web (webkit) | default",
+        "name": "web (webkit) | default",
+        "testDir": "/app/src",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.e2e.test.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/app/__diff_output__",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "android (chromium) | alternative",
+        "name": "android (chromium) | alternative",
+        "testDir": "/app/src",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.e2e.test.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/app/__diff_output__",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "ios (webkit) | alternative",
+        "name": "ios (webkit) | alternative",
+        "testDir": "/app/src",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.e2e.test.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/app/__diff_output__",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "web (chromium) | alternative",
+        "name": "web (chromium) | alternative",
+        "testDir": "/app/src",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.e2e.test.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/app/__diff_output__",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "web (firefox) | alternative",
+        "name": "web (firefox) | alternative",
+        "testDir": "/app/src",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.e2e.test.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/app/__diff_output__",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "web (webkit) | alternative",
+        "name": "web (webkit) | alternative",
+        "testDir": "/app/src",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.e2e.test.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.47.0",
+    "workers": 5,
+    "webServer": null,
+    "@playwright/test": {
+      "packageJSON": "/app/node_modules/@playwright/experimental-ct-vue/package.json",
+      "plugins": [
+        null
+      ],
+      "babelPlugins": [
+        [
+          "/app/node_modules/@playwright/experimental-ct-core/lib/tsxTransform.js"
+        ]
+      ],
+      "cli": {}
+    },
+    "@playwright/experimental-ct-core": {
+      "registerSourceFile": "/app/node_modules/@playwright/experimental-ct-vue/registerSource.mjs"
+    }
+  },
+  "suites": [
+    {
+      "title": "components/Accordion/__tests__/Accordion.e2e.test.ts",
+      "file": "components/Accordion/__tests__/Accordion.e2e.test.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Accordion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | default",
+              "projectName": "android (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 683,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:14.933Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1979a2418dbca4a5a55-bf21900b1b1c73b0bdd3",
+          "file": "components/Accordion/__tests__/Accordion.e2e.test.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "Accordion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | default",
+              "projectName": "ios (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "status": "passed",
+                  "duration": 1748,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:16.635Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1979a2418dbca4a5a55-59eca9bf1443312e0638",
+          "file": "components/Accordion/__tests__/Accordion.e2e.test.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "Accordion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | default",
+              "projectName": "web (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "status": "passed",
+                  "duration": 402,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:21.038Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1979a2418dbca4a5a55-3f9f5f20b2c621e37de2",
+          "file": "components/Accordion/__tests__/Accordion.e2e.test.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "Accordion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | default",
+              "projectName": "web (firefox) | default",
+              "results": [
+                {
+                  "workerIndex": 15,
+                  "status": "passed",
+                  "duration": 1536,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:22.984Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1979a2418dbca4a5a55-29a0a5966bf44c77f22c",
+          "file": "components/Accordion/__tests__/Accordion.e2e.test.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "Accordion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | default",
+              "projectName": "web (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 20,
+                  "status": "passed",
+                  "duration": 1427,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:26.746Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1979a2418dbca4a5a55-fb03edb7fc930bf3d7ad",
+          "file": "components/Accordion/__tests__/Accordion.e2e.test.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "Accordion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | alternative",
+              "projectName": "android (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 25,
+                  "status": "passed",
+                  "duration": 750,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:29.828Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1979a2418dbca4a5a55-ea446386a316be77fd27",
+          "file": "components/Accordion/__tests__/Accordion.e2e.test.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "Accordion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | alternative",
+              "projectName": "ios (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 30,
+                  "status": "passed",
+                  "duration": 1566,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:31.993Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1979a2418dbca4a5a55-9cff8c4511852966f158",
+          "file": "components/Accordion/__tests__/Accordion.e2e.test.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "Accordion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | alternative",
+              "projectName": "web (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 35,
+                  "status": "passed",
+                  "duration": 383,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:35.075Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1979a2418dbca4a5a55-3bcc4ab91913363d109e",
+          "file": "components/Accordion/__tests__/Accordion.e2e.test.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "Accordion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | alternative",
+              "projectName": "web (firefox) | alternative",
+              "results": [
+                {
+                  "workerIndex": 40,
+                  "status": "passed",
+                  "duration": 1305,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:36.835Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1979a2418dbca4a5a55-feca0faf11c03e8d3403",
+          "file": "components/Accordion/__tests__/Accordion.e2e.test.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "Accordion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | alternative",
+              "projectName": "web (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 45,
+                  "status": "passed",
+                  "duration": 1154,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:40.111Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1979a2418dbca4a5a55-94b3e2528d5b5039760e",
+          "file": "components/Accordion/__tests__/Accordion.e2e.test.ts",
+          "line": 4,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "components/Button/__tests__/Button.e2e.test.ts",
+      "file": "components/Button/__tests__/Button.e2e.test.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Button Primary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | default",
+              "projectName": "android (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 449,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:14.939Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-06cbd858cd609c806b8a",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "Button Neutral",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | default",
+              "projectName": "android (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "passed",
+                  "duration": 415,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:14.930Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-a1904149a138c12b56c4",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "Button Secondary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | default",
+              "projectName": "android (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "status": "passed",
+                  "duration": 463,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:14.929Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-ffc1cd506d64fdd20b7c",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "Button Primary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | default",
+              "projectName": "ios (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "status": "passed",
+                  "duration": 1388,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:16.667Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-73fda7d96f8ac62daba2",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "Button Neutral",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | default",
+              "projectName": "ios (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "status": "passed",
+                  "duration": 1342,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:16.765Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-df2d23061af7a5aa1c20",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "Button Secondary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | default",
+              "projectName": "ios (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "status": "passed",
+                  "duration": 1333,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:16.748Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-3a5b98b13fab7b935a75",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "Button Primary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | default",
+              "projectName": "web (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "status": "passed",
+                  "duration": 298,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:21.151Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-18a5cb3a1e1332865e3d",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "Button Neutral",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | default",
+              "projectName": "web (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "status": "passed",
+                  "duration": 293,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:21.162Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-cbd90f998bfd2995a394",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "Button Secondary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | default",
+              "projectName": "web (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "status": "passed",
+                  "duration": 352,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:21.794Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-65cdec6a6d7892ce4fb0",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "Button Primary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | default",
+              "projectName": "web (firefox) | default",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "status": "passed",
+                  "duration": 1492,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:23.022Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-0a6c331da009c1b0f926",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "Button Neutral",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | default",
+              "projectName": "web (firefox) | default",
+              "results": [
+                {
+                  "workerIndex": 17,
+                  "status": "passed",
+                  "duration": 1456,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:23.302Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-75a69236192a58b38e2a",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "Button Secondary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | default",
+              "projectName": "web (firefox) | default",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "status": "passed",
+                  "duration": 1513,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:23.300Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-7fc07356986ef3fe86ff",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "Button Primary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | default",
+              "projectName": "web (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 21,
+                  "status": "passed",
+                  "duration": 1248,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:26.785Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-8dde96abb82680685a54",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "Button Neutral",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | default",
+              "projectName": "web (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 22,
+                  "status": "passed",
+                  "duration": 1245,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:26.787Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-ee2cd4baf618eb1f4bb2",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "Button Secondary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | default",
+              "projectName": "web (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 23,
+                  "status": "passed",
+                  "duration": 1149,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:27.054Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-e5b3ca8ef92e12c26ed6",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "Button Primary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | alternative",
+              "projectName": "android (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 26,
+                  "status": "passed",
+                  "duration": 440,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:29.862Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-8ffb436fd214d21fe99f",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "Button Neutral",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | alternative",
+              "projectName": "android (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 27,
+                  "status": "passed",
+                  "duration": 418,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:30.059Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-a2cb9f3eca9d613f2bc3",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "Button Secondary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | alternative",
+              "projectName": "android (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 28,
+                  "status": "passed",
+                  "duration": 442,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:30.528Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-94e73ad8050cdda0e81f",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "Button Primary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | alternative",
+              "projectName": "ios (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 31,
+                  "status": "passed",
+                  "duration": 1274,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:32.032Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-55d3c67938b25fba0453",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "Button Neutral",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | alternative",
+              "projectName": "ios (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 32,
+                  "status": "passed",
+                  "duration": 1077,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:32.075Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-cc61c6e5db417a400b1c",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "Button Secondary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | alternative",
+              "projectName": "ios (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 33,
+                  "status": "passed",
+                  "duration": 1173,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:32.146Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-1ba9981c25bb5333647d",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "Button Primary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | alternative",
+              "projectName": "web (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 36,
+                  "status": "passed",
+                  "duration": 299,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:35.135Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-cbb47d5093c325d79304",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "Button Neutral",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | alternative",
+              "projectName": "web (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 37,
+                  "status": "passed",
+                  "duration": 328,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:35.403Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-5310b116a1e1c2edbf71",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "Button Secondary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | alternative",
+              "projectName": "web (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 38,
+                  "status": "passed",
+                  "duration": 300,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:35.901Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-bb582cd4038caa35d9d1",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "Button Primary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | alternative",
+              "projectName": "web (firefox) | alternative",
+              "results": [
+                {
+                  "workerIndex": 41,
+                  "status": "passed",
+                  "duration": 1329,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:36.974Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-1b1df69f46eecef3919d",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "Button Neutral",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | alternative",
+              "projectName": "web (firefox) | alternative",
+              "results": [
+                {
+                  "workerIndex": 42,
+                  "status": "passed",
+                  "duration": 1238,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:37.038Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-60c0d87b860dff519441",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "Button Secondary",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | alternative",
+              "projectName": "web (firefox) | alternative",
+              "results": [
+                {
+                  "workerIndex": 43,
+                  "status": "timedOut",
+                  "duration": 30020,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m"
+                    },
+                    {
+                      "message": "Error: browserContext.newPage: Test ended."
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:37.036Z",
+                  "attachments": []
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-235e297eceb00e3c82ff",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "Button Primary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | alternative",
+              "projectName": "web (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 46,
+                  "status": "passed",
+                  "duration": 1016,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:40.242Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-2e771f55d84c396c48d0",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "Button Neutral",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | alternative",
+              "projectName": "web (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 47,
+                  "status": "passed",
+                  "duration": 1018,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:40.258Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-99786d9dfe054d56e124",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "Button Secondary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | alternative",
+              "projectName": "web (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 48,
+                  "status": "passed",
+                  "duration": 986,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:40.284Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1c3ad20e682f9659864-cd3497d5ca76efaeb607",
+          "file": "components/Button/__tests__/Button.e2e.test.ts",
+          "line": 25,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "components/Input/__tests__/Input.e2e.test.ts",
+      "file": "components/Input/__tests__/Input.e2e.test.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Input Light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | default",
+              "projectName": "android (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "status": "passed",
+                  "duration": 553,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:14.941Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "83f801224960a949b8ba-8df3f6142ec278a87057",
+          "file": "components/Input/__tests__/Input.e2e.test.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "Input Dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | default",
+              "projectName": "android (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "passed",
+                  "duration": 454,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:15.575Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "83f801224960a949b8ba-be331873b2d1ed50822a",
+          "file": "components/Input/__tests__/Input.e2e.test.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "Input Light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | default",
+              "projectName": "ios (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "status": "passed",
+                  "duration": 1531,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:16.818Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "83f801224960a949b8ba-1b67af95bc4139081f7a",
+          "file": "components/Input/__tests__/Input.e2e.test.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "Input Dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | default",
+              "projectName": "ios (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "status": "passed",
+                  "duration": 1099,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:19.405Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "83f801224960a949b8ba-761bfc9f00483b3dc23b",
+          "file": "components/Input/__tests__/Input.e2e.test.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "Input Light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | default",
+              "projectName": "web (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "status": "passed",
+                  "duration": 418,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:21.805Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "83f801224960a949b8ba-17738a96fee8e0a2ece3",
+          "file": "components/Input/__tests__/Input.e2e.test.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "Input Dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | default",
+              "projectName": "web (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "status": "passed",
+                  "duration": 262,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:21.529Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "83f801224960a949b8ba-f81fa16025c570a802bc",
+          "file": "components/Input/__tests__/Input.e2e.test.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "Input Light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | default",
+              "projectName": "web (firefox) | default",
+              "results": [
+                {
+                  "workerIndex": 19,
+                  "status": "passed",
+                  "duration": 1523,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:23.355Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "83f801224960a949b8ba-2cd9dd030afa3a3784ea",
+          "file": "components/Input/__tests__/Input.e2e.test.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "Input Dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | default",
+              "projectName": "web (firefox) | default",
+              "results": [
+                {
+                  "workerIndex": 17,
+                  "status": "passed",
+                  "duration": 469,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:25.116Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "83f801224960a949b8ba-f2d43cc908eb3dbf1d22",
+          "file": "components/Input/__tests__/Input.e2e.test.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "Input Light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | default",
+              "projectName": "web (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 24,
+                  "status": "passed",
+                  "duration": 1350,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:27.140Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "83f801224960a949b8ba-2b74864355c093336616",
+          "file": "components/Input/__tests__/Input.e2e.test.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "Input Dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | default",
+              "projectName": "web (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 21,
+                  "status": "passed",
+                  "duration": 1053,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:28.116Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "83f801224960a949b8ba-6a661a96a8469e2c8acf",
+          "file": "components/Input/__tests__/Input.e2e.test.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "Input Light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | alternative",
+              "projectName": "android (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 29,
+                  "status": "passed",
+                  "duration": 564,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:30.927Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "83f801224960a949b8ba-c5aacf8a1a7399a09116",
+          "file": "components/Input/__tests__/Input.e2e.test.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "Input Dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | alternative",
+              "projectName": "android (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 26,
+                  "status": "passed",
+                  "duration": 498,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:30.411Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "83f801224960a949b8ba-0edb9b4180bfd4b30ce3",
+          "file": "components/Input/__tests__/Input.e2e.test.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "Input Light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | alternative",
+              "projectName": "ios (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 34,
+                  "status": "passed",
+                  "duration": 1396,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:32.438Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "83f801224960a949b8ba-0301707afcce6db1426f",
+          "file": "components/Input/__tests__/Input.e2e.test.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "Input Dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | alternative",
+              "projectName": "ios (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 32,
+                  "status": "passed",
+                  "duration": 1001,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:33.261Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "83f801224960a949b8ba-0f045233e01fc34252ca",
+          "file": "components/Input/__tests__/Input.e2e.test.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "Input Light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | alternative",
+              "projectName": "web (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 39,
+                  "status": "passed",
+                  "duration": 369,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:35.895Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "83f801224960a949b8ba-512d2f516b794dba9e02",
+          "file": "components/Input/__tests__/Input.e2e.test.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "Input Dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | alternative",
+              "projectName": "web (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 36,
+                  "status": "passed",
+                  "duration": 311,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:35.529Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "83f801224960a949b8ba-60ccabec63bbfea895f8",
+          "file": "components/Input/__tests__/Input.e2e.test.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "Input Light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | alternative",
+              "projectName": "web (firefox) | alternative",
+              "results": [
+                {
+                  "workerIndex": 44,
+                  "status": "passed",
+                  "duration": 1326,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:37.106Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "83f801224960a949b8ba-69fbc765fcf0143cfd4c",
+          "file": "components/Input/__tests__/Input.e2e.test.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "Input Dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | alternative",
+              "projectName": "web (firefox) | alternative",
+              "results": [
+                {
+                  "workerIndex": 40,
+                  "status": "passed",
+                  "duration": 424,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:38.574Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "83f801224960a949b8ba-53f5abae40db5cf3c33d",
+          "file": "components/Input/__tests__/Input.e2e.test.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "Input Light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | alternative",
+              "projectName": "web (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 45,
+                  "status": "passed",
+                  "duration": 1087,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:41.331Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "83f801224960a949b8ba-776e0d121cdec2ace104",
+          "file": "components/Input/__tests__/Input.e2e.test.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "Input Dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | alternative",
+              "projectName": "web (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 46,
+                  "status": "passed",
+                  "duration": 1057,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:41.332Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "83f801224960a949b8ba-702c86f4306f6cf132c5",
+          "file": "components/Input/__tests__/Input.e2e.test.ts",
+          "line": 15,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "components/Spinner/__tests__/Spinner.e2e.test.ts",
+      "file": "components/Spinner/__tests__/Spinner.e2e.test.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Spinner",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | default",
+              "projectName": "android (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 231,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:15.601Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0ad48f3287e3934f02a6-c4d2a2688ba16a5d98cc",
+          "file": "components/Spinner/__tests__/Spinner.e2e.test.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "Spinner",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | default",
+              "projectName": "ios (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "status": "passed",
+                  "duration": 823,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:19.419Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0ad48f3287e3934f02a6-fde97b8673c842a76141",
+          "file": "components/Spinner/__tests__/Spinner.e2e.test.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "Spinner",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | default",
+              "projectName": "web (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "status": "passed",
+                  "duration": 176,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:21.529Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0ad48f3287e3934f02a6-86e84d2459404495004d",
+          "file": "components/Spinner/__tests__/Spinner.e2e.test.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "Spinner",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | default",
+              "projectName": "web (firefox) | default",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "status": "passed",
+                  "duration": 347,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:25.110Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0ad48f3287e3934f02a6-a8f06c4dbb5868050504",
+          "file": "components/Spinner/__tests__/Spinner.e2e.test.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "Spinner",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | default",
+              "projectName": "web (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 22,
+                  "status": "passed",
+                  "duration": 814,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:28.117Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0ad48f3287e3934f02a6-463b447b53953fd93c1c",
+          "file": "components/Spinner/__tests__/Spinner.e2e.test.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "Spinner",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | alternative",
+              "projectName": "android (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 27,
+                  "status": "passed",
+                  "duration": 267,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:30.584Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0ad48f3287e3934f02a6-8f4fc28dbe72dcc871c0",
+          "file": "components/Spinner/__tests__/Spinner.e2e.test.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "Spinner",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | alternative",
+              "projectName": "ios (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 31,
+                  "status": "passed",
+                  "duration": 872,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:33.430Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0ad48f3287e3934f02a6-ab59f054e77b055f335c",
+          "file": "components/Spinner/__tests__/Spinner.e2e.test.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "Spinner",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | alternative",
+              "projectName": "web (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 35,
+                  "status": "passed",
+                  "duration": 248,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:35.561Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0ad48f3287e3934f02a6-fd599fba403bf5758946",
+          "file": "components/Spinner/__tests__/Spinner.e2e.test.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "Spinner",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | alternative",
+              "projectName": "web (firefox) | alternative",
+              "results": [
+                {
+                  "workerIndex": 42,
+                  "status": "passed",
+                  "duration": 271,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:38.692Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0ad48f3287e3934f02a6-13f18e4cbe468839b506",
+          "file": "components/Spinner/__tests__/Spinner.e2e.test.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "Spinner",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | alternative",
+              "projectName": "web (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 47,
+                  "status": "passed",
+                  "duration": 750,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:41.352Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0ad48f3287e3934f02a6-f0d68c4ed37dea5a11d6",
+          "file": "components/Spinner/__tests__/Spinner.e2e.test.ts",
+          "line": 5,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "components/Text/__tests__/Text.e2e.test.ts",
+      "file": "components/Text/__tests__/Text.e2e.test.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | default",
+              "projectName": "android (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "status": "passed",
+                  "duration": 297,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:15.604Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-19b5d538ccab8e7e5507",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "Text Primary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | default",
+              "projectName": "android (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "status": "passed",
+                  "duration": 262,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:15.693Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-90458b7a5431f118349c",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "Text Secondary Dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | default",
+              "projectName": "android (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 246,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:15.826Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-e0700044ebfe7be2c1b2",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "Text Secondary Light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | default",
+              "projectName": "android (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 222,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:15.846Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-dffa7e4a4a6b3554c7b5",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "Text Error",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | default",
+              "projectName": "android (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "status": "passed",
+                  "duration": 226,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:15.908Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-a417f231911172edbb54",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "Text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | default",
+              "projectName": "ios (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "status": "passed",
+                  "duration": 865,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:19.423Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-08d72fd8c58a7a63cda9",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "Text Primary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | default",
+              "projectName": "ios (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "status": "passed",
+                  "duration": 857,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:19.518Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-8cf56eba528793c4c6b9",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "Text Secondary Dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | default",
+              "projectName": "ios (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "status": "passed",
+                  "duration": 753,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:19.737Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-032fa067d5d96ee3ec8e",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "Text Secondary Light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | default",
+              "projectName": "ios (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "status": "passed",
+                  "duration": 798,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:20.266Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-1089ab21b4bec8072481",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "Text Error",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | default",
+              "projectName": "ios (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "status": "passed",
+                  "duration": 793,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:20.316Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-50d428c7b9d26bcec16c",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "Text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | default",
+              "projectName": "web (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "status": "passed",
+                  "duration": 215,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:21.536Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-a129470e1736cded7674",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "Text Primary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | default",
+              "projectName": "web (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "status": "passed",
+                  "duration": 219,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:21.721Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-d5aff85ce5434245cc29",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "Text Secondary Dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | default",
+              "projectName": "web (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "status": "passed",
+                  "duration": 251,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:21.757Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-608e7e32cd469bd68c3c",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "Text Secondary Light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | default",
+              "projectName": "web (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "status": "passed",
+                  "duration": 239,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:21.804Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-a879ce7e23076d6f2305",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "Text Error",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | default",
+              "projectName": "web (chromium) | default",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "status": "passed",
+                  "duration": 238,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:21.948Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-9893609043aac9d9f088",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "Text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | default",
+              "projectName": "web (firefox) | default",
+              "results": [
+                {
+                  "workerIndex": 15,
+                  "status": "passed",
+                  "duration": 382,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:25.172Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-eccffcb070c06d1b7a6f",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "Text Primary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | default",
+              "projectName": "web (firefox) | default",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "status": "passed",
+                  "duration": 363,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:25.175Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-60476d1d66ce1a9ad193",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "Text Secondary Dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | default",
+              "projectName": "web (firefox) | default",
+              "results": [
+                {
+                  "workerIndex": 19,
+                  "status": "passed",
+                  "duration": 374,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:25.227Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-d14167f0c5d30d1f3b09",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "Text Secondary Light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | default",
+              "projectName": "web (firefox) | default",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "status": "passed",
+                  "duration": 333,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:25.475Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-52f9b8588a4663eafae3",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "Text Error",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | default",
+              "projectName": "web (firefox) | default",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "status": "passed",
+                  "duration": 306,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:25.547Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-06a545bcade7af3d449d",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "Text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | default",
+              "projectName": "web (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 20,
+                  "status": "passed",
+                  "duration": 927,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:28.283Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-9f402b1093c02b069627",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "Text Primary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | default",
+              "projectName": "web (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 23,
+                  "status": "passed",
+                  "duration": 843,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:28.357Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-321702e03cc4f769c292",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "Text Secondary Dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | default",
+              "projectName": "web (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 24,
+                  "status": "passed",
+                  "duration": 750,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:28.620Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-0a13b424dde60f84ddb0",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "Text Secondary Light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | default",
+              "projectName": "web (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 22,
+                  "status": "passed",
+                  "duration": 738,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:28.950Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-81133ed8b6fdc0d16a76",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "Text Error",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | default",
+              "projectName": "web (webkit) | default",
+              "results": [
+                {
+                  "workerIndex": 21,
+                  "status": "passed",
+                  "duration": 793,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:29.190Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-fcb9a4711302ef624c21",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "Text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | alternative",
+              "projectName": "android (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 25,
+                  "status": "passed",
+                  "duration": 344,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:30.692Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-b6a50e1e9941d75a1ce4",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "Text Primary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | alternative",
+              "projectName": "android (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 27,
+                  "status": "passed",
+                  "duration": 354,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:30.874Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-dd6a2674514b07bdfb9c",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "Text Secondary Dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | alternative",
+              "projectName": "android (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 26,
+                  "status": "passed",
+                  "duration": 341,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:30.934Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-48734ffe918d2f6879f6",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "Text Secondary Light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | alternative",
+              "projectName": "android (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 25,
+                  "status": "passed",
+                  "duration": 293,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:31.048Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-cc9d13bccc72f991b2b0",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "Text Error",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "android (chromium) | alternative",
+              "projectName": "android (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 28,
+                  "status": "passed",
+                  "duration": 299,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:31.084Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-b2c450fe564b96454819",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "Text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | alternative",
+              "projectName": "ios (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 33,
+                  "status": "passed",
+                  "duration": 954,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:33.431Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-f9f4e55331a43e7b4c3e",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "Text Primary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | alternative",
+              "projectName": "ios (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 30,
+                  "status": "passed",
+                  "duration": 821,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:33.663Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-78cd8f9bcdfcc0dd4728",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "Text Secondary Dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | alternative",
+              "projectName": "ios (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 34,
+                  "status": "passed",
+                  "duration": 705,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:33.987Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-3fb6c0f29eb653b02d4b",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "Text Secondary Light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | alternative",
+              "projectName": "ios (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 32,
+                  "status": "passed",
+                  "duration": 755,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:34.279Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-3cbc0461aa73de8fb25a",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "Text Error",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ios (webkit) | alternative",
+              "projectName": "ios (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 31,
+                  "status": "passed",
+                  "duration": 770,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:34.316Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-2d053810b88390b8dc39",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "Text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | alternative",
+              "projectName": "web (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 35,
+                  "status": "passed",
+                  "duration": 233,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:35.826Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-8a0503e00ac901b6f5ab",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "Text Primary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | alternative",
+              "projectName": "web (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 37,
+                  "status": "passed",
+                  "duration": 251,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:35.826Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-0849715edeff3a3c18f4",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "Text Secondary Dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | alternative",
+              "projectName": "web (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 36,
+                  "status": "passed",
+                  "duration": 238,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:35.874Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-f73fde506892820fc8c7",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "Text Secondary Light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | alternative",
+              "projectName": "web (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 35,
+                  "status": "passed",
+                  "duration": 201,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:36.065Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-8c112ae155e616785139",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "Text Error",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (chromium) | alternative",
+              "projectName": "web (chromium) | alternative",
+              "results": [
+                {
+                  "workerIndex": 37,
+                  "status": "passed",
+                  "duration": 219,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:36.089Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-cdc7f0a7b4e36e29875a",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "Text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | alternative",
+              "projectName": "web (firefox) | alternative",
+              "results": [
+                {
+                  "workerIndex": 41,
+                  "status": "passed",
+                  "duration": 325,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:38.709Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-1cfc1508bb26e1bcd2eb",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "Text Primary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | alternative",
+              "projectName": "web (firefox) | alternative",
+              "results": [
+                {
+                  "workerIndex": 44,
+                  "status": "passed",
+                  "duration": 298,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:38.814Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-7e88820570e704d55274",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "Text Secondary Dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | alternative",
+              "projectName": "web (firefox) | alternative",
+              "results": [
+                {
+                  "workerIndex": 42,
+                  "status": "passed",
+                  "duration": 275,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:38.977Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-2f9e3748c881f4f06bcd",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "Text Secondary Light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | alternative",
+              "projectName": "web (firefox) | alternative",
+              "results": [
+                {
+                  "workerIndex": 40,
+                  "status": "passed",
+                  "duration": 257,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:39.020Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-5ec537b1095f826f0fcd",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "Text Error",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (firefox) | alternative",
+              "projectName": "web (firefox) | alternative",
+              "results": [
+                {
+                  "workerIndex": 41,
+                  "status": "passed",
+                  "duration": 271,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:39.041Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-6ee3bb64aabd93ee6062",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "Text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | alternative",
+              "projectName": "web (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 48,
+                  "status": "passed",
+                  "duration": 821,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:41.353Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-80cd478531c29eb1cf91",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "Text Primary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | alternative",
+              "projectName": "web (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 47,
+                  "status": "passed",
+                  "duration": 769,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:42.127Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-c1b2911275377ea89edd",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "Text Secondary Dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | alternative",
+              "projectName": "web (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 48,
+                  "status": "passed",
+                  "duration": 762,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:42.189Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-99925af25472ae220441",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "Text Secondary Light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | alternative",
+              "projectName": "web (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 46,
+                  "status": "passed",
+                  "duration": 740,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:42.410Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-c948ebefec851d3a6db4",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "Text Error",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "web (webkit) | alternative",
+              "projectName": "web (webkit) | alternative",
+              "results": [
+                {
+                  "workerIndex": 45,
+                  "status": "passed",
+                  "duration": 723,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-06T20:33:42.430Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c898d045ba5af026d541-1b73d178142c1ad54b16",
+          "file": "components/Text/__tests__/Text.e2e.test.ts",
+          "line": 45,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-03-06T20:33:13.627Z",
+    "duration": 54255.346000000005,
+    "expected": 119,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

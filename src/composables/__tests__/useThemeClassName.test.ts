@@ -1,13 +1,8 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest'
+import { describe, it, expect, beforeEach } from 'vitest'
 import { defineComponent, h } from 'vue'
 import { render, cleanup } from '@testing-library/vue'
 import { SwitcherPrimaryTheme } from '@/components/Switcher'
 import { useThemeClassName } from '../useThemeClassName'
-
-let nanoidCounter = 0
-vi.mock('nanoid', () => ({
-  nanoid: vi.fn(() => `id${nanoidCounter++}`),
-}))
 
 const createThemeComponent = <T extends Record<string, string>>(theme: T) => {
   let result: string | undefined
@@ -25,7 +20,6 @@ const createThemeComponent = <T extends Record<string, string>>(theme: T) => {
 
 describe('useThemeClassName', () => {
   beforeEach(() => {
-    nanoidCounter = 0
     cleanup()
     document.head.querySelectorAll('style').forEach((el) => el.remove())
   })
@@ -33,7 +27,7 @@ describe('useThemeClassName', () => {
   it('returns correct class name', () => {
     const { Comp, getResult } = createThemeComponent(SwitcherPrimaryTheme)
     render(Comp)
-    expect(getResult()).toBe('crm-ui-kit-theme-id0')
+    expect(getResult()).toMatch(/^crm-ui-kit-theme-\d+$/)
   })
 
   it('creates a style element with correct styles', () => {
