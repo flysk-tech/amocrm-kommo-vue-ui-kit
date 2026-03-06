@@ -27,7 +27,7 @@ import { TEST_CLASS_NAMES } from './constants'
 
 export interface Props {
   appearance: Appearance
-  propSets?: Parameters<typeof multiCartesian<P>>[0]
+  propSets?: Parameters<typeof multiCartesian>[0]
 }
 
 const props = withDefaults(defineProps<Props>(), {

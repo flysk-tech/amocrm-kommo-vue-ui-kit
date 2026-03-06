@@ -5,8 +5,8 @@
     "src/**/*",
     "src/**/*.vue",
     "tests/**/*",
-    "playground/**/*",
-    "docs/**/*"
+    "docs/**/*",
+    ".storybook/constants/**/*"
   ],
   "exclude": [
     "src/**/__tests__/*",

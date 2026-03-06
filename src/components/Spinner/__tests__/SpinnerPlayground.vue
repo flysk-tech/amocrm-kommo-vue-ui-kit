@@ -11,7 +11,7 @@
 <script setup lang="ts">
 import ComponentPlayground from '@/tests/e2e/ComponentPlayground.vue'
 import Spinner from '../Spinner.vue'
-import { SpinnerPrimaryTheme } from '../Spinner.themes'
+import { SpinnerTheme as SpinnerPrimaryTheme } from '../Spinner.themes'
 import { Appearance } from '@/lib/appearance'
 
 interface Props {

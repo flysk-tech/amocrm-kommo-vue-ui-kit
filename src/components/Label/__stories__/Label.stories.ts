@@ -81,10 +81,6 @@ import { Label, LabelGroup, LabelTheme, LabelGroupTheme } from '@amocrm/vue-ui-k
       control: 'boolean',
       description: 'Центрировать содержимое'
     },
-    className: {
-      control: 'text',
-      description: 'Дополнительные CSS классы'
-    }
   }
 } satisfies Meta<typeof Label>
 

@@ -61,10 +61,6 @@ import { Label, LabelTheme } from '@amocrm/vue-ui-kit'
       control: 'object',
       description: 'Тема оформления'
     },
-    className: {
-      control: 'text',
-      description: 'Дополнительные CSS классы'
-    }
   }
 } satisfies Meta<typeof Switcher>
 

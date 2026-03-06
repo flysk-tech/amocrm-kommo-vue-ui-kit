@@ -82,7 +82,6 @@ import {
   },
   args: {
     theme: FixedWidthInlineInputPrimaryTheme,
-    placeholder: 'Placeholder',
   },
   argTypes: {
     theme: {
@@ -103,14 +102,6 @@ import {
       control: 'text',
       description: 'Текст описания ошибки'
     },
-    placeholder: {
-      control: 'text',
-      description: 'Текст-заполнитель'
-    },
-    className: {
-      control: 'text',
-      description: 'Дополнительные CSS классы'
-    }
   }
 } satisfies Meta<typeof InlineInput>
 
@@ -126,7 +117,7 @@ export const Default: Story = {
       return { args, text }
     },
     template: `
-      <InlineInput v-bind="args" v-model="text" />
+      <InlineInput v-bind="args" v-model="text" placeholder="Placeholder" />
     `
   }),
   parameters: {
@@ -178,7 +169,7 @@ export const Invalid: Story = {
       return { args, text }
     },
     template: `
-      <InlineInput v-bind="args" v-model="text" />
+      <InlineInput v-bind="args" v-model="text" placeholder="Placeholder" />
     `
   }),
   parameters: {

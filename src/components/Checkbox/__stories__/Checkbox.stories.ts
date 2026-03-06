@@ -86,10 +86,6 @@ import { Label } from '@amocrm/vue-ui-kit'
       control: 'boolean',
       description: 'Отображать ошибку'
     },
-    className: {
-      control: 'text',
-      description: 'Дополнительные CSS классы'
-    }
   }
 } satisfies Meta<typeof Checkbox>
 

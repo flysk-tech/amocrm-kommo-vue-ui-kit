@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 
+import { ref } from 'vue'
 import Button from '../Button.vue'
 import { ButtonNeutralTheme, ButtonPrimaryTheme, ButtonSecondaryTheme } from '../Button.themes'
+import type { AnimationRefType } from '../Button.types'
 
 const meta = {
   title: 'Components/Button',
@@ -85,18 +87,10 @@ import { Button, ButtonPrimaryTheme, ButtonNeutralTheme, ButtonSecondaryTheme } 
       options: ['button', 'submit', 'reset'],
       description: 'HTML тип кнопки'
     },
-    className: {
-      control: 'text',
-      description: 'Дополнительные CSS классы'
-    },
     successfulStateText: {
       control: 'text',
       description: 'Текст для состояния успеха'
     },
-    onClick: {
-      action: 'clicked',
-      description: 'Обработчик клика'
-    }
   }
 } satisfies Meta<typeof Button>
 
@@ -223,9 +217,9 @@ export const WithAnimations: Story = {
   render: (args) => ({
     components: { Button },
     setup() {
-      const showInvalidAnimationRef1 = { value: null }
-      const showSuccessfulStateRef1 = { value: null }
-      const showInvalidAnimationRef2 = { value: null }
+      const showInvalidAnimationRef1 = ref<AnimationRefType | null>(null)
+      const showSuccessfulStateRef1 = ref<AnimationRefType | null>(null)
+      const showInvalidAnimationRef2 = ref<AnimationRefType | null>(null)
 
       const handleSuccessClick = () => {
         if (showSuccessfulStateRef1.value) {

@@ -71,7 +71,6 @@ import { Input, InputLightTheme, InputDarkTheme } from '@amocrm/vue-ui-kit'
     },
   },
   args: {
-    placeholder: 'Введите текст',
     modelValue: '',
   },
   argTypes: {
@@ -82,10 +81,6 @@ import { Input, InputLightTheme, InputDarkTheme } from '@amocrm/vue-ui-kit'
     modelValue: {
       control: 'text',
       description: 'Значение поля ввода'
-    },
-    placeholder: {
-      control: 'text',
-      description: 'Placeholder текст'
     },
     isInvalid: {
       control: 'boolean',
@@ -111,10 +106,6 @@ import { Input, InputLightTheme, InputDarkTheme } from '@amocrm/vue-ui-kit'
     after: {
       control: 'text',
       description: 'Контент после поля (например, иконка)'
-    },
-    className: {
-      control: 'text',
-      description: 'Дополнительные CSS классы'
     },
     'onUpdate:modelValue': {
       action: 'update:modelValue',
@@ -145,9 +136,16 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    placeholder: 'Введите ваш email',
     theme: InputLightTheme,
   },
+  render: (args) => ({
+    components: { Input },
+    setup() {
+      const value = ref('')
+      return { args, value }
+    },
+    template: `<Input v-bind="args" v-model="value" placeholder="Введите ваш email" />`
+  }),
   parameters: {
     docs: {
       description: {
@@ -161,9 +159,15 @@ export const WithValue: Story = {
   tags: ['!autodocs'],
   args: {
     modelValue: 'example@amocrm.ru',
-    placeholder: 'Email адрес',
     theme: InputLightTheme,
   },
+  render: (args) => ({
+    components: { Input },
+    setup() {
+      return { args }
+    },
+    template: `<Input v-bind="args" placeholder="Email адрес" />`
+  }),
   parameters: {
     docs: {
       description: {
@@ -178,9 +182,15 @@ export const Invalid: Story = {
   args: {
     isInvalid: true,
     invalidDescription: 'Это поле обязательно для заполнения',
-    placeholder: 'Обязательное поле',
     theme: InputLightTheme,
   },
+  render: (args) => ({
+    components: { Input },
+    setup() {
+      return { args }
+    },
+    template: `<Input v-bind="args" placeholder="Обязательное поле" />`
+  }),
   parameters: {
     docs: {
       description: {
@@ -225,24 +235,40 @@ export const Readonly: Story = {
 export const Light: Story = {
   tags: ['!autodocs'],
   args: {
-    placeholder: 'Light тема',
     theme: InputLightTheme,
-  }
+  },
+  render: (args) => ({
+    components: { Input },
+    setup() {
+      return { args }
+    },
+    template: `<Input v-bind="args" placeholder="Light тема" />`
+  }),
 }
 
 export const Dark: Story = {
   tags: ['!autodocs'],
   args: {
-    placeholder: 'Dark тема',
     theme: InputDarkTheme,
-  }
+  },
+  render: (args) => ({
+    components: { Input },
+    setup() {
+      return { args }
+    },
+    template: `<Input v-bind="args" placeholder="Dark тема" />`
+  }),
 }
 
 export const WithoutTheme: Story = {
   tags: ['!autodocs'],
-  args: {
-    placeholder: 'Без theme - используется дефолтная светлая тема',
-  },
+  render: (args) => ({
+    components: { Input },
+    setup() {
+      return { args }
+    },
+    template: `<Input v-bind="args" placeholder="Без theme - используется дефолтная светлая тема" />`
+  }),
   parameters: {
     docs: {
       description: {

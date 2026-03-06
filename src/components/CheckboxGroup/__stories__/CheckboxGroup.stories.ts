@@ -107,6 +107,7 @@ import { LabelTheme } from '@amocrm/vue-ui-kit/Label'
   args: {
     theme: CheckboxGroupTheme,
     orientation: 'horizontal',
+    onChange: () => {},
   },
   argTypes: {
     theme: {

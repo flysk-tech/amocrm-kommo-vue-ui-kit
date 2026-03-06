@@ -3,6 +3,7 @@ import { fileURLToPath } from 'url'
 import { defineConfig, devices } from '@playwright/experimental-ct-vue'
 import { type ReporterDescription } from '@playwright/test'
 import vue from '@vitejs/plugin-vue'
+import svgLoader from 'vite-svg-loader'
 
 import { Platform } from './src/lib/platform'
 import { Appearance } from './src/lib/appearance'
@@ -115,7 +116,7 @@ export default defineConfig({
     deviceScaleFactor: 1,
 
     ctViteConfig: {
-      plugins: [vue()],
+      plugins: [vue(), svgLoader()],
       resolve: {
         alias: {
           '@': path.resolve(__dirname, './src'),

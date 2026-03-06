@@ -42,10 +42,6 @@ const meta = {
       control: 'boolean',
       description: 'Центрировать спиннер абсолютным позиционированием'
     },
-    className: {
-      control: 'text',
-      description: 'Дополнительный CSS класс'
-    }
   },
 } satisfies Meta<typeof Spinner>
 

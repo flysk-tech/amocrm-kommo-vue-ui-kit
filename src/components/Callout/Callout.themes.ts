@@ -1,4 +1,3 @@
-import type { Component } from 'vue'
 import WarningIcon from '@/icons/warning.svg'
 import ErrorIcon from '@/icons/error.svg'
 import SuccessIcon from '@/icons/success.svg'
@@ -11,7 +10,7 @@ type CalloutKey =
   | '--crm-ui-kit-callout-icon-color'
 
 export type CalloutThemeType = {
-  Icon: Component
+  Icon: unknown
 } & {
   [K in CalloutKey]: string
 }

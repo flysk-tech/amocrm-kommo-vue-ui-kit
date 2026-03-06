@@ -64,8 +64,6 @@ import { TextArea, TextareaLightTheme, TextareaDarkTheme } from '@amocrm/vue-ui-
   },
   args: {
     theme: TextareaLightTheme,
-    placeholder: 'TextArea',
-    rows: 2,
   },
   argTypes: {
     theme: {
@@ -94,18 +92,6 @@ import { TextArea, TextareaLightTheme, TextareaDarkTheme } from '@amocrm/vue-ui-
       control: 'number',
       description: 'Максимальная высота при isAutosized'
     },
-    rows: {
-      control: 'number',
-      description: 'Количество строк'
-    },
-    placeholder: {
-      control: 'text',
-      description: 'Текст-заполнитель'
-    },
-    className: {
-      control: 'text',
-      description: 'Дополнительные CSS классы'
-    }
   }
 } satisfies Meta<typeof TextArea>
 
@@ -121,7 +107,7 @@ export const Default: Story = {
       return { args, text }
     },
     template: `
-      <TextArea v-bind="args" v-model="text" />
+      <TextArea v-bind="args" v-model="text" placeholder="TextArea" :rows="2" />
     `
   }),
   parameters: {
@@ -141,14 +127,15 @@ export const States: Story = {
     },
     template: `
       <div style="width: 100%; display: flex; flex-direction: column; gap: 10px;">
-        <TextArea v-bind="args" placeholder="Idle" />
+        <TextArea v-bind="args" placeholder="Idle" :rows="2" />
         <TextArea
           v-bind="args"
           :isInvalid="true"
           invalidDescription="Обязательное поле"
           placeholder="isInvalid"
+          :rows="2"
         />
-        <TextArea v-bind="args" :isDisabled="true" placeholder="isDisabled" />
+        <TextArea v-bind="args" :isDisabled="true" placeholder="isDisabled" :rows="2" />
       </div>
     `
   }),
@@ -173,7 +160,7 @@ export const Autosize: Story = {
       return { args, text }
     },
     template: `
-      <TextArea v-bind="args" v-model="text" />
+      <TextArea v-bind="args" v-model="text" placeholder="TextArea" :rows="2" />
     `
   }),
   parameters: {

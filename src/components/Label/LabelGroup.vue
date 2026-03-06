@@ -12,17 +12,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref, useSlots } from 'vue'
+import { computed, ref } from 'vue'
 import type { LabelGroupProps } from './Label.types'
 import styles from './Label.module.scss'
 
 type Props = LabelGroupProps & {}
 
 const props = defineProps<Props>()
-const slots = useSlots()
+const slots = defineSlots<{ default?(): any }>()
 const groupRef = ref<HTMLDivElement | null>(null)
 
-const childrenArray = slots.default ? slots.default() : []
+const childrenArray = computed(() => slots.default ? slots.default() : [])
 
 defineExpose({
   groupRef,

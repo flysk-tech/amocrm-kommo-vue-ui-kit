@@ -49,21 +49,12 @@ import { Link, LinkPrimaryTheme } from '@amocrm/vue-ui-kit'
   },
   args: {
     theme: LinkPrimaryTheme,
-    href: '#'
   },
   argTypes: {
     theme: {
       control: 'object',
       description: 'Объект с CSS переменными темы'
     },
-    className: {
-      control: 'text',
-      description: 'Дополнительные CSS классы'
-    },
-    href: {
-      control: 'text',
-      description: 'URL ссылки'
-    }
   }
 } satisfies Meta<typeof Link>
 
@@ -78,7 +69,7 @@ export const Default: Story = {
       return { args }
     },
     template: `
-      <Link v-bind="args">
+      <Link v-bind="args" href="#">
         Перейти в Dashboard
       </Link>
     `

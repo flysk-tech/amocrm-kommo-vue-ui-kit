@@ -129,14 +129,6 @@ import {
       control: 'boolean',
       description: 'Отключить все вкладки'
     },
-    onChange: {
-      description: 'Функция обработки изменения состояния',
-      table: {
-        type: {
-          summary: '(values: string[], trigger?: string) => void',
-        }
-      }
-    }
   }
 } satisfies Meta<typeof FilterTabs>
 

@@ -54,10 +54,6 @@ import { ContentBlock, ContentBlockTheme } from '@amocrm/vue-ui-kit'
       control: 'object',
       description: 'Объект с CSS переменными темы'
     },
-    className: {
-      control: 'text',
-      description: 'Дополнительные CSS классы'
-    }
   }
 } satisfies Meta<typeof ContentBlock>
 
