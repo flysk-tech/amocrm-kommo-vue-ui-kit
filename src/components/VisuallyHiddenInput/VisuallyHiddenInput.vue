@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted, watch } from 'vue'
 import BaseInput from '@/components/BaseInput/BaseInput.vue'
 import type { VisuallyHiddenInputProps } from './VisuallyHiddenInput.types'
 import styles from './VisuallyHiddenInput.module.scss'
@@ -23,8 +23,26 @@ const inputProps = computed(() => {
     return { checked: isChecked, ...rest }
   }
 
-  return { defaultChecked: isDefaultChecked, ...rest }
+  return rest
 })
+
+const getInputElement = (): HTMLInputElement | null => {
+  return inputRef.value?.inputRef ?? null
+}
+
+onMounted(() => {
+  if (props.isDefaultChecked) {
+    const el = getInputElement()
+    if (el) el.checked = true
+  }
+})
+
+if (props.isChecked !== undefined) {
+  watch(() => props.isChecked, (val) => {
+    const el = getInputElement()
+    if (el) el.checked = !!val
+  })
+}
 
 defineExpose({
   inputRef,

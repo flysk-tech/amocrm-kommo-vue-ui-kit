@@ -27,6 +27,8 @@
 </template>
 
 <script setup lang="ts">
+defineOptions({ inheritAttrs: false })
+
 import { ref } from 'vue'
 import BaseInput from '@/components/BaseInput/BaseInput.vue'
 import Text from '@/components/Text/Text.vue'

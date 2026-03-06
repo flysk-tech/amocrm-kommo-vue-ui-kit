@@ -35,6 +35,8 @@
 </template>
 
 <script setup lang="ts">
+defineOptions({ inheritAttrs: false })
+
 import { ref, watch, nextTick } from 'vue'
 import type { TextAreaProps } from './TextArea.types'
 import styles from './TextArea.module.scss'
