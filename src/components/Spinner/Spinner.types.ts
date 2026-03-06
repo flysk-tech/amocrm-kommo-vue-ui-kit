@@ -4,10 +4,6 @@ export interface SpinnerProps {
    */
   isCentered?: boolean
   /**
-   * Дополнительный CSS класс
-   */
-  className?: string
-  /**
    * Объект с CSS переменными темы
    */
   theme?: Record<string, string>

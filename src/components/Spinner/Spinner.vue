@@ -2,8 +2,7 @@
   <span
     :class="[
       styles.spinner,
-      { [styles.centered]: isCentered },
-      className
+      { [styles.centered]: isCentered }
     ]"
     :style="theme || {}"
     v-bind="$attrs"
@@ -18,7 +17,6 @@ type Props = SpinnerProps & {}
 
 withDefaults(defineProps<Props>(), {
   isCentered: false,
-  className: '',
   theme: undefined
 })
 </script>

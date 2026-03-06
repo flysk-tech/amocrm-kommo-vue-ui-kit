@@ -1,8 +1,7 @@
-import { describe, it, expect, vi } from 'vitest'
+import { describe, it, expect } from 'vitest'
 import { render, fireEvent } from '@testing-library/vue'
 import Button from '../Button.vue'
 import { ButtonPrimaryTheme } from '../Button.themes'
-import type { ButtonProps } from '../Button.types'
 
 describe('Button', () => {
   it('should be defined', () => {
@@ -24,11 +23,13 @@ describe('Button', () => {
     expect(button).toHaveTextContent('Go to Dashboard')
   })
 
-  it('renders with custom className', () => {
+  it('applies external class via Vue class binding', () => {
     const { getByRole } = render(Button, {
       props: {
         theme: ButtonPrimaryTheme,
-        className: 'custom-class',
+      },
+      attrs: {
+        class: 'custom-class',
       },
       slots: {
         default: 'Button',
@@ -54,12 +55,10 @@ describe('Button', () => {
     expect(button).toHaveAttribute('type', 'submit')
   })
 
-  it('handles click events when enabled', async () => {
-    const onClick = vi.fn()
-    const { getByRole } = render(Button, {
+  it('emits click event when enabled', async () => {
+    const { getByRole, emitted } = render(Button, {
       props: {
         theme: ButtonPrimaryTheme,
-        onClick,
       },
       slots: {
         default: 'Click me',
@@ -69,16 +68,15 @@ describe('Button', () => {
     const button = getByRole('button')
     await fireEvent.click(button)
 
-    expect(onClick).toHaveBeenCalledTimes(1)
+    expect(emitted()).toHaveProperty('click')
+    expect(emitted().click).toHaveLength(1)
   })
 
-  it('does not call onClick when disabled', async () => {
-    const onClick = vi.fn()
-    const { getByRole } = render(Button, {
+  it('does not emit click when disabled', async () => {
+    const { getByRole, emitted } = render(Button, {
       props: {
         theme: ButtonPrimaryTheme,
         isDisabled: true,
-        onClick,
       },
       slots: {
         default: 'Disabled',
@@ -88,7 +86,7 @@ describe('Button', () => {
     const button = getByRole('button')
     await fireEvent.click(button)
 
-    expect(onClick).not.toHaveBeenCalled()
+    expect(emitted()).not.toHaveProperty('click')
   })
 
   it('renders disabled state correctly', () => {
@@ -124,13 +122,11 @@ describe('Button', () => {
     expect(button).not.toHaveTextContent('Loading')
   })
 
-  it('does not call onClick when loading', async () => {
-    const onClick = vi.fn()
-    const { getByRole } = render(Button, {
+  it('does not emit click when loading', async () => {
+    const { getByRole, emitted } = render(Button, {
       props: {
         theme: ButtonPrimaryTheme,
         isLoading: true,
-        onClick,
       },
       slots: {
         default: 'Loading',
@@ -140,7 +136,7 @@ describe('Button', () => {
     const button = getByRole('button')
     await fireEvent.click(button)
 
-    expect(onClick).not.toHaveBeenCalled()
+    expect(emitted()).not.toHaveProperty('click')
   })
 
   it('renders before slot content', () => {
@@ -196,14 +192,12 @@ describe('Button', () => {
     })
   })
 
-  it('handles isClickableWhileDisabled prop', async () => {
-    const onClick = vi.fn()
-    const { getByRole } = render(Button, {
+  it('emits click when disabled with isClickableWhileDisabled', async () => {
+    const { getByRole, emitted } = render(Button, {
       props: {
         theme: ButtonPrimaryTheme,
         isDisabled: true,
         isClickableWhileDisabled: true,
-        onClick,
       },
       slots: {
         default: 'Clickable while disabled',
@@ -213,7 +207,8 @@ describe('Button', () => {
     const button = getByRole('button')
     await fireEvent.click(button)
 
-    expect(onClick).toHaveBeenCalledTimes(1)
+    expect(emitted()).toHaveProperty('click')
+    expect(emitted().click).toHaveLength(1)
   })
 
   it('renders success state text when provided', () => {

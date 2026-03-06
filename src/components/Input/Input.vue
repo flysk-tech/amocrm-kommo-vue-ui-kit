@@ -1,5 +1,5 @@
 <template>
-  <div :class="[styles.wrapper, className]" :style="effectiveTheme">
+  <div :class="[styles.wrapper, $attrs.class]" :style="effectiveTheme">
     <div
       :class="[
         styles.input_wrapper,
@@ -18,13 +18,9 @@
         ]"
       >
         <BaseInput
-          v-bind="$attrs"
+          v-bind="inputAttrs"
           ref="inputRef"
-          :className="[
-            {
-              [styles.has_after]: Boolean(after) || Boolean($slots.after)
-            }
-          ].filter(Boolean).join(' ')"
+          :class="{ [styles.has_after]: Boolean(after) || Boolean($slots.after) }"
           :isDisabled="isDisabled"
           :isReadonly="isReadonly"
           :isPlaceholderVisibleOnFocus="isPlaceholderVisibleOnFocus"
@@ -49,15 +45,23 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, useAttrs } from 'vue'
 import type { InputProps } from './Input.types'
+
+defineOptions({ inheritAttrs: false })
 import { InputInvalidTextTheme, InputLightTheme } from './Input.themes'
 import BaseInput from '@/components/BaseInput/BaseInput.vue'
 import styles from './Input.module.scss'
 
 type Props = InputProps & {
-  modelValue?: string | number
+  modelValue?: string | number | null
 }
+
+const attrs = useAttrs()
+const inputAttrs = computed(() => {
+  const { class: _, style: __, ...rest } = attrs
+  return rest
+})
 
 interface Emits {
   (e: 'update:modelValue', value: string): void
@@ -68,7 +72,6 @@ interface Emits {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  className: '',
   isInvalid: false,
   isDisabled: false,
   isReadonly: false,

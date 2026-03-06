@@ -1,31 +1,26 @@
 import { describe, it, expect } from 'vitest'
-import { render, screen } from '@testing-library/vue'
+import { render } from '@testing-library/vue'
 import Text from '../Text.vue'
 import { TextPrimaryTheme } from '../Text.themes'
 
-const renderText = (props: any = {}, slots: any = {}) => {
-  return render(Text, {
-    props: {
-      size: 'l',
-      theme: TextPrimaryTheme,
-      ...props,
-    },
-    slots,
-  })
-}
-
 describe('Text', () => {
-  it('should be defined', () => {
-    expect(Text).toBeDefined()
+  it('applies external class via Vue class binding', () => {
+    const { container } = render(Text, {
+      props: { size: 'm', theme: TextPrimaryTheme },
+      attrs: { class: 'custom-class' },
+      slots: { default: 'Hello' },
+    })
+
+    const span = container.querySelector('span')
+    expect(span?.classList.contains('custom-class')).toBe(true)
   })
 
-  it('should render text correctly', async () => {
-    const text = 'Text'
+  it('renders slot content', () => {
+    const { getByText } = render(Text, {
+      props: { size: 'm', theme: TextPrimaryTheme },
+      slots: { default: 'Hello World' },
+    })
 
-    renderText({}, { default: text })
-
-    const elements = screen.getAllByText(text)
-
-    expect(elements).toHaveLength(1)
+    expect(getByText('Hello World')).toBeInTheDocument()
   })
 })

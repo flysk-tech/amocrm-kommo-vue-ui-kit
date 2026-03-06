@@ -4,7 +4,6 @@
     :class="[
       styles.text,
       styles[size],
-      className,
       {
         [styles.ellipsis]: isEllipsis,
         [styles.line_clamp]: isLineClampAllowed
@@ -30,7 +29,6 @@ type Props = TextProps & {}
 const props = withDefaults(defineProps<Props>(), {
   isEllipsis: false,
   maxRows: 1,
-  className: '',
   style: () => ({})
 })
 

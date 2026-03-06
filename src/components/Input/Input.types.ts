@@ -16,21 +16,6 @@ export interface InputProps {
    * Is `placeholder` should be visible when Input in `focus`.
    */
   isPlaceholderVisibleOnFocus?: boolean
-  // Common input attributes
-  value?: string | number
-  placeholder?: string
-  name?: string
-  id?: string
-  autocomplete?: string
-  type?: string
-  maxlength?: number
-  minlength?: number
-  pattern?: string
-  required?: boolean
-  onInput?: (event: any) => void
-  onChange?: (event: any) => void
-  onFocus?: (event: any) => void
-  onBlur?: (event: any) => void
   /**
    * Valid value is entered or not.
    *
@@ -55,10 +40,6 @@ export interface InputProps {
    * Optional - if not provided, global CSS variables will be used.
    */
   theme?: InputTheme
-  /**
-   * Additional CSS class name
-   */
-  className?: string
 }
 
 export type InputThemeType = InputTheme

@@ -7,10 +7,6 @@ export type AnimationRefType = (onAnimationEnd?: () => void) => void | null
 // Пропсы Button компонента
 export interface ButtonProps {
   /**
-   * Дополнительные CSS классы
-   */
-  className?: string
-  /**
    * HTML тип кнопки
    */
   type?: 'button' | 'submit' | 'reset'
@@ -54,8 +50,4 @@ export interface ButtonProps {
    * Будет ли обрабатываться клик по заблокированной кнопке
    */
   isClickableWhileDisabled?: boolean
-  /**
-   * Обработчик клика
-   */
-  onClick?: (event: MouseEvent) => void
 }

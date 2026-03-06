@@ -4,7 +4,6 @@
     :type="type"
     :class="[
       styles.button,
-      className,
       {
         [styles.invalid]: shouldShowInvalidAnimation,
         [styles.success]: shouldShowSuccessfulState,
@@ -55,18 +54,16 @@ import type { ButtonProps } from './Button.types'
 import type { ButtonThemeType } from './Button.themes'
 import styles from './Button.module.scss'
 
-type Props = ButtonProps & {
-  onClick?: (event: MouseEvent) => void
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  className: '',
+const props = withDefaults(defineProps<ButtonProps>(), {
   type: 'button',
-  onClick: undefined,
   isLoading: false,
   isDisabled: false,
   isClickableWhileDisabled: false
 })
+
+const emit = defineEmits<{
+  (e: 'click', event: MouseEvent): void
+}>()
 
 // Композиционные функции для анимаций - переиспользуют React логику
 const { shouldShowInvalidAnimation, showInvalidAnimation } = useShowInvalidAnimation()
@@ -113,8 +110,6 @@ const handleClick = (event: MouseEvent) => {
     return
   }
 
-  if (props.onClick) {
-    props.onClick(event)
-  }
+  emit('click', event)
 }
 </script>

@@ -6,8 +6,7 @@
       styles.input,
       {
         [styles.placeholder_visible]: isPlaceholderVisibleOnFocus
-      },
-      className
+      }
     ]"
     :disabled="isDisabled"
     :readonly="isReadonly"
@@ -19,12 +18,9 @@ import { ref } from 'vue'
 import type { BaseInputProps } from './BaseInput.types'
 import styles from './BaseInput.module.scss'
 
-type Props = BaseInputProps & {
-  className?: string
-}
+type Props = BaseInputProps
 
 const props = withDefaults(defineProps<Props>(), {
-  className: '',
   isDisabled: false,
   isReadonly: false,
   isPlaceholderVisibleOnFocus: false,

@@ -2,7 +2,7 @@
   <a
     ref="linkRef"
     v-bind="$attrs"
-    :class="[styles.link, className]"
+    :class="styles.link"
     :style="theme"
   >
     <slot />
@@ -14,13 +14,9 @@ import { ref } from 'vue'
 import type { LinkProps } from './Link.types'
 import styles from './Link.module.scss'
 
-type Props = LinkProps & {
-  className?: string
-}
+type Props = LinkProps
 
-const props = withDefaults(defineProps<Props>(), {
-  className: '',
-})
+const props = defineProps<Props>()
 
 const linkRef = ref<HTMLAnchorElement | null>(null)
 

@@ -29,10 +29,6 @@ export interface TextProps {
    */
   theme?: TextTheme
   /**
-   * Additional CSS class name.
-   */
-  className?: string
-  /**
    * Additional CSS styles.
    */
   style?: Record<string, any>

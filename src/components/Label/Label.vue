@@ -4,7 +4,6 @@
     ref="labelRef"
     :class="[
       textPlacementClass,
-      className,
       {
         [styles.centered]: isCentered
       }
@@ -26,12 +25,9 @@ import { computed, ref } from 'vue'
 import type { LabelProps } from './Label.types'
 import styles from './Label.module.scss'
 
-type Props = LabelProps & {
-  className?: string
-}
+type Props = LabelProps
 
 const props = withDefaults(defineProps<Props>(), {
-  className: '',
   textPlacement: 'top',
   isCentered: false,
 })
