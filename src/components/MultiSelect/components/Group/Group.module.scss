@@ -9,7 +9,7 @@
   gap: 8px;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   padding: var(--crm-ui-kit-multiselect-group-padding);
   box-sizing: content-box;
 
@@ -17,6 +17,7 @@
   font-weight: var(--crm-ui-kit-multiselect-group-font-weight);
   color: var(--crm-ui-kit-multiselect-group-color);
   background-color: var(--crm-ui-kit-multiselect-group-background-color);
+  text-transform: var(--crm-ui-kit-multiselect-group-text-transform);
 
   white-space: nowrap;
   overflow: hidden;
