@@ -43,7 +43,7 @@
     "test:e2e": "./scripts/generate_env.docker.sh && docker compose --env-file=./.env.docker up --abort-on-container-exit",
     "test:e2e:update-snapshots": "./scripts/generate_env.docker.sh -u && docker compose --env-file=./.env.docker up --abort-on-container-exit",
     "test:e2e:ci": "playwright test --config playwright-ct.config.ts",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "lint": "eslint . --fix",
     "type-check": "vue-tsc --build --force",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",

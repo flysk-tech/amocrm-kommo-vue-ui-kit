@@ -10,14 +10,9 @@ export {
   ListTheme as SelectListTheme,
   type ListThemeType as SelectListThemeType,
 } from '../List'
-export {
-  SelectButtonLightTheme,
-  SelectButtonDarkTheme,
-  type SelectButtonThemeType,
-} from '../SelectButton'
 
 // Subcomponents
-export { SelectButton } from './components/Button'
+export { SelectTrigger } from './components/Button'
 export { SelectList } from './components/List'
 export { SelectItem } from './components/Item'
 export { SelectValue } from './components/Value'

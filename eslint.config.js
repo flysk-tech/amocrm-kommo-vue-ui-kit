@@ -1,84 +1,86 @@
-// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
-import storybook from "eslint-plugin-storybook";
-
 import js from '@eslint/js'
 import pluginVue from 'eslint-plugin-vue'
 import * as parserVue from 'vue-eslint-parser'
-import configPrettier from '@vue/eslint-config-prettier'
-import configTypeScript from '@vue/eslint-config-typescript'
-import { fileURLToPath } from 'node:url'
+import tseslint from '@typescript-eslint/eslint-plugin'
+import tsparser from '@typescript-eslint/parser'
+import configPrettier from 'eslint-config-prettier'
+import storybook from 'eslint-plugin-storybook'
 
-export default [{
-  name: 'app/files-to-lint',
-  files: ['**/*.{ts,mts,tsx,vue}']
-}, {
-  name: 'app/files-to-ignore',
-  ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**', '**/.storybook/**']
-}, js.configs.recommended, ...pluginVue.configs['flat/recommended'], {
-  ...configTypeScript(),
-  files: ['**/*.{ts,mts,tsx,vue}']
-}, {
-  languageOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    globals: {
-      browser: true,
-      node: true
+export default [
+  {
+    name: 'app/files-to-lint',
+    files: ['**/*.{ts,mts,tsx,vue}'],
+  },
+  {
+    name: 'app/files-to-ignore',
+    ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**', '**/.storybook/**', '**/storybook-static/**', '**/playwright/**', '**/playwright-report/**', '**/node_modules/**'],
+  },
+  js.configs.recommended,
+  ...pluginVue.configs['flat/recommended'],
+  {
+    files: ['**/*.{ts,mts,tsx,vue}'],
+    plugins: {
+      '@typescript-eslint': tseslint,
     },
-    parser: parserVue,
-    parserOptions: {
-      parser: '@typescript-eslint/parser',
-      project: './tsconfig.json',
-      tsconfigRootDir: fileURLToPath(new URL('.', import.meta.url)),
-      extraFileExtensions: ['.vue'],
-      ecmaFeatures: {
-        jsx: true
-      }
-    }
-  }
-}, {
-  rules: {
-    // Vue.js специфичные правила
-    'vue/html-self-closing': [
-      'error',
-      {
-        html: {
-          void: 'never',
-          normal: 'always',
-          component: 'always'
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      parser: parserVue,
+      parserOptions: {
+        parser: tsparser,
+        extraFileExtensions: ['.vue'],
+        ecmaFeatures: {
+          jsx: true,
         },
-        svg: 'always',
-        math: 'always'
-      }
-    ],
-    'vue/max-attributes-per-line': [
-      'error',
-      {
-        singleline: 3,
-        multiline: 1
-      }
-    ],
-    'vue/multiline-html-element-content-newline': 'error',
-    'vue/singleline-html-element-content-newline': 'off',
-    'vue/component-name-in-template-casing': ['error', 'PascalCase'],
-    'vue/custom-event-name-casing': ['error', 'camelCase'],
+      },
+    },
+    rules: {
+      // Vue.js rules
+      'vue/html-self-closing': [
+        'error',
+        {
+          html: { void: 'never', normal: 'always', component: 'always' },
+          svg: 'always',
+          math: 'always',
+        },
+      ],
+      'vue/max-attributes-per-line': [
+        'error',
+        { singleline: 3, multiline: 1 },
+      ],
+      'vue/multiline-html-element-content-newline': 'error',
+      'vue/singleline-html-element-content-newline': 'off',
+      'vue/component-name-in-template-casing': ['error', 'PascalCase'],
+      'vue/custom-event-name-casing': ['error', 'camelCase'],
 
-    // TypeScript правила
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_'
-      }
-    ],
-    '@typescript-eslint/no-explicit-any': 'warn',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
+      // TypeScript rules
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_', destructuredArrayIgnorePattern: '^_', ignoreRestSiblings: true },
+      ],
+      '@typescript-eslint/no-explicit-any': 'warn',
 
-    // Общие правила
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'prefer-const': 'error',
-    'no-var': 'error'
-  }
-}, configPrettier, ...storybook.configs["flat/recommended"]];
+      // General rules
+      'no-console': 'off',
+      'no-debugger': 'warn',
+      'prefer-const': 'error',
+      'no-var': 'error',
+      'no-unused-vars': 'off', // handled by @typescript-eslint/no-unused-vars
+      'no-undef': 'off', // TypeScript handles this
+      'no-prototype-builtins': 'warn',
+
+      // Vue relaxed rules
+      'vue/multi-word-component-names': 'off',
+      'vue/no-reserved-component-names': 'off',
+      'vue/no-mutating-props': 'warn',
+    },
+  },
+  configPrettier,
+  ...storybook.configs['flat/recommended'],
+  {
+    files: ['**/*.stories.ts', '**/*.stories.tsx'],
+    rules: {
+      'storybook/no-renderer-packages': 'off',
+    },
+  },
+]

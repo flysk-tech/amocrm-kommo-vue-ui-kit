@@ -1,1 +1,1 @@
-export { default as SelectButton } from './Button.vue'
+export { default as SelectTrigger } from './Button.vue'
