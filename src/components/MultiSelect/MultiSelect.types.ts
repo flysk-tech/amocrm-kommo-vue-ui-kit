@@ -4,6 +4,7 @@ export interface MultiSelectItem {
   value: string | number
   option: string
   group?: string | number
+  isOnline?: boolean
 }
 
 export interface MultiSelectGroup {
@@ -35,6 +36,7 @@ export interface MultiSelectContextProps {
   hoveredItemValue: string | number | null
   mode: 'single' | 'multi'
   groupSelectable: boolean
+  searchQuery: string
 
   // Actions
   onOpen: (isOpen: boolean) => void
@@ -42,6 +44,11 @@ export interface MultiSelectContextProps {
   onToggleGroup: (groupId: string | number) => void
   onToggleAll: () => void
   onHoveredItemChange: (value: string | number | null) => void
+  onSearchChange: (query: string) => void
+
+  // Search helpers
+  isItemMatchingSearch: (item: MultiSelectItem) => boolean
+  isGroupMatchingSearch: (groupId: string | number) => boolean
 
   // Group helpers
   getGroupItems: (groupId: string | number) => MultiSelectItem[]

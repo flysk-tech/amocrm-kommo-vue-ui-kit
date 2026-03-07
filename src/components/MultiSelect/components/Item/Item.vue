@@ -1,5 +1,6 @@
 <template>
   <li
+    v-if="isVisible"
     ref="itemRef"
     v-bind="$attrs"
     role="option"
@@ -22,7 +23,9 @@
       :tabindex="-1"
       @click.stop
     />
-    <Option>{{ item.option }}</Option>
+    <slot>
+      <Option>{{ item.option }}</Option>
+    </slot>
   </li>
 </template>
 
@@ -49,6 +52,7 @@ const itemRef = ref<HTMLLIElement | null>(null)
 
 const checkboxTheme = CheckboxLightTheme
 
+const isVisible = computed(() => multiSelectContext.isItemMatchingSearch(props.item))
 const isSelected = computed(() => multiSelectContext.values.has(props.item.value))
 const isHovered = computed(() => multiSelectContext.hoveredItemValue === props.item.value)
 

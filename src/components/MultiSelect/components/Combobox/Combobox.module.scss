@@ -1,0 +1,68 @@
+.combobox {
+  position: relative;
+  width: var(--crm-ui-kit-multiselect-combobox-width);
+  box-sizing: border-box;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  height: var(--crm-ui-kit-multiselect-combobox-height);
+  padding: var(--crm-ui-kit-multiselect-combobox-padding);
+  box-sizing: border-box;
+
+  background-color: var(--crm-ui-kit-multiselect-combobox-background-color);
+  border: var(--crm-ui-kit-multiselect-combobox-border);
+  border-radius: var(--crm-ui-kit-multiselect-combobox-border-radius);
+
+  cursor: text;
+
+  &:hover {
+    border-color: var(--crm-ui-kit-multiselect-combobox-hover-border-color);
+  }
+}
+
+.focused {
+  border-color: var(--crm-ui-kit-multiselect-combobox-focus-border-color);
+}
+
+.invalid {
+  border-color: var(--crm-ui-kit-multiselect-combobox-error-border-color);
+}
+
+.disabled {
+  opacity: var(--crm-ui-kit-disabled-opacity, 0.6);
+  pointer-events: none;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: var(--crm-ui-kit-multiselect-combobox-font-size);
+  font-family: inherit;
+  color: var(--crm-ui-kit-multiselect-combobox-color);
+  box-sizing: border-box;
+  padding: 0;
+
+  &::placeholder {
+    color: var(--crm-ui-kit-multiselect-combobox-placeholder-color);
+  }
+}
+
+.arrow {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-left: auto;
+  flex-shrink: 0;
+  background: var(--crm-ui-kit-icon-arrow-down) no-repeat center;
+  background-size: contain;
+  transition: transform 0.15s ease;
+}
+
+.arrowOpen {
+  transform: rotate(180deg);
+}

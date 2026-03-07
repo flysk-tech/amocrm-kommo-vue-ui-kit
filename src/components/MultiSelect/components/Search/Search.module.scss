@@ -1,0 +1,28 @@
+.search {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: var(--crm-ui-kit-multiselect-search-padding);
+  background-color: var(--crm-ui-kit-multiselect-search-background-color);
+  border-bottom: var(--crm-ui-kit-multiselect-search-border-bottom);
+  box-sizing: content-box;
+  list-style-type: none;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  padding: var(--crm-ui-kit-multiselect-search-input-padding);
+  box-sizing: border-box;
+
+  font-size: var(--crm-ui-kit-multiselect-search-font-size);
+  font-family: inherit;
+  color: var(--crm-ui-kit-multiselect-search-color);
+  background: transparent;
+  border: none;
+  outline: none;
+
+  &::placeholder {
+    color: var(--crm-ui-kit-palette-placeholder-primary);
+  }
+}

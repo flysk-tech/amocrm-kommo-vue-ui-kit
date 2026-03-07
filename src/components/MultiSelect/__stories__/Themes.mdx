@@ -1,0 +1,52 @@
+import { Title, Meta } from '@storybook/addon-docs/blocks'
+import * as MultiSelectStories from './MultiSelect.stories'
+import { ThemeVisualization } from '@storybook-utils/components'
+import { MultiSelectRootTheme } from '../MultiSelect.themes'
+import { MultiSelectItemTheme } from '../components/Item'
+import { MultiSelectGroupTheme } from '../components/Group'
+import { MultiSelectComboboxTheme } from '../components/Combobox'
+import { ListTheme as SelectListTheme } from '../../List'
+
+<Meta title="Components/MultiSelect/Themes" of={MultiSelectStories} />
+
+<Title>Темы</Title>
+
+## MultiSelectRootTheme
+
+```typescript
+import { MultiSelectRootTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/MultiSelect'
+```
+
+<ThemeVisualization theme={MultiSelectRootTheme} />
+
+## MultiSelectComboboxTheme
+
+```typescript
+import { MultiSelectComboboxTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/MultiSelect'
+```
+
+<ThemeVisualization theme={MultiSelectComboboxTheme} />
+
+## MultiSelectItemTheme
+
+```typescript
+import { MultiSelectItemTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/MultiSelect'
+```
+
+<ThemeVisualization theme={MultiSelectItemTheme} />
+
+## MultiSelectGroupTheme
+
+```typescript
+import { MultiSelectGroupTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/MultiSelect'
+```
+
+<ThemeVisualization theme={MultiSelectGroupTheme} />
+
+## SelectListTheme
+
+```typescript
+import { SelectListTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Select'
+```
+
+<ThemeVisualization theme={SelectListTheme} />

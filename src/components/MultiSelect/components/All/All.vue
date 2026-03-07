@@ -1,5 +1,6 @@
 <template>
   <li
+    v-if="!multiSelectContext.searchQuery"
     :class="styles.item"
     :style="theme"
     @click="handleClick"

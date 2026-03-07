@@ -1,5 +1,5 @@
 <template>
-  <li :class="styles.group" role="group" :aria-label="group.label">
+  <li v-if="isVisible" :class="styles.group" role="group" :aria-label="group.label">
     <div
       :class="[
         styles.header,
@@ -43,14 +43,19 @@ const DISPLAY_NAME = 'MultiSelect.Group'
 
 const COLOR_PATTERN = /^(#[\da-f]{3,8}|rgba?\(\s*\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}\s*(,\s*(0|1|0?\.\d+))?\s*\)|hsla?\(\s*\d{1,3}\s*,\s*\d{1,3}%\s*,\s*\d{1,3}%\s*(,\s*(0|1|0?\.\d+))?\s*\)|[a-z]{3,20})$/i
 
+import type { MultiSelectGroupThemeType } from './Group.themes'
+
 const props = withDefaults(defineProps<{
   group: MultiSelectGroupType
+  theme: MultiSelectGroupThemeType
   emptyText?: string
 }>(), {
   emptyText: 'Нет элементов',
 })
 
 const multiSelectContext = useMultiSelectContext(DISPLAY_NAME)
+
+const isVisible = computed(() => multiSelectContext.isGroupMatchingSearch(props.group.id))
 
 const checkboxTheme = CheckboxLightTheme
 
@@ -81,10 +86,11 @@ const isValidColor = (color: string): boolean => {
 }
 
 const headerStyle = computed(() => {
+  const base = { ...props.theme } as Record<string, string>
   if (props.group.color && isValidColor(props.group.color)) {
-    return { backgroundColor: props.group.color }
+    base.backgroundColor = props.group.color
   }
-  return undefined
+  return base
 })
 
 const handleHeaderClick = () => {

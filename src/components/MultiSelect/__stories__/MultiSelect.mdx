@@ -1,0 +1,17 @@
+import { Title, Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import { CodeBlock } from '@storybook-utils/components'
+import * as MultiSelectStories from './MultiSelect.stories'
+
+<Meta of={MultiSelectStories} />
+
+<Title>MultiSelect</Title>
+
+<Canvas of={MultiSelectStories.Grouped} />
+
+## Использование
+
+<CodeBlock of={MultiSelectStories.Grouped} />
+
+## Props
+
+<Controls />

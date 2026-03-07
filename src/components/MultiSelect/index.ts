@@ -9,3 +9,7 @@ export { MultiSelectItem } from './components/Item'
 export { MultiSelectGroup } from './components/Group'
 export { MultiSelectAll } from './components/All'
 export { MultiSelectValue } from './components/Value'
+export { MultiSelectSearch } from './components/Search'
+export { MultiSelectCombobox } from './components/Combobox'
+
+export { useMultiSelectContext } from './MultiSelect.context'

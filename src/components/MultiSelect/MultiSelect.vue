@@ -35,6 +35,7 @@ const emit = defineEmits<{
 const multiSelectRef = ref<HTMLDivElement | null>(null)
 const internalIsOpened = ref(props.isDefaultOpen ?? false)
 const internalHoveredValue = ref<string | number | null>(null)
+const searchQuery = ref('')
 
 // Internal values Set for uncontrolled mode
 const internalValues = ref<Set<string | number>>(
@@ -75,6 +76,9 @@ const handleOpen = (open: boolean) => {
   if (!(props.isDisabled ?? false)) {
     if (!isOpenControlled.value) {
       internalIsOpened.value = open
+    }
+    if (!open) {
+      searchQuery.value = ''
     }
     emit('openChange', open)
   }
@@ -169,6 +173,23 @@ const handleHoveredItemChange = (value: string | number | null) => {
   internalHoveredValue.value = value
 }
 
+const handleSearchChange = (query: string) => {
+  searchQuery.value = query
+}
+
+const isItemMatchingSearch = (item: MultiSelectItem): boolean => {
+  const q = searchQuery.value.trim().toLowerCase()
+  if (!q) return true
+  return item.option.toLowerCase().includes(q)
+}
+
+const isGroupMatchingSearch = (groupId: string | number): boolean => {
+  const q = searchQuery.value.trim().toLowerCase()
+  if (!q) return true
+  const groupItems = getGroupItems(groupId)
+  return groupItems.some(item => item.option.toLowerCase().includes(q))
+}
+
 // Watch items prop — remove stale selected values
 watch(
   () => props.items,
@@ -201,11 +222,15 @@ const context = reactive({
   get hoveredItemValue() { return internalHoveredValue.value },
   get mode() { return props.mode ?? 'multi' },
   get groupSelectable() { return props.groupSelectable ?? false },
+  get searchQuery() { return searchQuery.value },
   onOpen: handleOpen,
   onToggleItem: handleToggleItem,
   onToggleGroup: handleToggleGroup,
   onToggleAll: handleToggleAll,
   onHoveredItemChange: handleHoveredItemChange,
+  onSearchChange: handleSearchChange,
+  isItemMatchingSearch,
+  isGroupMatchingSearch,
   getGroupItems,
   isGroupAllSelected,
   isGroupPartiallySelected,
