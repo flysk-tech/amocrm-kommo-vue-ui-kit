@@ -80,9 +80,9 @@ export const Uncontrolled: Story = {
         :theme="CheckboxLabelTheme"
         textPlacement="right"
         :isCentered="true"
+        text="Нажми на меня"
       >
         <Checkbox v-bind="args" :isDefaultChecked="true" />
-        text="Нажми на меня"
       </Label>
     `
   }),
@@ -146,11 +146,37 @@ export const States: Story = {
 export const CheckboxLight: Story = {
   tags: ['!autodocs'],
   args: { theme: CheckboxLightTheme },
+  render: (args) => ({
+    components: { Checkbox, Label },
+    setup() {
+      const checked = ref(false)
+      const onChange = (e: Event) => { checked.value = (e.target as HTMLInputElement).checked }
+      return { args, checked, onChange, CheckboxLabelTheme }
+    },
+    template: `
+      <Label :theme="CheckboxLabelTheme" textPlacement="right" :isCentered="true" text="Нажми на меня">
+        <Checkbox v-bind="args" :isChecked="checked" @change="onChange" />
+      </Label>
+    `
+  }),
 }
 
 export const CheckboxDark: Story = {
   tags: ['!autodocs'],
   args: { theme: CheckboxDarkTheme },
+  render: (args) => ({
+    components: { Checkbox, Label },
+    setup() {
+      const checked = ref(false)
+      const onChange = (e: Event) => { checked.value = (e.target as HTMLInputElement).checked }
+      return { args, checked, onChange, CheckboxLabelTheme }
+    },
+    template: `
+      <Label :theme="CheckboxLabelTheme" textPlacement="right" :isCentered="true" text="Нажми на меня">
+        <Checkbox v-bind="args" :isChecked="checked" @change="onChange" />
+      </Label>
+    `
+  }),
 }
 
 export const CheckboxSmallLight: Story = {
