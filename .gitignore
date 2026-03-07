@@ -45,3 +45,9 @@ Thumbs.db
 # Husky
 .husky/_
 *storybook.log
+
+# Playwright
+playwright-report/
+playwright/.cache/
+__diff_output__/
+e2e-results.json
