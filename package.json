@@ -1,7 +1,7 @@
 {
   "name": "@flysk-tech/amocrm-kommo-vue-ui-kit",
   "description": "Ready-to-use Vue 3 components which implements amoCRM design",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
