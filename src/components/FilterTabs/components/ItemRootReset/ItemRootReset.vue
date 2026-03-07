@@ -22,7 +22,8 @@ import styles from '../ItemRoot/ItemRoot.module.scss'
 
 const props = defineProps<ItemRootResetProps>()
 
-const { isDisabled: groupIsDisabled } = useFilterTabsContext(DISPLAY_NAME)
+const filterTabsContext = useFilterTabsContext(DISPLAY_NAME)
+const groupIsDisabled = computed(() => filterTabsContext.isDisabled)
 
 const contextValue = computed(() => {
   const { theme, className, ...rest } = props

@@ -65,7 +65,7 @@ import {
   RadioGroupTheme,
   RadioGroupItemRootTheme,
   RadioPrimaryTheme
-} from '@amocrm/vue-ui-kit'
+} from '@flysk-tech/amocrm-kommo-vue-ui-kit'
 \`\`\`
 
 ## API

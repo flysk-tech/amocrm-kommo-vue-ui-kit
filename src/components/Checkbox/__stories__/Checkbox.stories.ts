@@ -23,50 +23,6 @@ const themeMap = {
 const meta = {
   title: 'Components/Checkbox',
   component: Checkbox,
-  parameters: {
-    docs: {
-      description: {
-        component: `
-Компонент Checkbox для создания чекбоксов с различными темами и состояниями.
-
-## Возможности
-
-- **Четыре темы**: Light, SmallLight, Dark, SmallDark
-- **Два стиля отметки**: галочка (mark) и индетерминированное состояние (indeterminate)
-- **Состояния**: обычное, отключено, ошибка
-- **Touch поддержка**: автоматическое определение сенсорных устройств
-- **Label интеграция**: специальная тема для Label
-
-## Применение
-
-- Формы с множественным выбором
-- Списки с выбором элементов
-- Настройки с переключателями
-
-## Импорт
-
-\`\`\`typescript
-import { Checkbox, CheckboxLightTheme, CheckboxLabelTheme } from '@amocrm/vue-ui-kit'
-import { Label } from '@amocrm/vue-ui-kit'
-\`\`\`
-
-## API
-
-### Props
-
-- \`theme\` - объект темы оформления (обязательный)
-- \`checkedStyle\` - стиль отметки ('mark' | 'indeterminate')
-- \`isInvalid\` - отображать ошибку
-- \`className\` - дополнительные CSS классы
-- \`v-model\` - двустороннее связывание для checked состояния (через v-bind="$attrs")
-
-### Events
-
-- \`@change\` - событие изменения состояния (через v-bind="$attrs")
-        `
-      }
-    }
-  },
   args: {
     theme: CheckboxLightTheme,
   },
@@ -75,16 +31,13 @@ import { Label } from '@amocrm/vue-ui-kit'
       control: 'select',
       options: Object.keys(themeMap),
       mapping: themeMap,
-      description: 'Тема оформления'
     },
     checkedStyle: {
       control: 'select',
       options: ['mark', 'indeterminate'],
-      description: 'Стиль отметки'
     },
     isInvalid: {
       control: 'boolean',
-      description: 'Отображать ошибку'
     },
   }
 } satisfies Meta<typeof Checkbox>
@@ -98,30 +51,22 @@ export const Default: Story = {
     components: { Checkbox, Label, Text },
     setup() {
       const checked = ref(true)
-      return { args, checked, CheckboxLabelTheme, TextPrimaryTheme }
+      const onChange = (e: Event) => {
+        checked.value = (e.target as HTMLInputElement).checked
+      }
+      return { args, checked, onChange, CheckboxLabelTheme, TextPrimaryTheme }
     },
     template: `
       <Label
         :theme="CheckboxLabelTheme"
         textPlacement="right"
         :isCentered="true"
+        text="Нажми на меня"
       >
-        <template #default>
-          <Text size="l" :theme="TextPrimaryTheme">
-            Нажми на меня
-          </Text>
-          <Checkbox v-bind="args" v-model="checked" />
-        </template>
+        <Checkbox v-bind="args" :isChecked="checked" @change="onChange" />
       </Label>
     `
   }),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Базовый пример Checkbox с Label.'
-      }
-    }
-  }
 }
 
 export const Uncontrolled: Story = {
@@ -136,64 +81,38 @@ export const Uncontrolled: Story = {
         textPlacement="right"
         :isCentered="true"
       >
-        <template #default>
-          <Text size="l" :theme="TextPrimaryTheme">
-            Нажми на меня
-          </Text>
-          <Checkbox v-bind="args" :checked="true" />
-        </template>
+        <Checkbox v-bind="args" :isDefaultChecked="true" />
+        text="Нажми на меня"
       </Label>
     `
   }),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Неконтролируемый Checkbox с начальным значением.'
-      }
-    }
-  }
 }
 
 export const CheckedStyles: Story = {
   render: (args) => ({
     components: { Checkbox, Label, Text },
     setup() {
-      const styles = [
+      const items = [
         { value: 'mark', label: 'Отметка' },
         { value: 'indeterminate', label: 'Индетерминированное' }
       ]
-      return { args, styles, CheckboxLabelTheme, TextPrimaryTheme }
+      return { args, items, CheckboxLabelTheme, TextPrimaryTheme }
     },
     template: `
       <div style="display: flex; flex-direction: column; gap: 12px;">
         <Label
-          v-for="style in styles"
-          :key="style.value"
+          v-for="item in items"
+          :key="item.value"
           :theme="CheckboxLabelTheme"
           textPlacement="right"
           :isCentered="true"
+          :text="item.label"
         >
-          <template #default>
-            <Text size="l" :theme="TextPrimaryTheme">
-              {{ style.label }}
-            </Text>
-            <Checkbox
-              v-bind="args"
-              :checkedStyle="style.value"
-              :checked="true"
-            />
-          </template>
+          <Checkbox v-bind="args" :checkedStyle="item.value" :isDefaultChecked="true" />
         </Label>
       </div>
     `
   }),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Различные стили отметки: галочка и индетерминированное состояние.'
-      }
-    }
-  }
 }
 
 export const States: Story = {
@@ -201,9 +120,9 @@ export const States: Story = {
     components: { Checkbox, Label, Text },
     setup() {
       const states = [
-        { label: 'Отключен', props: { disabled: true, checked: false } },
-        { label: 'Ошибка', props: { isInvalid: true, checked: false } },
-        { label: 'Выбран', props: { checked: true } }
+        { label: 'Отключен', props: { isDisabled: true } },
+        { label: 'Ошибка', props: { isInvalid: true } },
+        { label: 'Выбран', props: { isDefaultChecked: true } }
       ]
       return { args, states, CheckboxLabelTheme, TextPrimaryTheme }
     },
@@ -215,63 +134,38 @@ export const States: Story = {
           :theme="CheckboxLabelTheme"
           textPlacement="right"
           :isCentered="true"
+          :text="state.label"
         >
-          <template #default>
-            <Text size="l" :theme="TextPrimaryTheme">
-              {{ state.label }}
-            </Text>
-            <Checkbox
-              v-bind="{ ...args, ...state.props }"
-            />
-          </template>
+          <Checkbox v-bind="{ ...args, ...state.props }" />
         </Label>
       </div>
     `
   }),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Различные состояния Checkbox: отключен, ошибка, выбран.'
-      }
-    }
-  }
 }
 
 export const CheckboxLight: Story = {
   tags: ['!autodocs'],
-  args: {
-    theme: CheckboxLightTheme,
-  }
+  args: { theme: CheckboxLightTheme },
 }
 
 export const CheckboxDark: Story = {
   tags: ['!autodocs'],
-  args: {
-    theme: CheckboxDarkTheme,
-  }
+  args: { theme: CheckboxDarkTheme },
 }
 
 export const CheckboxSmallLight: Story = {
   tags: ['!autodocs'],
-  args: {
-    theme: CheckboxSmallLightTheme,
-  },
+  args: { theme: CheckboxSmallLightTheme },
   render: (args) => ({
     components: { Checkbox, Label, Text },
     setup() {
       return { args, CheckboxLabelTheme, TextPrimaryTheme }
     },
     template: `
-      <Label
-        :theme="CheckboxLabelTheme"
-        textPlacement="right"
-        :isCentered="true"
-      >
-        <template #default>
-          <Text size="s" :theme="TextPrimaryTheme">
-            Нажми на меня
-          </Text>
-          <Checkbox v-bind="args" :checked="true" />
+      <Label :theme="CheckboxLabelTheme" textPlacement="right" :isCentered="true">
+        <Checkbox v-bind="args" :isDefaultChecked="true" />
+        <template #text>
+          <Text size="s" :theme="TextPrimaryTheme">Нажми на меня</Text>
         </template>
       </Label>
     `
@@ -280,25 +174,17 @@ export const CheckboxSmallLight: Story = {
 
 export const CheckboxSmallDark: Story = {
   tags: ['!autodocs'],
-  args: {
-    theme: CheckboxSmallDarkTheme,
-  },
+  args: { theme: CheckboxSmallDarkTheme },
   render: (args) => ({
     components: { Checkbox, Label, Text },
     setup() {
       return { args, CheckboxLabelTheme, TextPrimaryTheme }
     },
     template: `
-      <Label
-        :theme="CheckboxLabelTheme"
-        textPlacement="right"
-        :isCentered="true"
-      >
-        <template #default>
-          <Text size="s" :theme="TextPrimaryTheme">
-            Нажми на меня
-          </Text>
-          <Checkbox v-bind="args" :checked="true" />
+      <Label :theme="CheckboxLabelTheme" textPlacement="right" :isCentered="true">
+        <Checkbox v-bind="args" :isDefaultChecked="true" />
+        <template #text>
+          <Text size="s" :theme="TextPrimaryTheme">Нажми на меня</Text>
         </template>
       </Label>
     `

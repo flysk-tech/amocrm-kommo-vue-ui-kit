@@ -64,7 +64,7 @@ import {
   FilterTabsTheme,
   FilterTabsItemRootTheme,
   TabPrimaryTheme,
-} from '@amocrm/vue-ui-kit/FilterTabs'
+} from '@flysk-tech/amocrm-kommo-vue-ui-kit/FilterTabs'
 \`\`\`
 
 ## API

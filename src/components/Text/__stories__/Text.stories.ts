@@ -18,7 +18,7 @@ const themeMap: Record<string, TextTheme> = {
   TextErrorTheme,
 }
 
-const USAGE = `import { Text, TextPrimaryTheme } from '@amocrm/vue-ui-kit'
+const USAGE = `import { Text, TextPrimaryTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit'
 
 function App() {
   return (

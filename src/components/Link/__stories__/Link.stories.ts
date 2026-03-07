@@ -28,7 +28,7 @@ const meta = {
 ## Импорт
 
 \`\`\`typescript
-import { Link, LinkPrimaryTheme } from '@amocrm/vue-ui-kit'
+import { Link, LinkPrimaryTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit'
 \`\`\`
 
 ## API

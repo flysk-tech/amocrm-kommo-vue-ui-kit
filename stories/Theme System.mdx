@@ -18,7 +18,7 @@ import { Meta } from "@storybook/addon-docs/blocks";
 Каждый компонент имеет свойство `theme` для стилизации. Все компоненты имеют предопределенные темы, которые можно найти по адресу:
 
 ```javascript
-import { ThemeName } from '@amocrm/vue-ui-kit/ComponentName'
+import { ThemeName } from '@flysk-tech/amocrm-kommo-vue-ui-kit/ComponentName'
 ```
 
 Где:
@@ -77,7 +77,7 @@ import { ThemeName } from '@amocrm/vue-ui-kit/ComponentName'
 **my-theme.ts**
 
 ```typescript
-import { type InputTheme } from '@amocrm/vue-ui-kit/Input';
+import { type InputTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Input';
 
 export const MyInputTheme: InputTheme = {
   '--amocrm-vue-ui-kit-input-color': '#2c3e50',
@@ -121,8 +121,8 @@ export const MyInputTheme: InputTheme = {
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Input } from '@amocrm/vue-ui-kit/Input'
-import { Button, ButtonPrimaryTheme } from '@amocrm/vue-ui-kit/Button'
+import { Input } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Input'
+import { Button, ButtonPrimaryTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Button'
 import { MyInputTheme } from './my-theme'
 
 const inputValue = ref('')
@@ -139,7 +139,7 @@ const validateInput = () => {
 Вы можете создать базовую тему и расширить её:
 
 ```typescript
-import { InputPrimaryTheme, type InputTheme } from '@amocrm/vue-ui-kit/Input'
+import { InputPrimaryTheme, type InputTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Input'
 
 // Создаём тему на основе Primary
 export const MyDarkInputTheme: InputTheme = {
@@ -159,9 +159,9 @@ export const MyDarkInputTheme: InputTheme = {
 
 ```typescript
 // Каждый компонент экспортирует свой тип темы
-import { type ButtonTheme } from '@amocrm/vue-ui-kit/Button'
-import { type InputTheme } from '@amocrm/vue-ui-kit/Input'
-import { type SpinnerTheme } from '@amocrm/vue-ui-kit/Spinner'
+import { type ButtonTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Button'
+import { type InputTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Input'
+import { type SpinnerTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Spinner'
 
 // Создание типизированной темы
 const myTheme: ButtonTheme = {
@@ -204,7 +204,7 @@ export function useTheme<T extends Record<string, string>>(defaultTheme: T) {
 ```vue
 <script setup lang="ts">
 import { useTheme } from '@/composables/useTheme'
-import { InputPrimaryTheme } from '@amocrm/vue-ui-kit/Input'
+import { InputPrimaryTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Input'
 
 const { theme, setTheme } = useTheme(InputPrimaryTheme)
 

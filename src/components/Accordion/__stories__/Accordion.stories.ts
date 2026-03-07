@@ -39,8 +39,8 @@ const items = [
 ]
 
 const USAGE = `<script setup>
-import { Text, TextPrimaryTheme } from '@amocrm/vue-ui-kit'
-import { Accordion, AccordionItemTheme, AccordionTheme } from '@amocrm/vue-ui-kit'
+import { Text, TextPrimaryTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit'
+import { Accordion, AccordionItemTheme, AccordionTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit'
 
 const items = [
   {

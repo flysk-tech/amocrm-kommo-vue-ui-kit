@@ -22,8 +22,9 @@ import styles from './ItemRoot.module.scss'
 
 const props = defineProps<ItemRootProps>()
 
-const { isDisabled: groupIsDisabled, registerActiveName } =
-  useFilterTabsContext(DISPLAY_NAME)
+const filterTabsContext = useFilterTabsContext(DISPLAY_NAME)
+const groupIsDisabled = computed(() => filterTabsContext.isDisabled)
+const { registerActiveName } = filterTabsContext
 
 onMounted(() => {
   if (props.isDefaultActive && props.name) {

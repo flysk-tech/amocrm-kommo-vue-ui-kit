@@ -7,8 +7,8 @@ const fontProps = {
 }
 
 const brandingProps = {
-  brandTitle: 'amoCRM Vue UI Kit',
-  brandUrl: 'https://github.com/amocrm',
+  brandTitle: 'amoCRM/Kommo Vue UI Kit от Флайск',
+  brandUrl: 'https://github.com/flysk-tech/amocrm-kommo-vue-ui-kit',
   brandTarget: '_blank',
 }
 

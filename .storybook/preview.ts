@@ -2,6 +2,7 @@ import type { Preview } from '@storybook/vue3-vite'
 import { CustomDocsContainer } from '@storybook-utils/components'
 import { initialTheme } from '@storybook-utils/utils'
 import '../src/styles/theme.css'
+import '../src/styles/icons.css'
 
 const preview: Preview = {
   parameters: {
@@ -51,6 +52,9 @@ const preview: Preview = {
         document.body.style.backgroundColor = 'var(--crm-ui-kit-palette-background-default, #f5f5f5)'
         document.body.style.color = 'var(--crm-ui-kit-palette-text-primary, #363b44)'
       }
+
+      // Устанавливаем шрифт на body
+      document.body.style.fontFamily = "'PT Sans', sans-serif"
 
       // Создаем wrapper с центрированием
       const wrapper = document.createElement('div')

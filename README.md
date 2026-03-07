@@ -1,6 +1,8 @@
 # @flysk-tech/amocrm-kommo-vue-ui-kit
 
-> Vue 3 port of [@kommo-crm/crm-react-ui-kit](https://www.npmjs.com/package/@kommo-crm/crm-react-ui-kit) — ready-to-use UI components implementing amoCRM/Kommo design system.
+> Vue 3 UI-компоненты для amoCRM/Kommo — порт [@kommo-crm/crm-react-ui-kit](https://www.npmjs.com/package/@kommo-crm/crm-react-ui-kit) с Vue-нативным API.
+
+Разработано компанией **[Флайск](https://flysk.ru?utm_source=github&utm_medium=readme&utm_campaign=vue-ui-kit)** — официальным партнёром amoCRM/Kommo. Наш вклад в развитие экосистемы amoCRM/Kommo.
 
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 [![Vue 3](https://img.shields.io/badge/Vue-3-4FC08D?logo=vue.js)](https://vuejs.org/)
@@ -132,6 +134,16 @@ Key differences:
 - `value` + `onChange` → `v-model`
 - `children` → default `<slot />`
 
+## About
+
+Библиотека разработана компанией **[Флайск](https://flysk.ru?utm_source=github&utm_medium=readme&utm_campaign=vue-ui-kit)** — официальным партнёром [amoCRM/Kommo](https://www.amocrm.ru/).
+
+Мы развиваем экосистему amoCRM/Kommo и создаём инструменты, которые помогают разработчикам строить качественные интеграции.
+
+- 🌐 [flysk.ru](https://flysk.ru?utm_source=github&utm_medium=readme&utm_campaign=vue-ui-kit) — наш сайт
+- 📦 [npm](https://www.npmjs.com/package/@flysk-tech/amocrm-kommo-vue-ui-kit) — пакет на npm
+- 💻 [GitHub](https://github.com/flysk-tech/amocrm-kommo-vue-ui-kit) — исходный код
+
 ## License
 
-MIT © Flysk LLC
+MIT © [Флайск](https://flysk.ru?utm_source=github&utm_medium=footer&utm_campaign=vue-ui-kit)

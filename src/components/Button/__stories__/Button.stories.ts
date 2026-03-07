@@ -32,7 +32,7 @@ const meta = {
 ## Импорт
 
 \`\`\`typescript
-import { Button, ButtonPrimaryTheme, ButtonNeutralTheme, ButtonSecondaryTheme } from '@amocrm/vue-ui-kit'
+import { Button, ButtonPrimaryTheme, ButtonNeutralTheme, ButtonSecondaryTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit'
 \`\`\`
 
 ## API
@@ -217,27 +217,29 @@ export const WithAnimations: Story = {
   render: (args) => ({
     components: { Button },
     setup() {
-      const showInvalidAnimationRef1 = ref<AnimationRefType | null>(null)
-      const showSuccessfulStateRef1 = ref<AnimationRefType | null>(null)
-      const showInvalidAnimationRef2 = ref<AnimationRefType | null>(null)
+      const showSuccessfulStateRef = ref<AnimationRefType | null>(null)
+      const showInvalidAnimationRef = ref<AnimationRefType | null>(null)
+
+      // Wrap refs in plain objects so Vue template doesn't unwrap them
+      const successRef = { ref: showSuccessfulStateRef }
+      const errorRef = { ref: showInvalidAnimationRef }
 
       const handleSuccessClick = () => {
-        if (showSuccessfulStateRef1.value) {
-          showSuccessfulStateRef1.value()
+        if (showSuccessfulStateRef.value) {
+          showSuccessfulStateRef.value()
         }
       }
 
       const handleErrorClick = () => {
-        if (showInvalidAnimationRef2.value) {
-          showInvalidAnimationRef2.value()
+        if (showInvalidAnimationRef.value) {
+          showInvalidAnimationRef.value()
         }
       }
 
       return {
         ButtonPrimaryTheme,
-        showInvalidAnimationRef1,
-        showSuccessfulStateRef1,
-        showInvalidAnimationRef2,
+        successRef,
+        errorRef,
         handleSuccessClick,
         handleErrorClick
       }
@@ -246,7 +248,7 @@ export const WithAnimations: Story = {
       <div style="display: flex; gap: 16px; align-items: flex-start;">
         <Button
           :theme="ButtonPrimaryTheme"
-          :showSuccessfulStateRef="showSuccessfulStateRef1"
+          :showSuccessfulStateRef="successRef.ref"
           successfulStateText="Сохранено!"
           @click="handleSuccessClick"
         >
@@ -255,7 +257,7 @@ export const WithAnimations: Story = {
 
         <Button
           :theme="ButtonPrimaryTheme"
-          :showInvalidAnimationRef="showInvalidAnimationRef2"
+          :showInvalidAnimationRef="errorRef.ref"
           @click="handleErrorClick"
         >
           Показать ошибку

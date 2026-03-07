@@ -11,55 +11,12 @@ import { SwitcherPrimaryTheme, type SwitcherTheme } from '../Switcher.themes'
 const meta = {
   title: 'Components/Switcher',
   component: Switcher,
-  parameters: {
-    docs: {
-      description: {
-        component: `
-Компонент Switcher для создания переключателей (toggle switch).
-
-## Возможности
-
-- **Primary тема**: стандартная тема оформления
-- **Состояния**: обычное, отключено, выбрано
-- **Touch поддержка**: автоматическое определение сенсорных устройств
-- **Label интеграция**: работает с компонентом Label
-- **Кастомизация**: полная настройка через CSS переменные
-
-## Применение
-
-- Переключатели в настройках
-- Включение/выключение функций
-- Бинарные опции
-
-## Импорт
-
-\`\`\`typescript
-import { Switcher, SwitcherPrimaryTheme } from '@amocrm/vue-ui-kit'
-import { Label, LabelTheme } from '@amocrm/vue-ui-kit'
-\`\`\`
-
-## API
-
-### Props
-
-- \`theme\` - объект темы оформления (обязательный)
-- \`className\` - дополнительные CSS классы
-- \`v-model\` - двустороннее связывание для checked состояния (через v-bind="$attrs")
-
-### Events
-
-- \`@change\` - событие изменения состояния (через v-bind="$attrs")
-        `
-      }
-    }
-  },
   args: {
     theme: SwitcherPrimaryTheme,
   },
   argTypes: {
     theme: {
       control: 'object',
-      description: 'Тема оформления'
     },
   }
 } satisfies Meta<typeof Switcher>
@@ -81,22 +38,13 @@ export const Default: Story = {
         textPlacement="right"
         :isCentered="true"
       >
-        <template #default>
-          <Text size="l" :theme="TextPrimaryTheme">
-            Нажми на меня
-          </Text>
-          <Switcher v-bind="args" v-model="checked" />
+        <Switcher v-bind="args" v-model="checked" />
+        <template #text>
+          <Text size="l" :theme="TextPrimaryTheme">Нажми на меня</Text>
         </template>
       </Label>
     `
   }),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Базовый пример Switcher с Label.'
-      }
-    }
-  }
 }
 
 export const Uncontrolled: Story = {
@@ -111,22 +59,13 @@ export const Uncontrolled: Story = {
         textPlacement="right"
         :isCentered="true"
       >
-        <template #default>
-          <Text size="l" :theme="TextPrimaryTheme">
-            Нажми на меня
-          </Text>
-          <Switcher v-bind="args" :checked="true" />
+        <Switcher v-bind="args" :checked="true" />
+        <template #text>
+          <Text size="l" :theme="TextPrimaryTheme">Нажми на меня</Text>
         </template>
       </Label>
     `
   }),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Неконтролируемый Switcher с начальным значением.'
-      }
-    }
-  }
 }
 
 export const States: Story = {
@@ -148,25 +87,14 @@ export const States: Story = {
           textPlacement="right"
           :isCentered="true"
         >
-          <template #default>
-            <Text size="l" :theme="TextPrimaryTheme">
-              {{ state.label }}
-            </Text>
-            <Switcher
-              v-bind="{ ...args, ...state.props }"
-            />
+          <Switcher v-bind="{ ...args, ...state.props }" />
+          <template #text>
+            <Text size="l" :theme="TextPrimaryTheme">{{ state.label }}</Text>
           </template>
         </Label>
       </div>
     `
   }),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Различные состояния Switcher: отключен и выбран.'
-      }
-    }
-  }
 }
 
 export const CustomTheme: Story = {
@@ -220,46 +148,27 @@ export const CustomTheme: Story = {
     },
     template: `
       <div style="display: flex; flex-direction: column; gap: 16px;">
-        <Label
-          :theme="LabelTheme"
-          textPlacement="right"
-          :isCentered="true"
-        >
-          <template #default>
+        <Label :theme="LabelTheme" textPlacement="right" :isCentered="true">
+          <Switcher :theme="themeS" v-model="checked1" />
+          <template #text>
             <Text size="s" :theme="TextPrimaryTheme">Маленький</Text>
-            <Switcher :theme="themeS" v-model="checked1" />
           </template>
         </Label>
 
-        <Label
-          :theme="LabelTheme"
-          textPlacement="right"
-          :isCentered="true"
-        >
-          <template #default>
+        <Label :theme="LabelTheme" textPlacement="right" :isCentered="true">
+          <Switcher :theme="themeM" v-model="checked2" />
+          <template #text>
             <Text size="l" :theme="TextPrimaryTheme">Средний</Text>
-            <Switcher :theme="themeM" v-model="checked2" />
           </template>
         </Label>
 
-        <Label
-          :theme="LabelTheme"
-          textPlacement="right"
-          :isCentered="true"
-        >
-          <template #default>
+        <Label :theme="LabelTheme" textPlacement="right" :isCentered="true">
+          <Switcher :theme="themeL" v-model="checked3" />
+          <template #text>
             <Text size="xl" :theme="TextPrimaryTheme">Большой</Text>
-            <Switcher :theme="themeL" v-model="checked3" />
           </template>
         </Label>
       </div>
     `
   }),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Кастомные темы с разными размерами переключателя.'
-      }
-    }
-  }
 }

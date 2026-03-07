@@ -35,7 +35,7 @@ const meta = {
 ## Импорт
 
 \`\`\`typescript
-import { Label, LabelGroup, LabelTheme, LabelGroupTheme } from '@amocrm/vue-ui-kit'
+import { Label, LabelGroup, LabelTheme, LabelGroupTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit'
 \`\`\`
 
 ## API
@@ -148,16 +148,16 @@ export const Group: Story = {
             :theme="LabelTheme"
             textPlacement="right"
           >
-            <template #default>
-              <div style="display: flex; flex-direction: column; gap: 4px;">
-                <Text size="l" :theme="TextPrimaryTheme">
-                  {{ element.text }}
-                </Text>
-                <Text size="s" :theme="TextSecondaryLightTheme">
-                  Свернуть приложения чата в одну кнопку
-                </Text>
-              </div>
-              <Switcher :isDefaultChecked="false" :theme="SwitcherPrimaryTheme" />
+            <Switcher :isDefaultChecked="false" :theme="SwitcherPrimaryTheme" />
+            <template #text>
+              <Text size="l" :theme="TextPrimaryTheme">
+                {{ element.text }}
+              </Text>
+            </template>
+            <template #description>
+              <Text size="s" :theme="TextSecondaryLightTheme">
+                Свернуть приложения чата в одну кнопку
+              </Text>
             </template>
           </Label>
         </LabelGroup>
@@ -188,16 +188,16 @@ export const WithDescription: Story = {
     template: `
       <div style="width: 100%;">
         <Label :theme="LabelTheme" textPlacement="right">
-          <template #default>
-            <div style="display: flex; flex-direction: column; gap: 4px;">
-              <Text size="l" :theme="TextPrimaryTheme">
-                Текст метки
-              </Text>
-              <Text size="s" :theme="TextSecondaryLightTheme">
-                Свернуть приложения чата в одну кнопку
-              </Text>
-            </div>
-            <Switcher :isDefaultChecked="false" :theme="SwitcherPrimaryTheme" />
+          <Switcher :isDefaultChecked="false" :theme="SwitcherPrimaryTheme" />
+          <template #text>
+            <Text size="l" :theme="TextPrimaryTheme">
+              Текст метки
+            </Text>
+          </template>
+          <template #description>
+            <Text size="s" :theme="TextSecondaryLightTheme">
+              Свернуть приложения чата в одну кнопку
+            </Text>
           </template>
         </Label>
       </div>

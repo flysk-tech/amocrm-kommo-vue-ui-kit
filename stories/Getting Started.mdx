@@ -20,9 +20,9 @@ export const RightArrow = () => <svg
 
 <div className="sb-container">
   <div className='sb-section-title'>
-    # amoCRM Vue UI Kit
+    # amoCRM/Kommo Vue UI Kit от Флайск
 
-    Библиотека Vue.js компонентов для создания виджетов в экосистеме amoCRM. Это Vue-порт оригинальной React-библиотеки с поддержкой Vue 3, Composition API и полной типизацией TypeScript.
+    Библиотека Vue 3 компонентов для создания виджетов в экосистеме amoCRM/Kommo. Порт оригинальной React-библиотеки [@kommo-crm/crm-react-ui-kit](https://www.npmjs.com/package/@kommo-crm/crm-react-ui-kit) с Vue-нативным API, Composition API и полной типизацией TypeScript. Разработано компанией [Флайск](https://flysk.ru?utm_source=storybook&utm_medium=intro&utm_campaign=vue-ui-kit) — официальным партнёром amoCRM/Kommo.
   </div>
 
   <div className="sb-section">
@@ -30,7 +30,7 @@ export const RightArrow = () => <svg
       <h4 className="sb-section-item-heading">🚀 Быстрый старт</h4>
       <p className="sb-section-item-paragraph">Установите пакет и начните использовать компоненты в своих Vue приложениях.</p>
       <div style={{ backgroundColor: '#f8f9fa', padding: '16px', borderRadius: '4px', marginBottom: '16px' }}>
-        <code>npm install @amocrm/vue-ui-kit</code>
+        <code>npm install @flysk-tech/amocrm-kommo-vue-ui-kit</code>
       </div>
       <a
         href="/?path=/docs/components-input--docs"
@@ -89,8 +89,8 @@ export const RightArrow = () => <svg
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Button, ButtonPrimaryTheme } from '@amocrm/vue-ui-kit/Button'
-import { Input, InputPrimaryTheme } from '@amocrm/vue-ui-kit/Input'
+import { Button, ButtonPrimaryTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Button'
+import { Input, InputPrimaryTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Input'
 
 const inputValue = ref('')
 const isError = ref(false)
@@ -182,9 +182,9 @@ const handleSubmit = () => {
     <div className="sb-section-item">
       <div>
         <h4>🚀 Флайск</h4>
-        Разработано командой Флайск - ваши надежные партнеры в web-разработке.
+        Разработано командой Флайск — официальным партнёром amoCRM/Kommo.
         <a
-          href="https://flysk.ru/"
+          href="https://flysk.ru?utm_source=storybook&utm_medium=intro&utm_campaign=vue-ui-kit"
           target="_blank"
         >Узнать о нас<RightArrow /></a>
       </div>
@@ -194,25 +194,23 @@ const handleSubmit = () => {
 <div className='sb-addon'>
   <div className='sb-addon-text'>
     <h4>Открытый исходный код</h4>
-    <p className="sb-section-item-paragraph">Библиотека разработана с любовью командой Флайск. Вклад в развитие Vue экосистемы и знакомство с нашими технологиями.</p>
+    <p className="sb-section-item-paragraph">Библиотека разработана командой Флайск. Наш вклад в развитие экосистемы amoCRM/Kommo.</p>
     <a
-        href="https://github.com/flysk-tech/"
+        href="https://github.com/flysk-tech/amocrm-kommo-vue-ui-kit"
         target="_blank"
-      >GitHub Флайск<RightArrow /></a>
+      >GitHub<RightArrow /></a>
   </div>
   <div className='sb-addon-img-custom'>
     <div style={{
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      background: 'linear-gradient(135deg, #1a1a2e 0%, #2d1b3d 40%, #1a1a2e 70%, #2a1533 100%)',
       height: '100%',
       width: '100%',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      fontSize: '48px',
-      color: 'white',
-      fontWeight: 'bold'
+      padding: '0'
     }}>
-      Флайск
+      <img src="https://flysk.ru/images/logo/logo-drak.svg" alt="Флайск" style={{ width: '60%', objectFit: 'contain' }} />
     </div>
   </div>
 </div>
@@ -295,9 +293,10 @@ const handleSubmit = () => {
   .sb-addon-img-custom {
     position: absolute;
     right: 48px;
-    top: 20px;
-    height: 140px;
-    width: 200px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 120px;
+    width: 320px;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

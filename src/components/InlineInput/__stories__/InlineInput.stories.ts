@@ -53,7 +53,7 @@ import {
   InlineInput,
   InlineInputPrimaryTheme,
   InlineInputPrimaryFocusedTheme
-} from '@amocrm/vue-ui-kit'
+} from '@flysk-tech/amocrm-kommo-vue-ui-kit'
 \`\`\`
 
 ## API

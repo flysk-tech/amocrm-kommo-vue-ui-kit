@@ -36,7 +36,7 @@ const meta = {
 ## Импорт
 
 \`\`\`typescript
-import { TextArea, TextareaLightTheme, TextareaDarkTheme } from '@amocrm/vue-ui-kit'
+import { TextArea, TextareaLightTheme, TextareaDarkTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit'
 \`\`\`
 
 ## API

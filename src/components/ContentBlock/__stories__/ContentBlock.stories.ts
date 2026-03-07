@@ -29,7 +29,7 @@ const meta = {
 ## Импорт
 
 \`\`\`typescript
-import { ContentBlock, ContentBlockTheme } from '@amocrm/vue-ui-kit'
+import { ContentBlock, ContentBlockTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit'
 \`\`\`
 
 ## API

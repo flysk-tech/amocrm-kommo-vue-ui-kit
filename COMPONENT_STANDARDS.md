@@ -391,7 +391,7 @@ import * as ComponentNameStories from './ComponentName.stories';
 
 ```vue
 <script setup>
-import { ComponentName, ComponentNameTheme } from '@amocrm/vue-ui-kit'
+import { ComponentName, ComponentNameTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit'
 </script>
 
 <template>

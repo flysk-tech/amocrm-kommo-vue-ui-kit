@@ -38,14 +38,15 @@ const { theme, className, ...restProps } = props
 
 const buttonRef = ref<HTMLButtonElement | null>(null)
 
-const { values, isDisabled, onChange } = useFilterTabsContext(DISPLAY_NAME)
+const filterTabsContext = useFilterTabsContext(DISPLAY_NAME)
 
 const { isDisabled: isItemRootDisabled } = useTabItemRootResetContext(DISPLAY_NAME)
 
-const isSelected = computed(() => !values.length)
+const isSelected = computed(() => !filterTabsContext.values.length)
+const isDisabled = computed(() => filterTabsContext.isDisabled)
 
 const handleChange = () => {
-  onChange()
+  filterTabsContext.onChange()
 }
 
 defineExpose({

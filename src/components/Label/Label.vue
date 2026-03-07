@@ -10,10 +10,12 @@
     ]"
     :style="theme"
   >
-    <div v-if="text || description" :class="styles.text_container">
-      <template v-if="text">{{ text }}</template>
-      <div v-if="description" :class="styles.text_description">
-        {{ description }}
+    <div v-if="text || description || $slots.text || $slots.description" :class="styles.text_container">
+      <span v-if="text || $slots.text">
+        <slot name="text">{{ text }}</slot>
+      </span>
+      <div v-if="description || $slots.description" :class="styles.text_description">
+        <slot name="description">{{ description }}</slot>
       </div>
     </div>
     <slot />

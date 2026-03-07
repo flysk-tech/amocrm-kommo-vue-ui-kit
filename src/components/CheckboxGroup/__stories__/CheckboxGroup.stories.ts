@@ -68,9 +68,9 @@ import {
   CheckboxSelectAll,
   CheckboxGroupTheme,
   CheckboxGroupItemRootTheme,
-} from '@amocrm/vue-ui-kit/CheckboxGroup'
-import { CheckboxLightTheme } from '@amocrm/vue-ui-kit/Checkbox'
-import { LabelTheme } from '@amocrm/vue-ui-kit/Label'
+} from '@flysk-tech/amocrm-kommo-vue-ui-kit/CheckboxGroup'
+import { CheckboxLightTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Checkbox'
+import { LabelTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Label'
 \`\`\`
 
 ## API
