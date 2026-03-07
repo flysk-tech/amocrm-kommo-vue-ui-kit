@@ -18,8 +18,8 @@ const themeMap = {
 }
 
 const USAGE = `
-import { Text, TextPrimaryTheme } from '@kommo-crm/amocrm-vue-ui-kit/Text'
-import { Callout, CalloutErrorTheme } from '@kommo-crm/amocrm-vue-ui-kit/Callout'
+import { Text, TextPrimaryTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Text'
+import { Callout, CalloutErrorTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Callout'
 
 <template>
   <Callout :theme="CalloutErrorTheme">
