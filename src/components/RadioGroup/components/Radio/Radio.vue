@@ -1,11 +1,11 @@
 <template>
-  <div :class="[styles.wrapper, itemRootClassName]" :style="theme">
+  <div :class="[styles.wrapper, itemRootClass]" :style="theme">
     <VisuallyHiddenInput
       ref="inputRef"
-      :class="[styles.input, className]"
+      :class="[styles.input, props.class]"
       type="radio"
       :value="value"
-      :isDisabled="radioGroupContext.isDisabled || itemRootIsDisabled"
+      :is-disabled="radioGroupContext.isDisabled || itemRootIsDisabled"
       v-bind="propsBasedOnType"
     />
     <span :class="styles.radio" />
@@ -23,11 +23,11 @@ import styles from './Radio.module.scss'
 const DISPLAY_NAME = 'RadioGroup.Radio'
 
 type Props = RadioProps & {
-  className?: string
+  class?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  className: '',
+  class: '',
 })
 
 const inputRef = ref<InstanceType<typeof VisuallyHiddenInput> | null>(null)
@@ -37,7 +37,7 @@ const radioGroupContext = useRadioGroupContext(DISPLAY_NAME)
 const {
   value,
   isDisabled: itemRootIsDisabled,
-  className: itemRootClassName,
+  class: itemRootClass,
   ...restItemRoot
 } = useRadioItemRootContext(DISPLAY_NAME)
 

@@ -7,6 +7,6 @@ export type ItemRootSelectAllProps = Omit<
 >
 
 export interface CheckboxItemSelectAllContextValue
-  extends Omit<ItemRootSelectAllProps, 'theme' | 'className'> {
+  extends Omit<ItemRootSelectAllProps, 'theme' | 'class'> {
   onChange: (option: InternalCheckboxGroupChangeEvent) => void
 }

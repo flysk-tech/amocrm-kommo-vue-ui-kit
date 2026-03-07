@@ -52,7 +52,7 @@ import { Input, InputLightTheme, InputDarkTheme } from '@flysk-tech/amocrm-kommo
 - \`invalidDescription\` - текст ошибки
 - \`invalidDescriptionPlacement\` - позиция текста ошибки ('bottom' | 'right')
 - \`after\` - контент после основного поля
-- \`className\` - дополнительные CSS классы
+- \`class\` - дополнительные CSS классы
 - \`isPlaceholderVisibleOnFocus\` - показывать placeholder при фокусе
 
 ### Events

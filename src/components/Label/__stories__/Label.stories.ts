@@ -47,7 +47,7 @@ import { Label, LabelGroup, LabelTheme, LabelGroupTheme } from '@flysk-tech/amoc
 - \`description\` - дополнительное описание (string или VNode)
 - \`textPlacement\` - расположение текста ('top' | 'left' | 'right')
 - \`isCentered\` - центрировать содержимое
-- \`className\` - дополнительные CSS классы
+- \`class\` - дополнительные CSS классы
 
 ### Slots
 

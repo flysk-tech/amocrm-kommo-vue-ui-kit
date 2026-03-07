@@ -16,7 +16,7 @@
           <component :is="before" />
         </div>
 
-        <Text :theme="TextPrimaryTheme" size="xl" :isEllipsis="true">
+        <Text :theme="TextPrimaryTheme" size="xl" :is-ellipsis="true">
           {{ title }}
         </Text>
       </div>

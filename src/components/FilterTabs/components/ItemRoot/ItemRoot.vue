@@ -2,7 +2,7 @@
   <div
     :class="[
       styles.item_root,
-      className,
+      props.class,
       {
         [styles.disabled]: groupIsDisabled || isDisabled
       }
@@ -33,7 +33,7 @@ onMounted(() => {
 })
 
 const contextValue = computed(() => {
-  const { theme, className, isDefaultActive, ...rest } = props
+  const { theme, class: _class, isDefaultActive, ...rest } = props
   return rest
 })
 

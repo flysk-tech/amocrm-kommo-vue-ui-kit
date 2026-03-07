@@ -6,8 +6,8 @@
     :style="themeStyles"
   >
     <component
-      v-if="isIconAvailable"
       :is="theme.Icon"
+      v-if="isIconAvailable"
       :class="styles.icon"
     />
     <slot />

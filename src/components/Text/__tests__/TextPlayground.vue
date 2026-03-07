@@ -1,5 +1,5 @@
 <template>
-  <ComponentPlayground :appearance="appearance" :propSets="propSets">
+  <ComponentPlayground :appearance="appearance" :prop-sets="propSets">
     <template #default="{ props: itemProps }">
       <Text :style="{ width: '100px' }" v-bind="itemProps" :theme="TextPrimaryTheme">
         Long text that will be truncated.

@@ -1,5 +1,5 @@
 <template>
-  <span ref="arrowRef" :class="[styles.wrapper, className]" :style="theme">
+  <span ref="arrowRef" :class="[styles.wrapper, props.class]" :style="theme">
     <slot>
       <svg xmlns="http://www.w3.org/2000/svg" :width="BASE_WIDTH" :height="BASE_HEIGHT" fill="none" viewBox="0 0 21 21">
         <path fill="currentColor" fill-rule="evenodd" d="m5.25 8.826 1-1 4.5 4.4 4.5-4.4 1 1-5.5 5.5-5.5-5.5Z" clip-rule="evenodd"/>
@@ -16,9 +16,9 @@ import styles from './Arrow.module.scss'
 const BASE_WIDTH = 20
 const BASE_HEIGHT = 20
 
-defineProps<{
+const props = defineProps<{
   theme: SelectArrowThemeType
-  className?: string
+  class?: string
 }>()
 
 const arrowRef = ref<HTMLSpanElement | null>(null)

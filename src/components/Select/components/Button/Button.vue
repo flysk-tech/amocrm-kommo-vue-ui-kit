@@ -3,8 +3,8 @@
     ref="buttonRef"
     v-bind="$attrs"
     :theme="theme"
-    :isDisabled="selectContext.isDisabled"
-    :isInvalid="selectContext.isInvalid"
+    :is-disabled="selectContext.isDisabled"
+    :is-invalid="selectContext.isInvalid"
     @toggle="handleToggle"
   >
     <slot />

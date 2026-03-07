@@ -1,14 +1,14 @@
 <template>
   <CheckboxCore
     ref="checkboxRef"
-    :class="className"
+    :class="className_"
     :name="name"
     :value="value"
     :theme="theme"
-    :isChecked="isChecked"
-    :isDisabled="isDisabled"
-    @change="handleChange"
+    :is-checked="isChecked"
+    :is-disabled="isDisabled"
     v-bind="rest"
+    @change="handleChange"
   />
 </template>
 
@@ -22,14 +22,14 @@ import type { CheckboxProps } from './Checkbox.types'
 const DISPLAY_NAME = 'CheckboxGroup.Checkbox'
 
 type Props = CheckboxProps & {
-  className?: string
+  class?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  className: '',
+  class: '',
 })
 
-const { theme, className, name: _name, ...rest } = props
+const { theme, class: className_, name: _name, ...rest } = props
 
 const checkboxRef = ref<InstanceType<typeof CheckboxCore> | null>(null)
 

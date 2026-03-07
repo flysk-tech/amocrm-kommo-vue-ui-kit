@@ -1,6 +1,6 @@
 <template>
-  <span ref="optionRef" :class="[styles.text, className]">
-    <Text :theme="OptionTextTheme" size="l" :isEllipsis="true">
+  <span ref="optionRef" :class="[styles.text, props.class]">
+    <Text :theme="OptionTextTheme" size="l" :is-ellipsis="true">
       <slot />
     </Text>
   </span>
@@ -12,8 +12,8 @@ import Text from '@/components/Text/Text.vue'
 import { TextPrimaryTheme, type TextTheme } from '@/components/Text'
 import styles from './Option.module.scss'
 
-defineProps<{
-  className?: string
+const props = defineProps<{
+  class?: string
 }>()
 
 const OptionTextTheme: TextTheme = {

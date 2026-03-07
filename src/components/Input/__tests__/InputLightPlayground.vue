@@ -1,5 +1,5 @@
 <template>
-  <ComponentPlayground :appearance="appearance" :propSets="propSets">
+  <ComponentPlayground :appearance="appearance" :prop-sets="propSets">
     <template #default="{ props: itemProps }">
       <Input v-bind="itemProps" :theme="InputLightFixedWidthTheme" />
     </template>

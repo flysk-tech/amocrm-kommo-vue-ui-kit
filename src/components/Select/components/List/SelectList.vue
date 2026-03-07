@@ -2,11 +2,11 @@
   <Teleport v-if="container" :to="container">
     <BaseList
       ref="listRef"
-      :className="className"
-      :isOpened="selectContext.isOpened"
+      :class="props.class"
+      :is-opened="selectContext.isOpened"
       :theme="theme"
-      :hoveredIndex="effectiveHoveredIndex"
-      @hoveredIndexChange="handleHoveredIndexChange"
+      :hovered-index="effectiveHoveredIndex"
+      @hovered-index-change="handleHoveredIndexChange"
       @toggle="handleListToggle"
       @select="handleItemSelect"
     >
@@ -16,11 +16,11 @@
   <BaseList
     v-else
     ref="listRef"
-    :className="className"
-    :isOpened="selectContext.isOpened"
+    :class="props.class"
+    :is-opened="selectContext.isOpened"
     :theme="theme"
-    :hoveredIndex="effectiveHoveredIndex"
-    @hoveredIndexChange="handleHoveredIndexChange"
+    :hovered-index="effectiveHoveredIndex"
+    @hovered-index-change="handleHoveredIndexChange"
     @toggle="handleListToggle"
     @select="handleItemSelect"
   >
@@ -40,7 +40,7 @@ const DISPLAY_NAME = 'Select.List'
 
 const props = defineProps<{
   theme: ListThemeType
-  className?: string
+  class?: string
   container?: Element | DocumentFragment | null
 }>()
 

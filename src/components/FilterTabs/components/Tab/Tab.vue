@@ -28,14 +28,14 @@ import styles from './Tab.module.scss'
 const DISPLAY_NAME = 'FilterTabs.Tab'
 
 type Props = TabProps & {
-  className?: string
+  class?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  className: '',
+  class: '',
 })
 
-const { theme, className, ...restProps } = props
+const { theme, class: className, ...restProps } = props
 
 const buttonRef = ref<HTMLButtonElement | null>(null)
 

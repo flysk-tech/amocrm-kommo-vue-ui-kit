@@ -37,7 +37,7 @@ import { ContentBlock, ContentBlockTheme } from '@flysk-tech/amocrm-kommo-vue-ui
 ### Props
 
 - \`theme\` - объект темы оформления (обязательный)
-- \`className\` - дополнительные CSS классы
+- \`class\` - дополнительные CSS классы
 
 ### Slots
 

@@ -10,10 +10,10 @@ export interface ItemRootResetProps {
    * Object with CSS theme properties.
    */
   theme: ItemRootThemeType
-  className?: string
+  class?: string
 }
 
 export type TabItemResetContextProps = Omit<
   ItemRootResetProps,
-  'theme' | 'className'
+  'theme' | 'class'
 >

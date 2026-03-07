@@ -16,7 +16,7 @@ export interface ItemRootProps {
   // Common input attributes
   value?: string | number
   id?: string
-  className?: string
+  class?: string
   onInput?: any
   onFocus?: any
   onBlur?: any
@@ -28,7 +28,7 @@ export interface RadioItemContextProps {
   isReadonly?: boolean
   value?: string | number
   id?: string
-  className?: string
+  class?: string
   onInput?: any
   onFocus?: any
   onBlur?: any

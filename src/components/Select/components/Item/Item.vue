@@ -8,7 +8,7 @@
         [styles.selected]: isSelected,
         [styles.hovered]: isHovered,
       },
-      className,
+      props.class,
     ]"
     :style="theme"
     @click="handleClick"
@@ -32,7 +32,7 @@ const DISPLAY_NAME = 'Select.Item'
 const props = defineProps<{
   item: SelectItem
   index: number
-  className?: string
+  class?: string
   theme: SelectItemThemeType
 }>()
 

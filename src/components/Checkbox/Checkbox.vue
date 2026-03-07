@@ -10,16 +10,16 @@
   >
     <VisuallyHiddenInput
       v-bind="$attrs"
+      :id="props.id"
       ref="inputRef"
       :class="styles.input"
       type="checkbox"
-      :isDisabled="props.isDisabled"
-      :isReadonly="props.isReadonly"
-      :isChecked="props.isChecked"
-      :isDefaultChecked="props.isDefaultChecked"
+      :is-disabled="props.isDisabled"
+      :is-readonly="props.isReadonly"
+      :is-checked="props.isChecked"
+      :is-default-checked="props.isDefaultChecked"
       :value="props.value"
       :name="props.name"
-      :id="props.id"
     />
     <span
       :class="[

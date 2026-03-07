@@ -12,7 +12,7 @@
         v-bind="$attrs"
         ref="inputRef"
         :class="{ [styles.has_after]: Boolean(after) }"
-        :isDisabled="isDisabled"
+        :is-disabled="isDisabled"
       />
     </div>
     <div v-if="after" :class="styles.after_container">

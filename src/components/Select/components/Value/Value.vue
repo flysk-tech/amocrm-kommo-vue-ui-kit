@@ -1,7 +1,7 @@
 <template>
   <slot v-if="$slots.default" />
   <template v-else>
-    <Option ref="optionRef" :className="className">
+    <Option ref="optionRef" :class="props.class">
       {{ shouldShowPlaceholder ? placeholder : selectContext.value?.option }}
     </Option>
   </template>
@@ -19,11 +19,11 @@ const DISPLAY_NAME = 'Select.Value'
 
 const props = withDefaults(defineProps<{
   placeholder?: string
-  className?: string
+  class?: string
   name?: string
 }>(), {
   placeholder: '',
-  className: '',
+  class: '',
 })
 
 const selectContext = useSelectContext(DISPLAY_NAME)

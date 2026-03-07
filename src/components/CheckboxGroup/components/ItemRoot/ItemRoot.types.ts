@@ -6,11 +6,11 @@ export interface ItemRootProps {
   value: string
   isDisabled?: boolean
   isDefaultChecked?: boolean
-  className?: string
+  class?: string
   theme: ItemRootThemeType
 }
 
 export interface CheckboxItemContextProps
-  extends Omit<ItemRootProps, 'theme' | 'className'> {
+  extends Omit<ItemRootProps, 'theme' | 'class'> {
   onChange: (option: InternalCheckboxGroupChangeEvent) => void
 }

@@ -2,7 +2,7 @@
   <div
     :class="[
       styles.item_root,
-      className,
+      props.class,
       {
         [styles.disabled]: groupIsDisabled || isDisabled
       }
@@ -26,7 +26,7 @@ const groupContext = useCheckboxGroupContext(DISPLAY_NAME)
 const groupIsDisabled = computed(() => groupContext.isDisabled)
 
 const contextValue = computed(() => {
-  const { theme, className, ...checkboxProps } = props
+  const { theme, class: _class, ...checkboxProps } = props
   return {
     ...groupContext.register(props.name, checkboxProps),
     value: props.value,

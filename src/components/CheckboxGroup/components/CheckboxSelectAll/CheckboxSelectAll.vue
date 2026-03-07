@@ -1,14 +1,14 @@
 <template>
   <CheckboxCore
     ref="checkboxRef"
-    :class="className"
+    :class="className_"
     :theme="theme"
     :value="SELECT_ALL"
-    :isDisabled="groupContext.isDisabled || selectAllContext.isDisabled"
-    :isChecked="propsBasedOnInternalState.isChecked"
-    :checkedStyle="propsBasedOnInternalState.checkedStyle"
-    @change="handleChange"
+    :is-disabled="groupContext.isDisabled || selectAllContext.isDisabled"
+    :is-checked="propsBasedOnInternalState.isChecked"
+    :checked-style="propsBasedOnInternalState.checkedStyle"
     v-bind="rest"
+    @change="handleChange"
   />
 </template>
 
@@ -24,14 +24,14 @@ const DISPLAY_NAME = 'CheckboxGroup.CheckboxSelectAll'
 const SELECT_ALL = 'selectAll'
 
 type Props = CheckboxProps & {
-  className?: string
+  class?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  className: '',
+  class: '',
 })
 
-const { theme, className, checkedStyle: _checkedStyle, ...rest } = props
+const { theme, class: className_, checkedStyle: _checkedStyle, ...rest } = props
 
 const checkboxRef = ref<InstanceType<typeof CheckboxCore> | null>(null)
 

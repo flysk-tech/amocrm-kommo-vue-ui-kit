@@ -50,7 +50,7 @@ import { TextArea, TextareaLightTheme, TextareaDarkTheme } from '@flysk-tech/amo
 - \`invalidDescription\` - текст описания ошибки
 - \`maxHeight\` - максимальная высота при isAutosized
 - \`rows\` - количество строк
-- \`className\` - дополнительные CSS классы
+- \`class\` - дополнительные CSS классы
 - \`v-model\` - двустороннее связывание значения (через v-bind="$attrs")
 
 ### Events

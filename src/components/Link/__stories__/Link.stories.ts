@@ -36,7 +36,7 @@ import { Link, LinkPrimaryTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit'
 ### Props
 
 - \`theme\` - объект темы оформления (обязательный)
-- \`className\` - дополнительные CSS классы
+- \`class\` - дополнительные CSS классы
 - \`href\` - URL ссылки (через v-bind="$attrs")
 - \`target\` - целевое окно (через v-bind="$attrs")
 

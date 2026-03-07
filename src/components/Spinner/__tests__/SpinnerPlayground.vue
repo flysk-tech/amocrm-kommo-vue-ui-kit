@@ -1,5 +1,5 @@
 <template>
-  <ComponentPlayground :appearance="appearance" :propSets="propSets">
+  <ComponentPlayground :appearance="appearance" :prop-sets="propSets">
     <template #default="{ props: itemProps }">
       <div :style="{ position: 'relative', height: '20px' }">
         <Spinner v-bind="itemProps" :theme="SpinnerPrimaryTheme" />

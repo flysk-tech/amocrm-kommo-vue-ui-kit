@@ -4,7 +4,7 @@ export interface RadioProps {
   /**
    * `class` attribute for `Radio`.
    */
-  className?: string
+  class?: string
   /**
    * Object with CSS theme properties.
    */

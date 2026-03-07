@@ -5,10 +5,10 @@ export interface ItemRootProps {
   isDefaultActive?: boolean
   name: string
   theme: ItemRootThemeType
-  className?: string
+  class?: string
 }
 
 export type TabItemContextProps = Omit<
   ItemRootProps,
-  'theme' | 'className' | 'isDefaultActive'
+  'theme' | 'class' | 'isDefaultActive'
 >

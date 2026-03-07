@@ -1,5 +1,5 @@
 <template>
-  <ComponentPlayground :appearance="appearance" :propSets="[defaultPropsSet, iconsPropsSet]">
+  <ComponentPlayground :appearance="appearance" :prop-sets="[defaultPropsSet, iconsPropsSet]">
     <template #default="{ props: itemProps }">
       <Button v-bind="itemProps" :theme="ButtonPrimaryTheme">
         <template v-if="itemProps.before" #before>

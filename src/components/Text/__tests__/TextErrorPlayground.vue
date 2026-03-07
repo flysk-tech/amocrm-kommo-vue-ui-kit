@@ -1,5 +1,5 @@
 <template>
-  <ComponentPlayground :appearance="appearance" :propSets="propSets">
+  <ComponentPlayground :appearance="appearance" :prop-sets="propSets">
     <template #default="{ props: itemProps }">
       <Text v-bind="itemProps" :theme="TextErrorTheme">
         Text

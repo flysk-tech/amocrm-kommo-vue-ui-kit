@@ -24,7 +24,7 @@
       <span v-else-if="isLoading" :class="styles.spinner_container">
         <Spinner
           :theme="isDisabled ? spinnerThemes.disabledTheme : spinnerThemes.defaultTheme"
-          :isCentered="true"
+          :is-centered="true"
         />
       </span>
 
