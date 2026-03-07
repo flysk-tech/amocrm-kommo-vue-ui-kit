@@ -1,17 +1,8 @@
 import cssParser from 'css';
+import themeCssRaw from '../../../../src/styles/theme.css?raw';
 
 export const getParsedCss = () => {
-  const styleElements = document.querySelectorAll('style');
-
-  const stylesArray = Array.from(styleElements);
-
-  const themeElement = stylesArray.find((element) =>
-    element.innerText.startsWith(':root')
-  );
-
-  if (!themeElement) {
-    throw new Error('Theme style element is not found');
-  }
-
-  return cssParser.parse(themeElement?.innerText);
+  // In production builds, Vite puts CSS into <link> tags instead of <style>,
+  // so we import theme.css as raw string to reliably parse it.
+  return cssParser.parse(themeCssRaw);
 };
