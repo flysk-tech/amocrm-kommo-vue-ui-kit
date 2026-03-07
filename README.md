@@ -16,10 +16,10 @@
 
 - **Vue 3 + Composition API** with `<script setup>`
 - **TypeScript** — full type coverage
-- **23 components** ported from React with Vue-native API
+- **24 components** — 23 ported from React + MultiSelect (Vue-only)
 - **Dark/light theme** via CSS custom properties
 - **Tree-shaking** — import only what you need
-- **CSS Modules** with SCSS
+- **CSS Modules** with SCSS — same approach as React original, ensures style isolation without conflicts in host page
 
 ## Installation
 
@@ -89,6 +89,7 @@ import { ConfigProvider, Appearance } from '@flysk-tech/amocrm-kommo-vue-ui-kit'
 - **TextArea** — multiline input with autosize
 - **BaseInput** — base input primitive
 - **Select** — dropdown select
+- **MultiSelect** — multi-select with groups, autocomplete, inline mode *(Vue-only, not in React kit)*
 - **SelectButton** — select trigger button
 - **Checkbox** / **CheckboxGroup** — checkboxes with select-all
 - **RadioGroup** — radio buttons
