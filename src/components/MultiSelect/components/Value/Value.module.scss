@@ -1,0 +1,12 @@
+.value {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: content-box;
+}
+
+.text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

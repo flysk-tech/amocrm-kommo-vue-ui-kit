@@ -1,0 +1,36 @@
+.list {
+  position: absolute;
+  top: var(--crm-ui-kit-list-top);
+  left: var(--crm-ui-kit-list-left);
+  overflow: auto;
+
+  display: block;
+  width: var(--crm-ui-kit-list-width);
+  max-height: var(--crm-ui-kit-list-max-height);
+  padding: 0;
+  padding-right: var(--crm-ui-kit-list-padding-right);
+  margin: 0;
+  margin-right: var(--crm-ui-kit-list-margin-right);
+  box-sizing: content-box;
+
+  color: var(--crm-ui-kit-list-color);
+  background-color: var(--crm-ui-kit-list-background-color);
+  border-width: var(--crm-ui-kit-list-border-width);
+  border-style: var(--crm-ui-kit-list-border-style);
+  border-color: var(--crm-ui-kit-list-border-color);
+
+  border-radius: var(--crm-ui-kit-list-border-radius);
+  outline: var(--crm-ui-kit-list-outline);
+
+  z-index: var(--crm-ui-kit-list-z-index);
+  -webkit-overflow-scrolling: touch;
+}
+
+.empty {
+  padding: 7px 12px;
+  box-sizing: content-box;
+  list-style-type: none;
+  color: var(--crm-ui-kit-list-color);
+  opacity: 0.5;
+  font-size: var(--crm-ui-kit-base-font-size);
+}

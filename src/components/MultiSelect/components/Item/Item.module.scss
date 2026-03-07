@@ -1,0 +1,30 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--crm-ui-kit-multiselect-item-checkbox-gap);
+  position: relative;
+  overflow: hidden;
+  padding: var(--crm-ui-kit-multiselect-item-padding);
+  box-sizing: content-box;
+
+  cursor: pointer;
+  list-style-type: none;
+
+  font-size: var(--crm-ui-kit-multiselect-item-font-size);
+  font-weight: var(--crm-ui-kit-multiselect-item-font-weight);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-wrap: normal;
+
+  &:hover {
+    background-color: var(--crm-ui-kit-multiselect-item-hover-background-color);
+  }
+}
+
+.selected {
+  background-color: var(--crm-ui-kit-multiselect-item-selected-background-color);
+}
+
+.hovered {
+  background-color: var(--crm-ui-kit-multiselect-item-hovered-background-color);
+}

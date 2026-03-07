@@ -15,6 +15,7 @@ export * from './InlineInput'
 export * from './Switcher'
 export * from './SelectButton'
 export * from './Select'
+export * from './MultiSelect'
 
 // Checkbox — explicit to avoid collision with CheckboxGroup's re-export
 export { default as Checkbox } from './Checkbox/Checkbox.vue'

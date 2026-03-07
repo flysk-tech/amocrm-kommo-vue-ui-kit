@@ -1,0 +1,8 @@
+.multiselect {
+  position: relative;
+  z-index: var(--crm-ui-kit-multiselect-z-index);
+}
+
+.opened {
+  z-index: var(--crm-ui-kit-multiselect-opened-z-index);
+}

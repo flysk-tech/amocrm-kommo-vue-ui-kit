@@ -1,0 +1,53 @@
+.group {
+  list-style-type: none;
+  box-sizing: content-box;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: var(--crm-ui-kit-multiselect-group-padding);
+  box-sizing: content-box;
+
+  font-size: var(--crm-ui-kit-multiselect-group-font-size);
+  font-weight: var(--crm-ui-kit-multiselect-group-font-weight);
+  color: var(--crm-ui-kit-multiselect-group-color);
+  background-color: var(--crm-ui-kit-multiselect-group-background-color);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  cursor: default;
+}
+
+.headerSelectable {
+  cursor: pointer;
+}
+
+.label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+}
+
+.children {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  box-sizing: content-box;
+}
+
+.empty {
+  padding: 7px 12px;
+  box-sizing: content-box;
+  list-style-type: none;
+  opacity: 0.5;
+  font-size: var(--crm-ui-kit-base-font-size);
+}
