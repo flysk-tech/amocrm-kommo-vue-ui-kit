@@ -4,10 +4,7 @@
     <template #default="{ props: itemProps }">
       <div style="margin: 0 20px">
         <MultiSelect v-bind="itemProps" :theme="MultiSelectRootTheme" :items="flatItems" :value="[]">
-          <MultiSelectTrigger :theme="SelectButtonLightTheme">
-            <MultiSelectValue placeholder="Select items" />
-            <SelectArrow :theme="SelectArrowTheme" />
-          </MultiSelectTrigger>
+          <MultiSelectCombobox :theme="MultiSelectComboboxTheme" placeholder="Select items" />
           <MultiSelectList :theme="ListTheme">
             <MultiSelectItem
               v-for="item in flatItems"
@@ -26,10 +23,7 @@
     <template #default="{ props: itemProps }">
       <div style="margin: 0 20px">
         <MultiSelect v-bind="itemProps" :theme="MultiSelectRootTheme" :items="flatItems" :value="[]">
-          <MultiSelectTrigger :theme="SelectButtonLightTheme">
-            <MultiSelectValue placeholder="Select items" />
-            <SelectArrow :theme="SelectArrowTheme" />
-          </MultiSelectTrigger>
+          <MultiSelectCombobox :theme="MultiSelectComboboxTheme" placeholder="Select items" />
           <MultiSelectList :theme="ListTheme">
             <MultiSelectItem
               v-for="item in flatItems"
@@ -49,10 +43,7 @@
       <div style="margin: 0 20px">
         <div style="height: 180px">
           <MultiSelect v-bind="itemProps" :theme="MultiSelectRootTheme" :items="flatItems">
-            <MultiSelectTrigger :theme="SelectButtonLightTheme">
-              <MultiSelectValue placeholder="Select items" />
-              <SelectArrow :theme="SelectArrowTheme" />
-            </MultiSelectTrigger>
+            <MultiSelectCombobox :theme="MultiSelectComboboxTheme" placeholder="Select items" />
             <MultiSelectList :theme="ListTheme">
               <MultiSelectAll :theme="MultiSelectItemTheme" />
               <MultiSelectItem
@@ -74,13 +65,10 @@
       <div style="margin: 0 20px">
         <div style="height: 220px">
           <MultiSelect v-bind="itemProps" :theme="MultiSelectRootTheme" :items="groupedItems" :group-selectable="true">
-            <MultiSelectTrigger :theme="SelectButtonLightTheme">
-              <MultiSelectValue placeholder="Select users" display-mode="names" :max-display-items="3" />
-              <SelectArrow :theme="SelectArrowTheme" />
-            </MultiSelectTrigger>
+            <MultiSelectCombobox :theme="MultiSelectComboboxTheme" :groups="groups" placeholder="Select users" />
             <MultiSelectList :theme="ListTheme">
               <template v-for="group in groups" :key="group.id">
-                <MultiSelectGroup :group="group">
+                <MultiSelectGroup :group="group" :theme="MultiSelectGroupTheme">
                   <MultiSelectItem
                     v-for="item in groupedItems.filter(i => i.group === group.id)"
                     :key="item.value"
@@ -101,10 +89,7 @@
     <template #default="{ props: itemProps }">
       <div style="margin: 0 20px">
         <MultiSelect v-bind="itemProps" :theme="MultiSelectRootTheme" :items="flatItems">
-          <MultiSelectTrigger :theme="SelectButtonLightTheme">
-            <MultiSelectValue placeholder="Select items" />
-            <SelectArrow :theme="SelectArrowTheme" />
-          </MultiSelectTrigger>
+          <MultiSelectCombobox :theme="MultiSelectComboboxTheme" placeholder="Select items" />
           <MultiSelectList :theme="ListTheme">
             <MultiSelectItem
               v-for="item in flatItems"
@@ -121,20 +106,19 @@
 
 <script setup lang="ts">
 import ComponentPlayground from '@/tests/e2e/ComponentPlayground.vue'
-import { SelectButtonLightTheme } from '@/components/SelectButton'
 import { ListTheme } from '@/components/List'
-import { SelectArrowTheme, SelectArrow } from '@/components/Select'
 import type { Appearance } from '@/lib/appearance'
 
 import MultiSelect from '../MultiSelect.vue'
-import MultiSelectTrigger from '../components/Trigger/Trigger.vue'
+import MultiSelectCombobox from '../components/Combobox/Combobox.vue'
 import MultiSelectList from '../components/List/MultiSelectList.vue'
 import MultiSelectItem from '../components/Item/Item.vue'
 import MultiSelectGroup from '../components/Group/Group.vue'
 import MultiSelectAll from '../components/All/All.vue'
-import MultiSelectValue from '../components/Value/Value.vue'
 import { MultiSelectRootTheme } from '../MultiSelect.themes'
 import { MultiSelectItemTheme } from '../components/Item'
+import { MultiSelectGroupTheme } from '../components/Group'
+import { MultiSelectComboboxTheme } from '../components/Combobox'
 
 import type { MultiSelectItem as MultiSelectItemType, MultiSelectGroup as MultiSelectGroupType } from '../MultiSelect.types'
 
