@@ -6,6 +6,10 @@
 
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 [![Vue 3](https://img.shields.io/badge/Vue-3-4FC08D?logo=vue.js)](https://vuejs.org/)
+[![Storybook](https://img.shields.io/badge/Storybook-docs-FF4785?logo=storybook)](https://flysk-tech.github.io/amocrm-kommo-vue-ui-kit/)
+[![npm](https://img.shields.io/npm/v/@flysk-tech/amocrm-kommo-vue-ui-kit)](https://www.npmjs.com/package/@flysk-tech/amocrm-kommo-vue-ui-kit)
+
+**[Storybook](https://flysk-tech.github.io/amocrm-kommo-vue-ui-kit/)** | **[npm](https://www.npmjs.com/package/@flysk-tech/amocrm-kommo-vue-ui-kit)**
 
 ## Features
 
