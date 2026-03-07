@@ -5,7 +5,7 @@
     :class="[
       styles.select,
       {
-        [styles.opened]: isOpen
+        [styles.opened]: currentIsOpen
       }
     ]"
     :style="theme"
@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, reactive, watchEffect } from 'vue'
+import { ref, computed, reactive, useAttrs, getCurrentInstance } from 'vue'
 import { provideSelectContext, DISPLAY_NAME } from './Select.context'
 import type { SelectProps, SelectItem } from './Select.types'
 import styles from './Select.module.scss'
@@ -24,12 +24,7 @@ const BASE_HOVER_INDEX = -1
 
 type Props = SelectProps
 
-const props = withDefaults(defineProps<Props>(), {
-  isDisabled: false,
-  isOpen: false,
-  isDefaultOpen: false,
-  isInvalid: false,
-})
+const props = defineProps<Props>()
 
 const emit = defineEmits<{
   (e: 'change', item: SelectItem): void
@@ -37,23 +32,29 @@ const emit = defineEmits<{
 }>()
 
 const selectRef = ref<HTMLDivElement | null>(null)
-const internalIsOpened = ref(props.isDefaultOpen)
+const internalIsOpened = ref(props.isDefaultOpen ?? false)
 const internalHoveredIndex = ref(BASE_HOVER_INDEX)
 const internalDefaultValue = ref<SelectItem | undefined>(props.defaultValue)
 
-const isControlled = computed(() => 'value' in props && props.value !== undefined)
-const isOpenControlled = computed(() => 'isOpen' in props)
+const isControlled = computed(() => props.value !== undefined)
+
+// Check if isOpen was actually passed by the parent (Vue Boolean default is false)
+const instance = getCurrentInstance()
+const isOpenControlled = computed(() => {
+  const vnode = instance?.vnode
+  return vnode?.props ? ('isOpen' in vnode.props || 'is-open' in vnode.props) : false
+})
 
 const selected = computed(() =>
   isControlled.value ? props.value : internalDefaultValue.value
 )
 
-const isOpen = computed(() =>
-  isOpenControlled.value ? props.isOpen : internalIsOpened.value
+const currentIsOpen = computed(() =>
+  isOpenControlled.value ? Boolean(props.isOpen) : internalIsOpened.value
 )
 
 const handleOpen = (open: boolean) => {
-  if (!props.isDisabled && !isOpenControlled.value) {
+  if (!(props.isDisabled ?? false) && !isOpenControlled.value) {
     internalIsOpened.value = open
     emit('openChange', open)
   }
@@ -72,26 +73,18 @@ const handleHoveredIndexChange = (index: number) => {
   internalHoveredIndex.value = index
 }
 
-// Provide reactive context — provide once, update reactively
+// Use getters for reactive context
 const context = reactive({
-  hoveredIndex: internalHoveredIndex.value,
+  get hoveredIndex() { return internalHoveredIndex.value },
+  set hoveredIndex(v) { internalHoveredIndex.value = v },
   onHoveredIndexChange: handleHoveredIndexChange,
   onChange: handleChange,
-  isOpened: isOpen.value,
+  get isOpened() { return currentIsOpen.value },
   onOpen: handleOpen,
-  isDisabled: props.isDisabled,
-  isInvalid: props.isInvalid,
-  value: selected.value,
-  defaultValue: props.defaultValue,
-})
-
-watchEffect(() => {
-  context.hoveredIndex = internalHoveredIndex.value
-  context.isOpened = isOpen.value
-  context.isDisabled = props.isDisabled
-  context.isInvalid = props.isInvalid
-  context.value = selected.value
-  context.defaultValue = props.defaultValue
+  get isDisabled() { return props.isDisabled ?? false },
+  get isInvalid() { return props.isInvalid ?? false },
+  get value() { return selected.value },
+  get defaultValue() { return props.defaultValue },
 })
 
 provideSelectContext(context as any)

@@ -14,6 +14,7 @@ export * from './TextArea'
 export * from './InlineInput'
 export * from './Switcher'
 export * from './SelectButton'
+export * from './Select'
 
 // Checkbox — explicit to avoid collision with CheckboxGroup's re-export
 export { default as Checkbox } from './Checkbox/Checkbox.vue'
@@ -42,6 +43,7 @@ export * from './Callout'
 
 // Complex components
 export * from './Accordion'
+export * from './FilterTabs'
 
 // CheckboxGroup — namespaced to avoid ItemRoot/ItemRootProps/LabelGroupOrientation collisions
 export {
@@ -84,5 +86,3 @@ export {
   type RadioThemeType,
 } from './RadioGroup'
 
-export * from './FilterTabs'
-export * from './Select'
