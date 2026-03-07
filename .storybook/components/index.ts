@@ -1,4 +1,4 @@
-export { ThemeVisualization } from './ThemeVisualization/ThemeVisualization';
+export { default as ThemeVisualization } from './ThemeVisualization/ThemeVisualization.vue';
 // CodeBlock - just re-export Source from Storybook, since Source is a React component
 // and we can't easily wrap it in Vue
 export { Source as CodeBlock } from '@storybook/addon-docs/blocks';
