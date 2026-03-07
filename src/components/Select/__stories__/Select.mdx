@@ -1,0 +1,17 @@
+import { Title, Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import { CodeBlock } from '@storybook-utils/components'
+import * as SelectStories from './Select.stories'
+
+<Meta of={SelectStories} />
+
+<Title>Select</Title>
+
+<Canvas of={SelectStories.Default} />
+
+## Использование
+
+<CodeBlock of={SelectStories.Default} />
+
+## Props
+
+<Controls />

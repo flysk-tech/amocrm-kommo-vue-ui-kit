@@ -1,0 +1,75 @@
+import { Title, Meta } from '@storybook/addon-docs/blocks'
+import * as SelectStories from './Select.stories'
+import { ThemeVisualization } from '@storybook-utils/components'
+import { SelectRootTheme } from '../Select.themes'
+import { SelectItemTheme } from '../components/Item'
+import { SelectArrowTheme } from '../components/Arrow'
+import { SelectIconTheme } from '../components/Icon'
+import { ListTheme as SelectListTheme } from '../../List'
+import { SelectButtonLightTheme, SelectButtonDarkTheme } from '../../SelectButton'
+
+<Meta title="Components/Select/Themes" of={SelectStories} />
+
+<Title>Темы</Title>
+
+## SelectRootTheme
+
+```typescript
+import { SelectRootTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Select'
+```
+
+<ThemeVisualization theme={SelectRootTheme} />
+
+## SelectItemTheme
+
+```typescript
+import { SelectItemTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Select'
+```
+
+<ThemeVisualization theme={SelectItemTheme} />
+
+## SelectListTheme
+
+```typescript
+import { SelectListTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Select'
+```
+
+<ThemeVisualization theme={SelectListTheme} />
+
+## SelectArrowTheme
+
+```typescript
+import { SelectArrowTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Select'
+```
+
+<ThemeVisualization theme={SelectArrowTheme} />
+
+## SelectIconTheme
+
+```typescript
+import { SelectIconTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Select'
+```
+
+<ThemeVisualization theme={SelectIconTheme} />
+
+## SelectButtonLightTheme
+
+```typescript
+import { SelectButtonLightTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/SelectButton'
+```
+
+<ThemeVisualization
+  theme={SelectButtonLightTheme}
+  of={SelectStories.SelectButtonLight}
+/>
+
+## SelectButtonDarkTheme
+
+```typescript
+import { SelectButtonDarkTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/SelectButton'
+```
+
+<ThemeVisualization
+  theme={SelectButtonDarkTheme}
+  of={SelectStories.SelectButtonDark}
+/>

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import { ref, computed, h } from 'vue'
+import { ref } from 'vue'
 
 import Select from '../Select.vue'
 import SelectButtonComp from '../components/Button/Button.vue'
@@ -37,7 +37,7 @@ const USAGE = `
 import { ref } from "vue";
 import {
   Select,
-  SelectButton,
+  SelectTrigger,
   SelectList,
   SelectItem,
   SelectValue,
@@ -62,10 +62,10 @@ const handleChange = (item) => {
 };
 
 <Select :theme="SelectRootTheme" :value="value" @change="handleChange">
-  <SelectButton :theme="SelectButtonLightTheme">
+  <SelectTrigger :theme="SelectButtonLightTheme">
     <SelectValue placeholder="Placeholder" />
     <SelectArrow :theme="SelectArrowTheme" />
-  </SelectButton>
+  </SelectTrigger>
 
   <SelectList :theme="SelectListTheme">
     <SelectItem
@@ -95,19 +95,49 @@ const meta = {
 
 ## Структура
 
-- \`Select\` — корневой компонент (контекст)
+- \`Select\` — корневой компонент (контекст, управление состоянием)
 - \`SelectButton\` — кнопка-триггер
 - \`SelectValue\` — отображение текущего значения
 - \`SelectArrow\` — стрелка раскрытия
-- \`SelectList\` — список опций
+- \`SelectList\` — dropdown со списком опций
 - \`SelectItem\` — элемент списка
 - \`SelectIcon\` — иконка элемента
-- \`SelectOption\` — текст опции
+- \`SelectOption\` — текст опции (кастомный контент)
+
+## Props (Select)
+
+| Prop | Тип | Default | Описание |
+|------|-----|---------|----------|
+| theme | SelectRootThemeType | — | CSS переменные темы |
+| value | SelectItem | — | Контролируемое значение |
+| defaultValue | SelectItem | — | Неконтролируемое начальное значение |
+| isDisabled | boolean | false | Отключить компонент |
+| isInvalid | boolean | false | Состояние ошибки |
+| isOpen | boolean | — | Контролируемое открытие |
+| isDefaultOpen | boolean | false | Начальное открытие |
+
+## Props (SelectItem)
+
+| Prop | Тип | Default | Описание |
+|------|-----|---------|----------|
+| theme | SelectItemThemeType | — | CSS переменные элемента |
+| item | SelectItem | — | Объект элемента { value, option } |
+| index | number | — | Индекс для навигации клавиатурой |
 
 ## События
 
 - \`@change\` — изменение выбранного значения (item: SelectItem)
 - \`@openChange\` — открытие/закрытие списка (open: boolean)
+
+## Темы
+
+Каждый подкомпонент принимает свой объект темы:
+- \`SelectRootTheme\` — z-index корня
+- \`SelectItemTheme\` — padding, font, hover, selected items
+- \`SelectArrowTheme\` — размер и отступы стрелки
+- \`SelectIconTheme\` — размер и отступы иконки
+- \`SelectButtonLightTheme\` / \`SelectButtonDarkTheme\` — триггер
+- \`SelectListTheme\` — dropdown list
         `
       }
     }
@@ -125,7 +155,7 @@ const meta = {
   argTypes: {
     theme: {
       control: 'object',
-      description: 'Тема оформления',
+      description: 'Тема оформления (CSS переменные)',
     },
     isDisabled: {
       control: 'boolean',
@@ -134,6 +164,22 @@ const meta = {
     isInvalid: {
       control: 'boolean',
       description: 'Невалидное состояние',
+    },
+    value: {
+      control: 'object',
+      description: 'Выбранный элемент { value, option }',
+    },
+    defaultValue: {
+      control: 'object',
+      description: 'Начальное значение (неконтролируемый режим)',
+    },
+    isOpen: {
+      control: 'boolean',
+      description: 'Контролируемое открытие/закрытие',
+    },
+    isDefaultOpen: {
+      control: 'boolean',
+      description: 'Начальное состояние открытия',
     },
   },
 } satisfies Meta<typeof Select>
@@ -326,7 +372,8 @@ export const States: Story = {
   }),
 }
 
-export const DarkButton: Story = {
+export const SelectButtonLight: Story = {
+  tags: ['!dev'],
   render: (args) => ({
     components: {
       Select,
@@ -338,20 +385,45 @@ export const DarkButton: Story = {
     },
     setup() {
       const value = ref<SelectItem>(DefaultSelectItems[0])
-
-      const handleChange = (item: SelectItem) => {
-        value.value = item
-      }
+      const handleChange = (item: SelectItem) => { value.value = item }
 
       return {
-        args,
-        value,
-        handleChange,
-        DefaultSelectItems,
-        SelectArrowTheme,
-        SelectItemTheme,
-        SelectListTheme,
-        SelectButtonDarkTheme,
+        args, value, handleChange, DefaultSelectItems,
+        SelectArrowTheme, SelectItemTheme, SelectListTheme, SelectButtonLightTheme,
+      }
+    },
+    template: `
+      <Select v-bind="args" :value="value" @change="handleChange">
+        <SelectButtonComp :theme="SelectButtonLightTheme">
+          <SelectValueComp placeholder="Выберите значение" />
+          <SelectArrowComp :theme="SelectArrowTheme" />
+        </SelectButtonComp>
+        <SelectListComp :theme="SelectListTheme">
+          <SelectItemComp v-for="(item, index) in DefaultSelectItems" :key="item.value" :theme="SelectItemTheme" :item="item" :index="index" />
+        </SelectListComp>
+      </Select>
+    `,
+  }),
+}
+
+export const SelectButtonDark: Story = {
+  tags: ['!dev'],
+  render: (args) => ({
+    components: {
+      Select,
+      SelectButtonComp,
+      SelectListComp,
+      SelectItemComp,
+      SelectValueComp,
+      SelectArrowComp,
+    },
+    setup() {
+      const value = ref<SelectItem>(DefaultSelectItems[0])
+      const handleChange = (item: SelectItem) => { value.value = item }
+
+      return {
+        args, value, handleChange, DefaultSelectItems,
+        SelectArrowTheme, SelectItemTheme, SelectListTheme, SelectButtonDarkTheme,
       }
     },
     template: `
@@ -360,15 +432,8 @@ export const DarkButton: Story = {
           <SelectValueComp placeholder="Выберите значение" />
           <SelectArrowComp :theme="SelectArrowTheme" />
         </SelectButtonComp>
-
         <SelectListComp :theme="SelectListTheme">
-          <SelectItemComp
-            v-for="(item, index) in DefaultSelectItems"
-            :key="item.value"
-            :theme="SelectItemTheme"
-            :item="item"
-            :index="index"
-          />
+          <SelectItemComp v-for="(item, index) in DefaultSelectItems" :key="item.value" :theme="SelectItemTheme" :item="item" :index="index" />
         </SelectListComp>
       </Select>
     `,
