@@ -20,4 +20,24 @@ jobs:
           registry-url: https://registry.npmjs.org
       - run: yarn install --frozen-lockfile
       - run: yarn build
+      - name: Mint npm token via OIDC
+        run: |
+          OIDC_TOKEN=$(curl -sS -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=https://registry.npmjs.org" | jq -r '.value')
+          response=$(curl -sS -w "\n%{http_code}" -X POST "https://registry.npmjs.org/-/npm/v1/security/oidc/token" \
+            -H "Content-Type: application/json" \
+            -d "{\"oidcToken\": \"$OIDC_TOKEN\"}")
+          http_code=$(echo "$response" | tail -1)
+          body=$(echo "$response" | head -n -1)
+          echo "OIDC exchange HTTP status: $http_code"
+          if [ "$http_code" != "200" ]; then
+            echo "OIDC token exchange failed: $body"
+            exit 1
+          fi
+          NPM_TOKEN=$(echo "$body" | jq -r '.token')
+          if [ -z "$NPM_TOKEN" ] || [ "$NPM_TOKEN" = "null" ]; then
+            echo "Failed to extract token from response: $body"
+            exit 1
+          fi
+          npm config set "//registry.npmjs.org/:_authToken" "$NPM_TOKEN"
       - run: npm publish --access public
