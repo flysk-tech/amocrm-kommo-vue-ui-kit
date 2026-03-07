@@ -1,29 +1,41 @@
 .list {
   position: absolute;
-  top: var(--crm-ui-kit-list-top);
-  left: var(--crm-ui-kit-list-left);
+  top: 100%;
+  left: 0;
   overflow: auto;
 
   display: block;
-  width: var(--crm-ui-kit-list-width);
+  width: 100%;
   max-height: var(--crm-ui-kit-list-max-height);
   padding: 0;
-  padding-right: var(--crm-ui-kit-list-padding-right);
   margin: 0;
-  margin-right: var(--crm-ui-kit-list-margin-right);
-  box-sizing: content-box;
+  box-sizing: border-box;
 
   color: var(--crm-ui-kit-list-color);
   background-color: var(--crm-ui-kit-list-background-color);
-  border-width: var(--crm-ui-kit-list-border-width);
-  border-style: var(--crm-ui-kit-list-border-style);
-  border-color: var(--crm-ui-kit-list-border-color);
-
+  border: none;
   border-radius: var(--crm-ui-kit-list-border-radius);
-  outline: var(--crm-ui-kit-list-outline);
+  outline: var(--crm-ui-kit-list-border-width) var(--crm-ui-kit-list-border-style) var(--crm-ui-kit-list-border-color);
 
   z-index: var(--crm-ui-kit-list-z-index);
   -webkit-overflow-scrolling: touch;
+
+  // Custom scrollbar (same approach as React's CustomScrollClassName)
+  scrollbar-color: var(--crm-ui-kit-palette-scrollbar-thumb-background) inherit;
+
+  &::-webkit-scrollbar {
+    width: var(--crm-ui-kit-palette-scrollbar-width);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--crm-ui-kit-palette-scrollbar-track-background);
+    border-radius: var(--crm-ui-kit-palette-scrollbar-track-border-radius);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: var(--crm-ui-kit-palette-scrollbar-thumb-border-radius);
+    background: var(--crm-ui-kit-palette-scrollbar-thumb-background);
+  }
 }
 
 .empty {

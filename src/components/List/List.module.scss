@@ -30,4 +30,25 @@
   outline: var(--crm-ui-kit-list-outline);
 
   z-index: var(--crm-ui-kit-list-z-index);
+
+  // Custom scrollbar (matches React's CustomScrollClassName)
+  // Only Firefox fallback — scrollbar-color with inherit is intentionally
+  // invalid as CSS-wide keyword, matching React behavior.
+  // Chrome 121+ ignores ::-webkit-scrollbar when scrollbar-width is set,
+  // so we must NOT set scrollbar-width here.
+  scrollbar-color: var(--crm-ui-kit-palette-scrollbar-thumb-background) inherit;
+
+  &::-webkit-scrollbar {
+    width: var(--crm-ui-kit-palette-scrollbar-width);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--crm-ui-kit-palette-scrollbar-track-background);
+    border-radius: var(--crm-ui-kit-palette-scrollbar-track-border-radius);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: var(--crm-ui-kit-palette-scrollbar-thumb-border-radius);
+    background: var(--crm-ui-kit-palette-scrollbar-thumb-background);
+  }
 }

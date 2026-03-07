@@ -6,7 +6,6 @@
     tabindex="0"
     role="list"
     :class="[
-      'custom-scroll',
       styles.list,
       {
         [styles.opened]: isOpened

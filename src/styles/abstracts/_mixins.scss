@@ -40,19 +40,24 @@
   }
 }
 
-// Миксин для кастомного scrollbar
+// Миксин для кастомного scrollbar (matches React's CustomScrollClassName)
+// NOTE: Do NOT add scrollbar-width here — Chrome 121+ ignores ::-webkit-scrollbar
+// when standard scrollbar-width/scrollbar-color are set.
 @mixin custom-scrollbar() {
-  scrollbar-width: var(--#{$prefix}-scrollbar-width, 7px);
+  scrollbar-color: var(--crm-ui-kit-palette-scrollbar-thumb-background) inherit;
 
   &::-webkit-scrollbar {
-    width: var(--#{$prefix}-scrollbar-width, 7px);
-    background: var(--#{$prefix}-scrollbar-track-background, inherit);
-    border-radius: var(--#{$prefix}-scrollbar-track-border-radius, 3px);
+    width: var(--crm-ui-kit-palette-scrollbar-width);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--crm-ui-kit-palette-scrollbar-track-background);
+    border-radius: var(--crm-ui-kit-palette-scrollbar-track-border-radius);
   }
 
   &::-webkit-scrollbar-thumb {
-    background: var(--#{$prefix}-scrollbar-thumb-background, #cdcdcd);
-    border-radius: var(--#{$prefix}-scrollbar-thumb-border-radius, 30px);
+    background: var(--crm-ui-kit-palette-scrollbar-thumb-background);
+    border-radius: var(--crm-ui-kit-palette-scrollbar-thumb-border-radius);
   }
 }
 
