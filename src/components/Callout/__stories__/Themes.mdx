@@ -1,0 +1,57 @@
+import { Title, Meta } from '@storybook/addon-docs/blocks'
+import * as CalloutStories from './Callout.stories'
+import { ThemeVisualization } from '@storybook-utils/components'
+import {
+  CalloutWarningTheme,
+  CalloutErrorTheme,
+  CalloutSuccessTheme,
+  CalloutInfoTheme,
+} from '../Callout.themes'
+
+<Meta title="Components/Callout/Themes" of={CalloutStories} />
+
+<Title>Темы</Title>
+
+## CalloutWarningTheme
+
+```typescript
+import { CalloutWarningTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Callout'
+```
+
+<ThemeVisualization
+  theme={(() => { const { Icon, ...rest } = CalloutWarningTheme; return rest })()}
+  of={CalloutStories.CalloutWarning}
+/>
+
+## CalloutErrorTheme
+
+```typescript
+import { CalloutErrorTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Callout'
+```
+
+<ThemeVisualization
+  theme={(() => { const { Icon, ...rest } = CalloutErrorTheme; return rest })()}
+  of={CalloutStories.CalloutError}
+/>
+
+## CalloutSuccessTheme
+
+```typescript
+import { CalloutSuccessTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Callout'
+```
+
+<ThemeVisualization
+  theme={(() => { const { Icon, ...rest } = CalloutSuccessTheme; return rest })()}
+  of={CalloutStories.CalloutSuccess}
+/>
+
+## CalloutInfoTheme
+
+```typescript
+import { CalloutInfoTheme } from '@flysk-tech/amocrm-kommo-vue-ui-kit/Callout'
+```
+
+<ThemeVisualization
+  theme={(() => { const { Icon, ...rest } = CalloutInfoTheme; return rest })()}
+  of={CalloutStories.CalloutInfo}
+/>
