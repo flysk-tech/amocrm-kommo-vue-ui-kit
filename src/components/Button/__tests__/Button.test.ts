@@ -247,16 +247,18 @@ describe('Button', () => {
     expect(button).toHaveAttribute('aria-label', 'Custom button')
   })
 
-  it('renders children prop as text content', () => {
+  it('renders default slot as text content', () => {
     const { getByRole } = render(Button, {
       props: {
         theme: ButtonPrimaryTheme,
-        children: 'Via children prop',
+      },
+      slots: {
+        default: 'Via default slot',
       },
     })
 
     const button = getByRole('button')
-    expect(button).toHaveTextContent('Via children prop')
+    expect(button).toHaveTextContent('Via default slot')
   })
 
   it('applies disabled CSS class when isDisabled is true', () => {

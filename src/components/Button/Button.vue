@@ -17,7 +17,8 @@
     <span :class="styles.content">
       <!-- Состояние успеха -->
       <span v-if="shouldShowSuccessfulState">
-        {{ successfulStateText || children }}
+        {{ successfulStateText }}
+        <slot v-if="!successfulStateText" />
       </span>
 
       <!-- Состояние загрузки -->
@@ -35,7 +36,7 @@
         </span>
 
         <span>
-          <slot>{{ children }}</slot>
+          <slot />
         </span>
 
         <span v-if="after" :class="styles.after">
@@ -47,11 +48,10 @@
 </template>
 
 <script setup lang="ts">
-import { computed, watchEffect } from 'vue'
+import { computed } from 'vue'
 import Spinner from '../Spinner/Spinner.vue'
 import { useShowInvalidAnimation, useShowSuccessfulState } from './composables/useButtonAnimations'
 import type { ButtonProps } from './Button.types'
-import type { ButtonThemeType } from './Button.themes'
 import styles from './Button.module.scss'
 
 const props = withDefaults(defineProps<ButtonProps>(), {
@@ -65,22 +65,10 @@ const emit = defineEmits<{
   (e: 'click', event: MouseEvent): void
 }>()
 
-// Композиционные функции для анимаций - переиспользуют React логику
 const { shouldShowInvalidAnimation, showInvalidAnimation } = useShowInvalidAnimation()
 const { shouldShowSuccessfulState, showSuccessfulState } = useShowSuccessfulState()
 
-// Реактивно устанавливаем функции в refs
-watchEffect(() => {
-  if (props.showInvalidAnimationRef) {
-    props.showInvalidAnimationRef.value = showInvalidAnimation
-  }
-})
-
-watchEffect(() => {
-  if (props.showSuccessfulStateRef) {
-    props.showSuccessfulStateRef.value = showSuccessfulState
-  }
-})
+defineExpose({ showInvalidAnimation, showSuccessfulState })
 
 // Mapping тем для Spinner - точно как в React версии
 const spinnerThemes = computed(() => {

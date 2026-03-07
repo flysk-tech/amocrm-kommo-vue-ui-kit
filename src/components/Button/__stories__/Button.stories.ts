@@ -3,7 +3,6 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 import { ref } from 'vue'
 import Button from '../Button.vue'
 import { ButtonNeutralTheme, ButtonPrimaryTheme, ButtonSecondaryTheme } from '../Button.themes'
-import type { AnimationRefType } from '../Button.types'
 
 const meta = {
   title: 'Components/Button',
@@ -43,9 +42,8 @@ import { Button, ButtonPrimaryTheme, ButtonNeutralTheme, ButtonSecondaryTheme } 
 - \`isLoading\` - показать состояние загрузки
 - \`isDisabled\` - отключить кнопку
 - \`before\`/\`after\` - контент до/после основного текста
-- \`showSuccessfulStateRef\` - ref для управления анимацией успеха
-- \`showInvalidAnimationRef\` - ref для управления анимацией ошибки
 - \`successfulStateText\` - текст для состояния успеха
+- Анимации доступны через template ref: \`buttonRef.showSuccessfulState()\`, \`buttonRef.showInvalidAnimation()\`
 - \`isClickableWhileDisabled\` - разрешить клики в отключенном состоянии
 
 ### Events
@@ -62,14 +60,9 @@ import { Button, ButtonPrimaryTheme, ButtonNeutralTheme, ButtonSecondaryTheme } 
     }
   },
   args: {
-    children: 'Кнопка',
     theme: ButtonPrimaryTheme
   },
   argTypes: {
-    children: {
-      control: 'text',
-      description: 'Текст кнопки'
-    },
     theme: {
       control: 'object',
       description: 'Объект с CSS переменными темы'
@@ -100,9 +93,13 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    children: 'Перейти в Dashboard',
     theme: ButtonPrimaryTheme
   },
+  render: (args) => ({
+    components: { Button },
+    setup() { return { args } },
+    template: '<Button v-bind="args">Перейти в Dashboard</Button>',
+  }),
   parameters: {
     docs: {
       description: {
@@ -115,10 +112,14 @@ export const Default: Story = {
 export const Loading: Story = {
   tags: ['!autodocs'],
   args: {
-    children: 'Загрузка...',
     theme: ButtonPrimaryTheme,
     isLoading: true
   },
+  render: (args) => ({
+    components: { Button },
+    setup() { return { args } },
+    template: '<Button v-bind="args">Загрузка...</Button>',
+  }),
   parameters: {
     docs: {
       description: {
@@ -131,10 +132,14 @@ export const Loading: Story = {
 export const Disabled: Story = {
   tags: ['!autodocs'],
   args: {
-    children: 'Отключенная кнопка',
     theme: ButtonPrimaryTheme,
     isDisabled: true
   },
+  render: (args) => ({
+    components: { Button },
+    setup() { return { args } },
+    template: '<Button v-bind="args">Отключенная кнопка</Button>',
+  }),
   parameters: {
     docs: {
       description: {
@@ -146,26 +151,29 @@ export const Disabled: Story = {
 
 export const Primary: Story = {
   tags: ['!autodocs'],
-  args: {
-    children: 'Primary кнопка',
-    theme: ButtonPrimaryTheme
-  }
+  render: () => ({
+    components: { Button },
+    setup() { return { ButtonPrimaryTheme } },
+    template: '<Button :theme="ButtonPrimaryTheme">Primary кнопка</Button>',
+  }),
 }
 
 export const Neutral: Story = {
   tags: ['!autodocs'],
-  args: {
-    children: 'Neutral кнопка',
-    theme: ButtonNeutralTheme
-  }
+  render: () => ({
+    components: { Button },
+    setup() { return { ButtonNeutralTheme } },
+    template: '<Button :theme="ButtonNeutralTheme">Neutral кнопка</Button>',
+  }),
 }
 
 export const Secondary: Story = {
   tags: ['!autodocs'],
-  args: {
-    children: 'Secondary кнопка',
-    theme: ButtonSecondaryTheme
-  }
+  render: () => ({
+    components: { Button },
+    setup() { return { ButtonSecondaryTheme } },
+    template: '<Button :theme="ButtonSecondaryTheme">Secondary кнопка</Button>',
+  }),
 }
 
 export const WithAnimations: Story = {
@@ -217,29 +225,21 @@ export const WithAnimations: Story = {
   render: (args) => ({
     components: { Button },
     setup() {
-      const showSuccessfulStateRef = ref<AnimationRefType | null>(null)
-      const showInvalidAnimationRef = ref<AnimationRefType | null>(null)
-
-      // Wrap refs in plain objects so Vue template doesn't unwrap them
-      const successRef = { ref: showSuccessfulStateRef }
-      const errorRef = { ref: showInvalidAnimationRef }
+      const successButtonRef = ref()
+      const errorButtonRef = ref()
 
       const handleSuccessClick = () => {
-        if (showSuccessfulStateRef.value) {
-          showSuccessfulStateRef.value()
-        }
+        successButtonRef.value?.showSuccessfulState()
       }
 
       const handleErrorClick = () => {
-        if (showInvalidAnimationRef.value) {
-          showInvalidAnimationRef.value()
-        }
+        errorButtonRef.value?.showInvalidAnimation()
       }
 
       return {
         ButtonPrimaryTheme,
-        successRef,
-        errorRef,
+        successButtonRef,
+        errorButtonRef,
         handleSuccessClick,
         handleErrorClick
       }
@@ -247,8 +247,8 @@ export const WithAnimations: Story = {
     template: `
       <div style="display: flex; gap: 16px; align-items: flex-start;">
         <Button
+          ref="successButtonRef"
           :theme="ButtonPrimaryTheme"
-          :showSuccessfulStateRef="successRef.ref"
           successfulStateText="Сохранено!"
           @click="handleSuccessClick"
         >
@@ -256,8 +256,8 @@ export const WithAnimations: Story = {
         </Button>
 
         <Button
+          ref="errorButtonRef"
           :theme="ButtonPrimaryTheme"
-          :showInvalidAnimationRef="errorRef.ref"
           @click="handleErrorClick"
         >
           Показать ошибку

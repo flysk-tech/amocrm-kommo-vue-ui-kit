@@ -1,5 +1,4 @@
-import { ref, type Ref } from 'vue'
-import type { AnimationRefType } from '../Button.types'
+import { ref } from 'vue'
 
 // Vue версия useShowInvalidAnimation хука из React
 export function useShowInvalidAnimation() {
