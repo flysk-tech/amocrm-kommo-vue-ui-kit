@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, reactive, watchEffect } from 'vue'
+import { ref, reactive } from 'vue'
 import { provideRadioGroupContext, DISPLAY_NAME } from './RadioGroup.context'
 import type { RadioGroupProps } from './RadioGroup.types'
 import styles from './RadioGroup.module.scss'
@@ -39,20 +39,13 @@ const handleChange = (event: Event) => {
   emit('change', target.value)
 }
 
-// Provide reactive context for child components
+// Use reactive getters for proper reactivity propagation
 const context = reactive({
-  name: props.name,
-  value: props.value,
-  defaultValue: props.defaultValue,
-  isDisabled: props.isDisabled,
+  get name() { return props.name },
+  get value() { return props.value },
+  get defaultValue() { return props.defaultValue },
+  get isDisabled() { return props.isDisabled },
   onChange: handleChange,
-})
-
-watchEffect(() => {
-  context.name = props.name
-  context.value = props.value
-  context.defaultValue = props.defaultValue
-  context.isDisabled = props.isDisabled
 })
 
 provideRadioGroupContext(context as any)

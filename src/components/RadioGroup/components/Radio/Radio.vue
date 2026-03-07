@@ -5,7 +5,7 @@
       :class="[styles.input, className]"
       type="radio"
       :value="value"
-      :isDisabled="isDisabled || itemRootIsDisabled"
+      :isDisabled="radioGroupContext.isDisabled || itemRootIsDisabled"
       v-bind="propsBasedOnType"
     />
     <span :class="styles.radio" />
@@ -32,13 +32,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const inputRef = ref<InstanceType<typeof VisuallyHiddenInput> | null>(null)
 
-const {
-  value: currentValue,
-  defaultValue,
-  isDisabled,
-  name,
-  onChange,
-} = useRadioGroupContext(DISPLAY_NAME)
+const radioGroupContext = useRadioGroupContext(DISPLAY_NAME)
 
 const {
   value,
@@ -49,20 +43,20 @@ const {
 
 const propsBasedOnType = computed(() => {
   const baseProps = {
-    name,
-    onChange,
+    name: radioGroupContext.name,
+    onChange: radioGroupContext.onChange,
     ...restItemRoot,
   }
 
-  if (defaultValue) {
+  if (radioGroupContext.defaultValue) {
     return {
-      isDefaultChecked: defaultValue === value,
+      isDefaultChecked: radioGroupContext.defaultValue === value,
       ...baseProps,
     }
   }
 
   return {
-    isChecked: currentValue === value,
+    isChecked: radioGroupContext.value === value,
     ...baseProps,
   }
 })

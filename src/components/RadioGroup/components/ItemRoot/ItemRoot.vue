@@ -21,7 +21,8 @@ import styles from './ItemRoot.module.scss'
 
 const props = defineProps<ItemRootProps>()
 
-const { isDisabled: groupIsDisabled } = useRadioGroupContext(DISPLAY_NAME)
+const radioGroupContext = useRadioGroupContext(DISPLAY_NAME)
+const groupIsDisabled = computed(() => radioGroupContext.isDisabled)
 
 // Provide context for Radio component
 const contextValue = computed(() => {
