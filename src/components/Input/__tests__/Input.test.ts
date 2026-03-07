@@ -268,6 +268,38 @@ describe('Input', () => {
     expect(mockFn).toHaveBeenCalledWith('x')
   })
 
+  // v-model / programmatic modelValue
+  it('should reflect modelValue prop as input value', () => {
+    renderInput({ modelValue: 'programmatic' })
+
+    const element = screen.getByPlaceholderText(basePlaceholderText)
+    expect(element).toHaveValue('programmatic')
+  })
+
+  it('should update DOM input when modelValue prop changes', async () => {
+    const { rerender } = renderInput({ modelValue: 'initial' })
+
+    const element = screen.getByPlaceholderText(basePlaceholderText)
+    expect(element).toHaveValue('initial')
+
+    await rerender({ modelValue: 'updated', theme: InputLightTheme, placeholder: basePlaceholderText })
+    expect(element).toHaveValue('updated')
+  })
+
+  it('should show empty input when modelValue is empty string', () => {
+    renderInput({ modelValue: '' })
+
+    const element = screen.getByPlaceholderText(basePlaceholderText)
+    expect(element).toHaveValue('')
+  })
+
+  it('should support numeric modelValue', () => {
+    renderInput({ modelValue: 42 })
+
+    const element = screen.getByPlaceholderText(basePlaceholderText)
+    expect(element).toHaveValue('42')
+  })
+
   // attrs forwarding (class should stay on wrapper, not on input)
   it('should apply class attr to wrapper, not to input', () => {
     const { container } = render(Input, {

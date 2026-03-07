@@ -60,6 +60,9 @@ type Props = InputProps & {
 const attrs = useAttrs()
 const inputAttrs = computed(() => {
   const { class: _, style: __, ...rest } = attrs
+  if (props.modelValue !== undefined) {
+    return { ...rest, value: props.modelValue }
+  }
   return rest
 })
 
@@ -77,7 +80,7 @@ const props = withDefaults(defineProps<Props>(), {
   isReadonly: false,
   isPlaceholderVisibleOnFocus: false,
   invalidDescriptionPlacement: 'bottom',
-  modelValue: '',
+  modelValue: undefined,
   after: undefined,
   invalidDescription: undefined
 })
