@@ -46,6 +46,9 @@ Thumbs.db
 .husky/_
 *storybook.log
 
+# Claude
+CLAUDE.md
+
 # Playwright
 playwright-report/
 playwright/.cache/
