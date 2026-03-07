@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { render, fireEvent } from '@testing-library/vue'
 import Button from '../Button.vue'
 import { ButtonPrimaryTheme } from '../Button.themes'
+import buttonStyles from '../Button.module.scss'
 
 describe('Button', () => {
   it('should be defined', () => {
@@ -244,5 +245,138 @@ describe('Button', () => {
     const button = getByRole('button')
     expect(button).toHaveAttribute('data-testid', 'custom-button')
     expect(button).toHaveAttribute('aria-label', 'Custom button')
+  })
+
+  it('renders children prop as text content', () => {
+    const { getByRole } = render(Button, {
+      props: {
+        theme: ButtonPrimaryTheme,
+        children: 'Via children prop',
+      },
+    })
+
+    const button = getByRole('button')
+    expect(button).toHaveTextContent('Via children prop')
+  })
+
+  it('applies disabled CSS class when isDisabled is true', () => {
+    const { getByRole } = render(Button, {
+      props: {
+        theme: ButtonPrimaryTheme,
+        isDisabled: true,
+      },
+      slots: {
+        default: 'Disabled',
+      },
+    })
+
+    const button = getByRole('button')
+    expect(button).toHaveClass(buttonStyles.disabled)
+  })
+
+  it('does not apply disabled CSS class by default', () => {
+    const { getByRole } = render(Button, {
+      props: {
+        theme: ButtonPrimaryTheme,
+      },
+      slots: {
+        default: 'Button',
+      },
+    })
+
+    const button = getByRole('button')
+    expect(button).not.toHaveClass(buttonStyles.disabled)
+  })
+
+  it('defaults to type="button"', () => {
+    const { getByRole } = render(Button, {
+      props: {
+        theme: ButtonPrimaryTheme,
+      },
+      slots: {
+        default: 'Button',
+      },
+    })
+
+    const button = getByRole('button')
+    expect(button).toHaveAttribute('type', 'button')
+  })
+
+  it('applies type="reset"', () => {
+    const { getByRole } = render(Button, {
+      props: {
+        theme: ButtonPrimaryTheme,
+        type: 'reset',
+      },
+      slots: {
+        default: 'Reset',
+      },
+    })
+
+    const button = getByRole('button')
+    expect(button).toHaveAttribute('type', 'reset')
+  })
+
+  it('applies button base CSS class', () => {
+    const { getByRole } = render(Button, {
+      props: {
+        theme: ButtonPrimaryTheme,
+      },
+      slots: {
+        default: 'Button',
+      },
+    })
+
+    const button = getByRole('button')
+    expect(button).toHaveClass(buttonStyles.button)
+  })
+
+  it('is not disabled when isClickableWhileDisabled is true', () => {
+    const { getByRole } = render(Button, {
+      props: {
+        theme: ButtonPrimaryTheme,
+        isDisabled: true,
+        isClickableWhileDisabled: true,
+      },
+      slots: {
+        default: 'Button',
+      },
+    })
+
+    const button = getByRole('button')
+    expect(button).not.toBeDisabled()
+  })
+
+  it('does not emit click when disabled without isClickableWhileDisabled even if not HTML-disabled', async () => {
+    // When isDisabled is true and isClickableWhileDisabled is false,
+    // the button is HTML-disabled so click won't reach handler
+    const { getByRole, emitted } = render(Button, {
+      props: {
+        theme: ButtonPrimaryTheme,
+        isDisabled: true,
+      },
+      slots: {
+        default: 'Button',
+      },
+    })
+
+    const button = getByRole('button')
+    await fireEvent.click(button)
+    expect(emitted()).not.toHaveProperty('click')
+  })
+
+  it('renders spinner when loading', () => {
+    const { container } = render(Button, {
+      props: {
+        theme: ButtonPrimaryTheme,
+        isLoading: true,
+      },
+      slots: {
+        default: 'Loading',
+      },
+    })
+
+    const spinnerContainer = container.querySelector(`.${buttonStyles.spinner_container}`)
+    expect(spinnerContainer).toBeInTheDocument()
   })
 })

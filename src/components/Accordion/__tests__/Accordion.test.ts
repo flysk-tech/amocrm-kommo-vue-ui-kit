@@ -131,6 +131,88 @@ describe('AccordionSingle', () => {
       expect(items[0]).not.toHaveClass(styles.active)
     })
   })
+
+  it('should render all items with titles', () => {
+    renderAccordionSingle()
+
+    expect(screen.getByText('Item 1')).toBeInTheDocument()
+    expect(screen.getByText('Item 2')).toBeInTheDocument()
+    expect(screen.getByText('Item 3')).toBeInTheDocument()
+  })
+
+  it('should render all accordion items', () => {
+    renderAccordionSingle()
+
+    const items = screen.getAllByTestId(DATA_ACCORDION_ITEM_TEST_ID)
+    expect(items).toHaveLength(3)
+  })
+
+  it('should only have one item active at a time', async () => {
+    renderAccordionSingle()
+
+    const item1Header = screen.getByText(defaultItems[0].title)
+    const item2Header = screen.getByText(defaultItems[1].title)
+
+    await fireEvent.click(item1Header)
+
+    const items = screen.getAllByTestId(DATA_ACCORDION_ITEM_TEST_ID)
+
+    await waitFor(() => {
+      expect(items[0]).toHaveClass(styles.active)
+    })
+
+    await fireEvent.click(item2Header)
+
+    await waitFor(() => {
+      expect(items[0]).not.toHaveClass(styles.active)
+      expect(items[1]).toHaveClass(styles.active)
+    })
+  })
+
+  it('should render with defaultValue', () => {
+    renderAccordionSingle({ defaultValue: '2' })
+
+    const items = screen.getAllByTestId(DATA_ACCORDION_ITEM_TEST_ID)
+    expect(items[1]).toHaveClass(styles.active)
+  })
+
+  it('should render with controlled value', () => {
+    renderAccordionSingle({ value: '3' })
+
+    const items = screen.getAllByTestId(DATA_ACCORDION_ITEM_TEST_ID)
+    expect(items[2]).toHaveClass(styles.active)
+  })
+
+  it('should have no active items initially', () => {
+    renderAccordionSingle()
+
+    const items = screen.getAllByTestId(DATA_ACCORDION_ITEM_TEST_ID)
+    items.forEach((item) => {
+      expect(item).not.toHaveClass(styles.active)
+    })
+  })
+
+  it('should emit onChange with undefined when collapsible item is collapsed', async () => {
+    const { onChangeMock } = renderAccordionSingle({ isCollapsible: true })
+
+    const itemHeader = screen.getByText(defaultItems[0].title)
+
+    await fireEvent.click(itemHeader)
+    await fireEvent.click(itemHeader)
+
+    expect(onChangeMock).toHaveBeenLastCalledWith(undefined)
+  })
+
+  it('should emit onChange with value when non-collapsible item clicked again', async () => {
+    const { onChangeMock } = renderAccordionSingle({ isCollapsible: false })
+
+    const itemHeader = screen.getByText(defaultItems[0].title)
+
+    await fireEvent.click(itemHeader)
+    await fireEvent.click(itemHeader)
+
+    expect(onChangeMock).toHaveBeenLastCalledWith(defaultItems[0].value)
+  })
 })
 
 const renderAccordionMultiple = (
@@ -217,5 +299,84 @@ describe('AccordionMultiple', () => {
       expect(items[0]).not.toHaveClass(styles.active)
       expect(items[1]).toHaveClass(styles.active)
     })
+  })
+
+  it('should have no active items initially', () => {
+    renderAccordionMultiple()
+
+    const items = screen.getAllByTestId(DATA_ACCORDION_ITEM_TEST_ID)
+    items.forEach((item) => {
+      expect(item).not.toHaveClass(styles.active)
+    })
+  })
+
+  it('should render with defaultValue', () => {
+    renderAccordionMultiple({ defaultValue: ['1', '3'] })
+
+    const items = screen.getAllByTestId(DATA_ACCORDION_ITEM_TEST_ID)
+    expect(items[0]).toHaveClass(styles.active)
+    expect(items[1]).not.toHaveClass(styles.active)
+    expect(items[2]).toHaveClass(styles.active)
+  })
+
+  it('should render with controlled value', () => {
+    renderAccordionMultiple({ value: ['2'] })
+
+    const items = screen.getAllByTestId(DATA_ACCORDION_ITEM_TEST_ID)
+    expect(items[0]).not.toHaveClass(styles.active)
+    expect(items[1]).toHaveClass(styles.active)
+    expect(items[2]).not.toHaveClass(styles.active)
+  })
+
+  it('should open all three items', async () => {
+    const { onChangeMock } = renderAccordionMultiple()
+
+    await fireEvent.click(screen.getByText(defaultItems[0].title))
+    await fireEvent.click(screen.getByText(defaultItems[1].title))
+    await fireEvent.click(screen.getByText(defaultItems[2].title))
+
+    expect(onChangeMock).toHaveBeenLastCalledWith([
+      defaultItems[0].value,
+      defaultItems[1].value,
+      defaultItems[2].value,
+    ])
+
+    const items = screen.getAllByTestId(DATA_ACCORDION_ITEM_TEST_ID)
+    await waitFor(() => {
+      items.forEach((item) => {
+        expect(item).toHaveClass(styles.active)
+      })
+    })
+  })
+
+  it('should close all items by clicking each', async () => {
+    renderAccordionMultiple({ defaultValue: ['1', '2', '3'] })
+
+    await fireEvent.click(screen.getByText(defaultItems[0].title))
+    await fireEvent.click(screen.getByText(defaultItems[1].title))
+    await fireEvent.click(screen.getByText(defaultItems[2].title))
+
+    const items = screen.getAllByTestId(DATA_ACCORDION_ITEM_TEST_ID)
+    await waitFor(() => {
+      items.forEach((item) => {
+        expect(item).not.toHaveClass(styles.active)
+      })
+    })
+  })
+
+  it('should render all items with titles', () => {
+    renderAccordionMultiple()
+
+    expect(screen.getByText('Item 1')).toBeInTheDocument()
+    expect(screen.getByText('Item 2')).toBeInTheDocument()
+    expect(screen.getByText('Item 3')).toBeInTheDocument()
+  })
+
+  it('should render with single item', () => {
+    const singleItem = [defaultItems[0]]
+    renderAccordionMultiple({}, singleItem)
+
+    expect(screen.getAllByTestId(DATA_ACCORDION_ITEM_TEST_ID)).toHaveLength(1)
+    expect(screen.getByText('Item 1')).toBeInTheDocument()
   })
 })

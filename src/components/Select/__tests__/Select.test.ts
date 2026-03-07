@@ -163,6 +163,122 @@ describe('Select', () => {
     const svg = document.querySelector('svg')
     expect(svg).toBeInTheDocument()
   })
+
+  it('should close the list after selecting an item', async () => {
+    renderSelect()
+
+    // Open the list
+    await fireEvent.click(screen.getByTestId('select-button'))
+    await nextTick()
+
+    await waitFor(() => {
+      expect(screen.getByRole('list')).toBeInTheDocument()
+    })
+
+    // Click an item
+    await fireEvent.click(screen.getByTestId('item-opt1'))
+    await nextTick()
+
+    // List should close
+    await waitFor(() => {
+      expect(screen.queryByRole('list')).not.toBeInTheDocument()
+    })
+  })
+
+  it('should toggle the list open and closed', async () => {
+    renderSelect()
+
+    const button = screen.getByTestId('select-button')
+
+    // Open
+    await fireEvent.click(button)
+    await nextTick()
+    await waitFor(() => {
+      expect(screen.getByRole('list')).toBeInTheDocument()
+    })
+
+    // Close by clicking button again
+    await fireEvent.click(button)
+    await nextTick()
+    await waitFor(() => {
+      expect(screen.queryByRole('list')).not.toBeInTheDocument()
+    })
+  })
+
+  it('should show placeholder when no value selected', () => {
+    renderSelect({ placeholder: 'Choose...' })
+    expect(screen.getByText('Choose...')).toBeInTheDocument()
+  })
+
+  it('should display the correct selected item after changing selection', async () => {
+    renderSelect()
+
+    // Open and select first item
+    await fireEvent.click(screen.getByTestId('select-button'))
+    await nextTick()
+    await waitFor(() => {
+      expect(screen.getByTestId('item-opt1')).toBeInTheDocument()
+    })
+
+    await fireEvent.click(screen.getByTestId('item-opt1'))
+    await nextTick()
+    await waitFor(() => {
+      expect(screen.getByText('Option 1')).toBeInTheDocument()
+    })
+
+    // Open and select third item
+    await fireEvent.click(screen.getByTestId('select-button'))
+    await nextTick()
+    await waitFor(() => {
+      expect(screen.getByTestId('item-opt3')).toBeInTheDocument()
+    })
+
+    await fireEvent.click(screen.getByTestId('item-opt3'))
+    await nextTick()
+    await waitFor(() => {
+      expect(screen.getByText('Option 3')).toBeInTheDocument()
+    })
+  })
+
+  it('should apply opened class when list is open', async () => {
+    renderSelect()
+
+    const selectRoot = screen.getByTestId('select-root')
+    expect(selectRoot.className).not.toContain('opened')
+
+    await fireEvent.click(screen.getByTestId('select-button'))
+    await nextTick()
+    await waitFor(() => {
+      expect(selectRoot.className).toContain('opened')
+    })
+  })
+
+  it('should render all items in the list', async () => {
+    renderSelect()
+
+    await fireEvent.click(screen.getByTestId('select-button'))
+    await nextTick()
+
+    await waitFor(() => {
+      expect(screen.getByTestId('item-opt1')).toBeInTheDocument()
+      expect(screen.getByTestId('item-opt2')).toBeInTheDocument()
+      expect(screen.getByTestId('item-opt3')).toBeInTheDocument()
+    })
+  })
+
+  it('should disable the button when isDisabled is true', () => {
+    renderSelect({ isDisabled: true })
+
+    const button = screen.getByTestId('select-button')
+    expect(button).toBeDisabled()
+  })
+
+  it('should apply invalid styling when isInvalid is true', () => {
+    renderSelect({ isInvalid: true })
+
+    const button = screen.getByTestId('select-button')
+    expect(button.className).toContain('invalid')
+  })
 })
 
 describe('Select uncontrolled', () => {
@@ -208,5 +324,109 @@ describe('Select uncontrolled', () => {
 
     render(Wrapper)
     expect(screen.getByText('Option 2')).toBeInTheDocument()
+  })
+
+  it('should update internal value when item is selected in uncontrolled mode', async () => {
+    const Wrapper = defineComponent({
+      components: {
+        Select,
+        SelectButtonComp,
+        SelectListComp,
+        SelectItemComp,
+        SelectValueComp,
+        SelectArrowComp,
+      },
+      setup() {
+        return {
+          items: defaultItems,
+          SelectRootTheme,
+          SelectArrowTheme,
+          SelectItemTheme,
+          SelectListTheme,
+          SelectButtonLightTheme,
+        }
+      },
+      template: `
+        <Select :theme="SelectRootTheme" data-testid="select-root">
+          <SelectButtonComp :theme="SelectButtonLightTheme" data-testid="select-button">
+            <SelectValueComp placeholder="Pick..." />
+            <SelectArrowComp :theme="SelectArrowTheme" />
+          </SelectButtonComp>
+          <SelectListComp :theme="SelectListTheme">
+            <SelectItemComp
+              v-for="(item, index) in items"
+              :key="item.value"
+              :theme="SelectItemTheme"
+              :item="item"
+              :index="index"
+              :data-testid="'item-' + item.value"
+            />
+          </SelectListComp>
+        </Select>
+      `,
+    })
+
+    render(Wrapper)
+
+    // Should show placeholder initially
+    expect(screen.getByText('Pick...')).toBeInTheDocument()
+
+    // Open and select
+    await fireEvent.click(screen.getByTestId('select-button'))
+    await nextTick()
+
+    await waitFor(() => {
+      expect(screen.getByTestId('item-opt1')).toBeInTheDocument()
+    })
+
+    await fireEvent.click(screen.getByTestId('item-opt1'))
+    await nextTick()
+
+    await waitFor(() => {
+      expect(screen.getByText('Option 1')).toBeInTheDocument()
+    })
+  })
+
+  it('should open with isDefaultOpen=true', () => {
+    const Wrapper = defineComponent({
+      components: {
+        Select,
+        SelectButtonComp,
+        SelectListComp,
+        SelectItemComp,
+        SelectValueComp,
+        SelectArrowComp,
+      },
+      setup() {
+        return {
+          items: defaultItems,
+          SelectRootTheme,
+          SelectArrowTheme,
+          SelectItemTheme,
+          SelectListTheme,
+          SelectButtonLightTheme,
+        }
+      },
+      template: `
+        <Select :theme="SelectRootTheme" :isDefaultOpen="true" data-testid="select-root">
+          <SelectButtonComp :theme="SelectButtonLightTheme" data-testid="select-button">
+            <SelectValueComp placeholder="Select..." />
+            <SelectArrowComp :theme="SelectArrowTheme" />
+          </SelectButtonComp>
+          <SelectListComp :theme="SelectListTheme">
+            <SelectItemComp
+              v-for="(item, index) in items"
+              :key="item.value"
+              :theme="SelectItemTheme"
+              :item="item"
+              :index="index"
+            />
+          </SelectListComp>
+        </Select>
+      `,
+    })
+
+    render(Wrapper)
+    expect(screen.getByRole('list')).toBeInTheDocument()
   })
 })

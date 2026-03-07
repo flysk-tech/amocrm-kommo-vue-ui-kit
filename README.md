@@ -4,6 +4,7 @@
 
 Разработано компанией **[Флайск](https://flysk.ru?utm_source=github&utm_medium=readme&utm_campaign=vue-ui-kit)** — официальным партнёром amoCRM/Kommo. Наш вклад в развитие экосистемы amoCRM/Kommo.
 
+[![CI](https://github.com/flysk-tech/amocrm-kommo-vue-ui-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/flysk-tech/amocrm-kommo-vue-ui-kit/actions/workflows/ci.yml)
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 [![Vue 3](https://img.shields.io/badge/Vue-3-4FC08D?logo=vue.js)](https://vuejs.org/)
 [![Storybook](https://img.shields.io/badge/Storybook-docs-FF4785?logo=storybook)](https://flysk-tech.github.io/amocrm-kommo-vue-ui-kit/)

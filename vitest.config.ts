@@ -29,7 +29,10 @@ export default defineConfig({
         'dist/',
         'playground/',
         'docs/',
-        '.storybook/'
+        '.storybook/',
+        'storybook-static/',
+        'playwright/',
+        'playwright-report/'
       ]
     },
     setupFiles: ['./tests/setup.ts']
