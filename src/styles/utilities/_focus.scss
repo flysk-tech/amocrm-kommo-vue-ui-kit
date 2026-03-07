@@ -6,9 +6,9 @@
 
 // Глобальные стили для focus-visible
 *:focus-visible {
-  outline: var(--amocrm-vue-ui-kit-palette-focus-visible-outline-width)
-           var(--amocrm-vue-ui-kit-palette-focus-visible-outline-style)
-           var(--amocrm-vue-ui-kit-palette-focus-visible-color);
-  outline-offset: var(--amocrm-vue-ui-kit-palette-focus-visible-outline-offset);
-  border-radius: var(--amocrm-vue-ui-kit-palette-focus-visible-border-radius);
+  outline: var(--crm-ui-kit-palette-focus-visible-outline-width)
+           var(--crm-ui-kit-palette-focus-visible-outline-style)
+           var(--crm-ui-kit-palette-focus-visible-color);
+  outline-offset: var(--crm-ui-kit-palette-focus-visible-outline-offset);
+  border-radius: var(--crm-ui-kit-palette-focus-visible-border-radius);
 }

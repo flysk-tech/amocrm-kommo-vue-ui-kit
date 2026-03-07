@@ -35,28 +35,28 @@ const currentTheme = computed(() => themeConfig.value.mode)
 
 <style module lang="scss">
 .container {
-  padding: var(--amocrm-vue-ui-kit-spacing-lg, 24px);
-  background: var(--amocrm-vue-ui-kit-palette-background-primary);
-  color: var(--amocrm-vue-ui-kit-palette-text-primary);
-  border-radius: var(--amocrm-vue-ui-kit-border-radius, 8px);
+  padding: var(--crm-ui-kit-spacing-lg, 24px);
+  background: var(--crm-ui-kit-palette-background-primary);
+  color: var(--crm-ui-kit-palette-text-primary);
+  border-radius: var(--crm-ui-kit-border-radius, 8px);
   transition: background 0.3s ease, color 0.3s ease;
 }
 
 .title {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: var(--amocrm-vue-ui-kit-spacing-md, 16px);
-  color: var(--amocrm-vue-ui-kit-palette-active-element-900);
+  margin-bottom: var(--crm-ui-kit-spacing-md, 16px);
+  color: var(--crm-ui-kit-palette-active-element-900);
 }
 
 .description {
-  margin-bottom: var(--amocrm-vue-ui-kit-spacing-lg, 24px);
+  margin-bottom: var(--crm-ui-kit-spacing-lg, 24px);
   opacity: 0.8;
 }
 
 .button {
-  padding: var(--amocrm-vue-ui-kit-spacing-sm, 8px) var(--amocrm-vue-ui-kit-spacing-md, 16px);
-  background: var(--amocrm-vue-ui-kit-palette-active-element-900);
+  padding: var(--crm-ui-kit-spacing-sm, 8px) var(--crm-ui-kit-spacing-md, 16px);
+  background: var(--crm-ui-kit-palette-active-element-900);
   color: white;
   border: none;
   border-radius: 4px;
