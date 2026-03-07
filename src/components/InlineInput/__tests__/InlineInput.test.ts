@@ -135,6 +135,42 @@ describe('InlineInput', () => {
     expect(wrapper).toBeTruthy()
   })
 
+  // v-model / programmatic modelValue
+  it('should reflect modelValue prop as input value', () => {
+    renderInlineInput({ modelValue: 'programmatic' })
+
+    const element = screen.getByPlaceholderText(basePlaceholderText)
+    expect(element).toHaveValue('programmatic')
+  })
+
+  it('should update DOM input when modelValue prop changes', async () => {
+    const { rerender } = renderInlineInput({ modelValue: 'initial' })
+
+    const element = screen.getByPlaceholderText(basePlaceholderText)
+    expect(element).toHaveValue('initial')
+
+    await rerender({ modelValue: 'updated', theme: InlineInputPrimaryTheme })
+    expect(element).toHaveValue('updated')
+  })
+
+  it('should emit update:modelValue on type', async () => {
+    const onUpdate = vi.fn()
+    renderInlineInput({ 'onUpdate:modelValue': onUpdate })
+
+    const element = screen.getByPlaceholderText(basePlaceholderText)
+    await userEvent.type(element, 'abc')
+
+    expect(onUpdate).toHaveBeenCalledTimes(3)
+    expect(onUpdate).toHaveBeenLastCalledWith('abc')
+  })
+
+  it('should support numeric modelValue', () => {
+    renderInlineInput({ modelValue: 42 })
+
+    const element = screen.getByPlaceholderText(basePlaceholderText)
+    expect(element).toHaveValue('42')
+  })
+
   // attrs forwarding
   it('should pass name attribute to input', () => {
     renderInlineInput({}, { name: 'my-input' })
