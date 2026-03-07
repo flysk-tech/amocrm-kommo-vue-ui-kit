@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, watchEffect } from 'vue'
+import { ref, reactive, toRef, watchEffect } from 'vue'
 import { provideCheckboxGroupContext, DISPLAY_NAME } from './CheckboxGroup.context'
 import { useCheckboxGroupState } from './composables/useCheckboxGroupState'
 import type { CheckboxGroupProps } from './CheckboxGroup.types'
@@ -31,7 +31,7 @@ const props = withDefaults(defineProps<Props>(), {
 const checkboxGroupRef = ref<HTMLDivElement | null>(null)
 
 const { register, state } = useCheckboxGroupState({
-  onChange: props.onChange,
+  onChange: toRef(props, 'onChange'),
   isDisabled: props.isDisabled,
 })
 

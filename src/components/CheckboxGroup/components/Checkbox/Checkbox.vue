@@ -33,8 +33,7 @@ const { theme, className, name: _name, ...rest } = props
 
 const checkboxRef = ref<InstanceType<typeof CheckboxCore> | null>(null)
 
-const { values, isDisabled: isGlobalDisabled } =
-  useCheckboxGroupContext(DISPLAY_NAME)
+const groupContext = useCheckboxGroupContext(DISPLAY_NAME)
 
 const {
   isDisabled: isItemRootIsDisabled,
@@ -44,10 +43,10 @@ const {
 } = useCheckboxItemRootContext(DISPLAY_NAME)
 
 const isDisabled = computed(
-  () => isGlobalDisabled || isItemRootIsDisabled
+  () => groupContext.isDisabled || isItemRootIsDisabled
 )
 
-const isChecked = computed(() => Boolean(values.get(name || '')?.isChecked))
+const isChecked = computed(() => Boolean(groupContext.values.get(name || '')?.isChecked))
 
 const handleChange = (e: Event) => {
   const target = e.target as HTMLInputElement

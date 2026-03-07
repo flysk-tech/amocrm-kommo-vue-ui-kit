@@ -25,13 +25,13 @@ import styles from '../ItemRoot/ItemRoot.module.scss'
 
 const props = defineProps<ItemRootSelectAllProps>()
 
-const { isDisabled: groupIsDisabled, register } =
-  useCheckboxGroupContext(DISPLAY_NAME)
+const groupContext = useCheckboxGroupContext(DISPLAY_NAME)
+const groupIsDisabled = computed(() => groupContext.isDisabled)
 
 const contextValue = computed(() => {
   const { theme, className, ...rest } = props
   return {
-    ...register('selectAll'),
+    ...groupContext.register('selectAll'),
     ...rest,
   }
 })

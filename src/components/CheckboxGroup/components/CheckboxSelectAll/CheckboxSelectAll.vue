@@ -4,7 +4,7 @@
     :class="className"
     :theme="theme"
     :value="SELECT_ALL"
-    :isDisabled="isGlobalDisabled || isDisabled"
+    :isDisabled="groupContext.isDisabled || selectAllContext.isDisabled"
     :isChecked="propsBasedOnInternalState.isChecked"
     :checkedStyle="propsBasedOnInternalState.checkedStyle"
     @change="handleChange"
@@ -35,24 +35,23 @@ const { theme, className, checkedStyle: _checkedStyle, ...rest } = props
 
 const checkboxRef = ref<InstanceType<typeof CheckboxCore> | null>(null)
 
-const { values, isDisabled: isGlobalDisabled } =
-  useCheckboxGroupContext(DISPLAY_NAME)
+const groupContext = useCheckboxGroupContext(DISPLAY_NAME)
 
-const { onChange, isDisabled } =
-  useCheckboxItemRootSelectAllContext(DISPLAY_NAME)
+const selectAllContext = useCheckboxItemRootSelectAllContext(DISPLAY_NAME)
 
 const handleChange = () => {
-  onChange({ type: SELECT_ALL, name: SELECT_ALL })
+  selectAllContext.onChange({ type: SELECT_ALL, name: SELECT_ALL })
 }
 
 const propsBasedOnInternalState = computed(() => {
-  const allChecked = Array.from(values.values()).every(
+  const vals = groupContext.values
+  const allChecked = Array.from(vals.values()).every(
     (checkbox) => checkbox.isChecked
   )
   const checkedStyle: CheckedStyleType = allChecked ? 'mark' : 'indeterminate'
 
   return {
-    isChecked: Array.from(values.values()).some(
+    isChecked: Array.from(vals.values()).some(
       (checkbox) => checkbox.isChecked
     ),
     checkedStyle,

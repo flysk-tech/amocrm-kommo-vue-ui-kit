@@ -1,4 +1,4 @@
-import { ref, watch, nextTick } from 'vue'
+import { ref, watch, nextTick, type Ref } from 'vue'
 import type {
   InternalCheckboxGroupChangeEvent,
   RegisterHandlerType,
@@ -8,7 +8,7 @@ import type {
 
 export interface UseCheckboxGroupStateArgs {
   isDisabled?: boolean
-  onChange: CheckboxGroupChangeEvent
+  onChange: Ref<CheckboxGroupChangeEvent | undefined>
 }
 
 export const useCheckboxGroupState = ({
@@ -46,7 +46,9 @@ export const useCheckboxGroupState = ({
     }
 
     state.value = copyState
-    onChange([...copyState.values()], changeEvent)
+    if (typeof onChange.value === 'function') {
+      onChange.value([...copyState.values()], changeEvent)
+    }
   }
 
   watch(
