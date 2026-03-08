@@ -77,9 +77,22 @@ function extractItems(vnodes: VNode[]): MultiSelectItem[] {
     if (vnode.props?.item) {
       result.push(vnode.props.item as MultiSelectItem)
     }
-    // Recurse into Fragment children (e.g. v-for, groups)
+    // Recurse into Fragment children (e.g. v-for)
     if (Array.isArray(vnode.children)) {
       result.push(...extractItems(vnode.children as VNode[]))
+    }
+    // Recurse into component slot children (e.g. MultiSelectGroup)
+    else if (
+      vnode.children
+      && typeof vnode.children === 'object'
+      && 'default' in vnode.children
+      && typeof (vnode.children as Record<string, unknown>).default === 'function'
+    ) {
+      const slotFn = (vnode.children as Record<string, () => VNode[]>).default
+      const slotChildren = slotFn()
+      if (Array.isArray(slotChildren)) {
+        result.push(...extractItems(slotChildren))
+      }
     }
   }
   return result
