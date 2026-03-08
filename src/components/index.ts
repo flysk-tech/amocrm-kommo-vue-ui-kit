@@ -26,6 +26,7 @@ export {
   CheckboxSmallLightTheme,
   CheckboxDarkTheme,
   CheckboxSmallDarkTheme,
+  CheckboxLabelTheme,
 } from './Checkbox/Checkbox.themes'
 
 // Layout components
